@@ -4,7 +4,12 @@ import { connectToDB } from '@/utils/database';
 
 const HomePage = async () => {
 
-
+  try {
+    let db = await connectToDB();
+    console.log(db);
+  } catch (error) {
+    console.log(error);
+  }
 
   return (
     <div >Home Page</div>
