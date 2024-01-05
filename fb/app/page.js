@@ -1,3 +1,4 @@
+import { getContestants } from '@/utils/actions';
 import { connectToDB } from '@/utils/database';
 //import Image from 'next/image';
 
@@ -5,8 +6,14 @@ import { connectToDB } from '@/utils/database';
 const HomePage = async () => {
 
   try {
-    let db = await connectToDB();
-    console.log(db);
+    await connectToDB();
+    let contestants = await getContestants();
+    if (contestants) {
+      console.log(contestants);;
+    } else {
+      console.log('no');;
+    }
+    //console.log(db);
   } catch (error) {
     console.log(error);
   }
