@@ -6,16 +6,16 @@ import { connectToDB } from '@/utils/database';
 const HomePage = async () => {
 
   try {
-    //await connectToDB();
-    const response = await fetch('http://localhost:3000/api/contestants');
-    const data = await response.json();
-    console.log(data);
-    // let contestants = await getContestants();
-    // if (contestants) {
-    //   console.log(contestants);;
-    // } else {
-    //   console.log('no');;
-    // }
+    await connectToDB();
+    // const response = await fetch('http://localhost:3000/api/contestants');
+    // const data = await response.json();
+    // console.log(data);
+    let contestants = await getContestants();
+    if (contestants) {
+      console.log(contestants);;
+    } else {
+      console.log('no');;
+    }
   } catch (error) {
     console.log(error);
   }

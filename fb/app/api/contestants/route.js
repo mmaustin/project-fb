@@ -11,4 +11,19 @@ export const GET = async () => {
   } catch (error) {
     return new Response('Failed to fetch contestants', { status: 500 });
   }
+};
+
+export const POST = async (request) => {
+  const { name } = await request.json();
+  try {
+    await connectToDB();
+    const newContestant = new Contestant({
+      name
+    })
+    await newContestant.save();
+
+    return Response.json({ newContestant }, { status: 201 })
+  } catch (error) {
+    return new Response('Failed to create a new contestant', { status: 500 })
+  }
 }
