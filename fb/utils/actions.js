@@ -1,4 +1,4 @@
-import Baby from "@/models/babies";
+import Baby from "@/models/baby";
 
 
 export const getBabies = async () => {

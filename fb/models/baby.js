@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+import { Schema, model, models } from 'mongoose';
 
-const BabySchema = mongoose.Schema({
+const BabySchema = new Schema({
   parents: {
-    type: String,
+    type: [String],
     required: true,
   },
   babyName: {
@@ -13,7 +13,7 @@ const BabySchema = mongoose.Schema({
     type: [String],
     required: true,
   },
-  girlNameArray: {
+  girlNamesArray: {
     type: [String],
     required: true,
   },
@@ -39,6 +39,6 @@ const BabySchema = mongoose.Schema({
   }
 });
 
-const Baby = mongoose.model("Baby", BabySchema);
+const Baby = models.Baby || model("Baby", BabySchema);
 export default Baby;
 
