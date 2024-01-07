@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const links = [
-  { href: '/', label: 'Home' },
+  { href: '/', label: 'home' },
   { href: '/authors', label: 'authors' },
-  { href: '/prisma-example', label: 'prisma' },
-  { href: '/tasks', label: 'tasks' }
+  { href: '/works', label: 'works in progress' },
+  { href: '/my-page', label: 'my page' }
 ];
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="bg-base-300 py-4">
       <div className="navbar px-8 max-w-6xl mx-auto flex-col sm:flex-row">
         <Link href='/' className="btn btn-primary">
-          Next.js
+          Novel Ideas
         </Link>
         <ul className="menu menu-horizontal md:ml-8">
           {links.map(link => {
