@@ -6,11 +6,13 @@ import { connectToDB } from '@/utils/database';
 const HomePage = async () => {
 
   // try {
-  //   await connectToDB();
+  // await connectToDB();
+
   // cache no-store is necessary unless you'll get the very first fetch every time--i think
-  const response = await fetch('http://localhost:3000/api/contestants', { cache: 'no-store' });
-  const data = await response.json();
-  console.log(data);
+
+  // const response = await fetch('http://localhost:3000/api/contestants', { cache: 'no-store' });
+  // const data = await response.json();
+  // console.log(data);
 
   //   let contestants = await getContestants();
   //   if (contestants) {
@@ -23,32 +25,9 @@ const HomePage = async () => {
   // }
 
   return (
-    // <div className="shadow-zinc-950 opacity-35">
-    //   <h1 className="text-3xl">Home Page Page</h1>
-    // </div>
-    <>
-      <div className="carousel w-full">
-        <div id="item1" className="carousel-item w-full">
-          <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
-        </div>
-        <div id="item2" className="carousel-item w-full">
-          <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
-        </div>
-        <div id="item3" className="carousel-item w-full">
-          <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-        </div>
-        <div id="item4" className="carousel-item w-full">
-          <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-        </div>
-      </div>
-      <div className="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" className="btn btn-xs">1</a>
-        <a href="#item2" className="btn btn-xs">2</a>
-        <a href="#item3" className="btn btn-xs">3</a>
-        <a href="#item4" className="btn btn-xs">4</a>
-      </div>
-    </>
-
+    <div className="shadow-2xl shadow-cyan-500  bg-cyan-500">
+      <h1 className="text-2xl">Home Page</h1>
+    </div>
   )
 }
 export default HomePage;
