@@ -7,10 +7,10 @@ const HomePage = async () => {
 
   // try {
   //   await connectToDB();
-
-  // const response = await fetch('http://localhost:3000/api/contestants');
-  // const data = await response.json();
-  // console.log(data);
+  // cache no-store is necessary unless you'll get the very first fetch every time--i think
+  const response = await fetch('http://localhost:3000/api/contestants', { cache: 'no-store' });
+  const data = await response.json();
+  console.log(data);
 
   //   let contestants = await getContestants();
   //   if (contestants) {
