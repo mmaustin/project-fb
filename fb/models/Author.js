@@ -21,9 +21,7 @@ const AuthorSchema = mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-    },
-    public: Boolean,
-    default: false,
+    }
   },
   { timestamps: true }
 );
