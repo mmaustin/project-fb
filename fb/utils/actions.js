@@ -1,8 +1,11 @@
+'use server'
+
 import Contestant from "@/models/Contestant";
 import Author from "@/models/Author";
 import { connectToDB } from "./database";
 
 export const getContestants = async () => {
+
   return await Contestant.find();
 };
 

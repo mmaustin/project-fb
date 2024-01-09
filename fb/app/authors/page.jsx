@@ -7,4 +7,4 @@ const ShowAuthors = () => {
     </div>
   )
 }
-export default ShowAuthors
+export default ShowAuthors;
