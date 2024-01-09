@@ -10,7 +10,11 @@ export const getContestants = async () => {
 };
 
 export const createAuthor = async (formData) => {
-  console.log(formData);
+  const name = formData.get('name');
+  const style = formData.get('style');
+  const authorInfluence = formData.get('authorInfluence');
+  const workInfluence = formData.get('workInfluence');
+  console.log(name, style, authorInfluence, workInfluence);
   // try {
   //   await connectToDB();
 
