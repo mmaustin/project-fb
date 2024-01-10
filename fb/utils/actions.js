@@ -12,22 +12,22 @@ export const getContestants = async () => {
 };
 
 export const createAuthor = async (prevState, formData) => {
-  //formData.delete('name');
-  if (!formData.get('name')) console.log('there is no name');
+
   const name = formData.get('name')
   const style = formData.get('style');
   const authorInfluence = formData.get('authorInfluence');
   const workInfluence = formData.get('workInfluence');
 
-  console.log(name, style, authorInfluence, workInfluence);
+  try {
+    await connectToDB();
+    await Author.create({
+      name, style, authorInfluence, workInfluence
+    })
 
-  return { message: 'success' };
-  // try {
-  //   await connectToDB();
-
-  // } catch (error) {
-
-  // }
+    return { message: 'success' };
+  } catch (error) {
+    return { message: 'error' };
+  }
 };
 
 

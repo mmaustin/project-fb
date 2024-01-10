@@ -9,7 +9,7 @@ const SubmitBtn = () => {
 
   return (
     <button type="submit" className="btn btn-primary join-item" disabled={pending}>
-      {pending ? 'please wait . . .' : 'create task'}
+      {pending ? 'please wait . . .' : 'Author'}
     </button>
   )
 };
