@@ -1,12 +1,12 @@
 import { getAuthors } from '@/utils/actions';
-import { connectToDB } from '@/utils/database';
+//import { connectToDB } from '@/utils/database';
 //import Image from 'next/image';
 
 
 const HomePage = async () => {
 
   try {
-    await connectToDB();
+    //await connectToDB();
 
     // cache no-store is necessary. otherwise, you'll get the very first fetch every time--i think.
 

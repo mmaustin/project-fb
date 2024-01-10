@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 
 
 export const getAuthors = async () => {
-
+  await connectToDB();
   return await Author.find();
 };
 
