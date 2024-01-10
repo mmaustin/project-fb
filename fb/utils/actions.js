@@ -3,18 +3,25 @@
 import Contestant from "@/models/Contestant";
 import Author from "@/models/Author";
 import { connectToDB } from "./database";
+import { revalidatePath } from "next/cache";
+
 
 export const getContestants = async () => {
 
   return await Contestant.find();
 };
 
-export const createAuthor = async (formData) => {
-  const name = formData.get('name');
+export const createAuthor = async (prevState, formData) => {
+  //formData.delete('name');
+  if (!formData.get('name')) console.log('there is no name');
+  const name = formData.get('name')
   const style = formData.get('style');
   const authorInfluence = formData.get('authorInfluence');
   const workInfluence = formData.get('workInfluence');
+
   console.log(name, style, authorInfluence, workInfluence);
+
+  return { message: 'success' };
   // try {
   //   await connectToDB();
 
