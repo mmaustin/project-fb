@@ -4,6 +4,7 @@
 import Author from "@/models/Author";
 import { connectToDB } from "./database";
 import { revalidatePath } from "next/cache";
+import Work from "@/models/Work";
 
 
 export const getAuthors = async () => {
@@ -25,6 +26,27 @@ export const createAuthor = async (prevState, formData) => {
     })
 
     revalidatePath('authors');
+    return { message: 'success' };
+  } catch (error) {
+    return { message: 'error' };
+  }
+};
+
+export const createWork = async (prevState, formData) => {
+
+  const title = formData.get('title')
+  const genre = formData.get('genre');
+  const synopsis = formData.get('synopsis');
+  const wordCount = formData.get('wordCount');
+  const createdBy = formData.get('createdBy');
+
+  try {
+    await connectToDB();
+    await Work.create({
+      title, genre, synopsis, wordCount, createdBy
+    })
+
+    revalidatePath(`/authors/${createdBy}`);
     return { message: 'success' };
   } catch (error) {
     return { message: 'error' };
