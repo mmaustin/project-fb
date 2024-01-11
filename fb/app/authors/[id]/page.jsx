@@ -1,11 +1,12 @@
+import WorkForm from "@/components/WorkForm";
 
 
 const AuthorPage = ({ params }) => {
-  const authorId = params.id;
+  const authorParamId = params.id;
   return (
     <div>
       <p>Author's Page</p>
-      {authorId}
+      <WorkForm authorId={authorParamId} />
     </div>
   )
 }
