@@ -15,7 +15,7 @@ const AuthorList = async () => {
   return (
     <div className="mt-8">
       {allAuthors.map(author => {
-        return <div key={author._id} className="flex justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lf shadow-lg">
+        return <div key={author._id} className="flex-col justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lf shadow-lg">
           <h4 className="text-lg capitalize">
             {author.name}
           </h4>
