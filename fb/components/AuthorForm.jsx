@@ -13,7 +13,7 @@ const SubmitBtn = () => {
     </button>
   )
 };
-
+//[action.payload.name]: action.payload.value,
 const initialState = { message: null };
 
 const AuthorForm = () => {
