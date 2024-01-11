@@ -41,13 +41,13 @@ export const createWork = async (authorId, prevState, formData) => {
   const createdBy = authorId;
 
   try {
-    // await connectToDB();
-    // await Work.create({
-    //   title, genre, synopsis, wordCount, createdBy
-    // })
+    await connectToDB();
+    await Work.create({
+      title, genre, synopsis, wordCount, createdBy
+    })
 
-    // revalidatePath(`/authors/${createdBy}`);
-    console.log(title, genre, synopsis, wordCount, createdBy);
+    revalidatePath(`/authors/${createdBy}`);
+    //console.log(title, genre, synopsis, wordCount, createdBy);
     return { message: 'success' };
   } catch (error) {
     return { message: 'error' };

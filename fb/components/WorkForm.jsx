@@ -17,7 +17,7 @@ const WorkForm = ({ authorId }) => {
         <input type="text" className="input input-bordered join-item w-full" placeholder="title" name="title" required />
         <input type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" required />
         <input type="text" className="input input-bordered join-item w-full" placeholder="synopsis" name="synopsis" required />
-        <input type="text" className="input input-bordered join-item w-full" placeholder="word count" name="wordCount" required />
+        <input type="number" className="input input-bordered join-item w-full" placeholder="word count" name="wordCount" />
         <button type="submit">Create Work</button>
       </div>
     </form>
