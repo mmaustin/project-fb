@@ -3,7 +3,7 @@ import Link from "next/link";
 const links = [
   { href: '/authors', label: 'authors' },
   { href: '/works', label: 'works in progress' },
-  { href: '/my-page', label: 'my page' }
+  // { href: '/my-page', label: 'my page' }
 ];
 
 const Navbar = () => {

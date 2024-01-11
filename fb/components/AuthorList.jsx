@@ -1,6 +1,6 @@
 import { getAuthors } from "@/utils/actions";
+import Link from "next/link";
 //import { connectToDB } from "@/utils/database";
-
 
 const AuthorList = async () => {
 
@@ -28,6 +28,9 @@ const AuthorList = async () => {
           <h4 className="text-lg capitalize">
             {author.workInfluence}
           </h4>
+          <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs" >
+            Your Page
+          </Link>
         </div>
       })}
     </div>
