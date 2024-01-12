@@ -8,8 +8,12 @@ import Work from "@/models/Work";
 
 
 export const getAuthors = async () => {
-  await connectToDB();
-  return await Author.find();
+  try {
+    await connectToDB();
+    return await Author.find();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const createAuthor = async (prevState, formData) => {
@@ -53,4 +57,13 @@ export const createWork = async (authorId, prevState, formData) => {
     return { message: 'error' };
   }
 };
+
+export const getAuthorsWorks = async (authorId) => {
+  try {
+    await connectToDB();
+    return await Work.find({ createdBy: authorId });
+  } catch (error) {
+    console.log(error);
+  }
+}
 
