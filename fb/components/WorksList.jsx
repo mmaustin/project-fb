@@ -3,8 +3,8 @@ import { getAuthorsWorks } from "@/utils/actions";
 
 
 
-const WorksList = async () => {
-  const allAuthorsWorks = await getAuthorsWorks();
+const WorksList = async ({ authorId }) => {
+  const allAuthorsWorks = await getAuthorsWorks(authorId);
 
   if (allAuthorsWorks.length === 0) {
     return (

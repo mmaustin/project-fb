@@ -1,4 +1,5 @@
 import WorkForm from "@/components/WorkForm";
+import WorksList from "@/components/WorksList";
 
 
 const AuthorPage = ({ params }) => {
@@ -7,6 +8,7 @@ const AuthorPage = ({ params }) => {
     <div>
       <p>Author's Page</p>
       <WorkForm authorId={authorParamId} />
+      <WorksList authorId={authorParamId} />
     </div>
   )
 }
