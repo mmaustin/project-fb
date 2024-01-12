@@ -20,7 +20,7 @@ const WorksList = async ({ authorId }) => {
             {work.title}
           </h4>
           <h4 className="text-lg capitalize">
-            {author.genre}
+            {work.genre}
           </h4>
           <h4 className="text-lg capitalize">
             {work.synopsis}

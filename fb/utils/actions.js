@@ -58,6 +58,15 @@ export const createWork = async (authorId, prevState, formData) => {
   }
 };
 
+export const getAllWorks = async () => {
+  try {
+    await connectToDB();
+    return await Work.find();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export const getAuthorsWorks = async (authorId) => {
   try {
     await connectToDB();
