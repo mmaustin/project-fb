@@ -1,6 +1,11 @@
+import WorksList from "@/components/WorksList";
+
+
 const Works = () => {
   return (
-    <div>Works</div>
+    <div>
+      <WorksList />
+    </div>
   )
 }
 export default Works
