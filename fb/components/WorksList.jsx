@@ -1,10 +1,16 @@
-import { getAuthorsWorks } from "@/utils/actions";
+import { getAuthorsWorks, getAllWorks } from "@/utils/actions";
 //import Link from "next/link";
 
 
 
 const WorksList = async ({ authorId }) => {
-  const allAuthorsWorks = await getAuthorsWorks(authorId);
+  let allAuthorsWorks;
+
+  if (authorId) {
+    allAuthorsWorks = await getAuthorsWorks(authorId);
+  } else {
+    allAuthorsWorks = await getAllWorks();
+  }
 
   if (allAuthorsWorks.length === 0) {
     return (
