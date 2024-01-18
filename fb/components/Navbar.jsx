@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { auth, currentUser } from "@clerk/nextjs";
 
 const links = [
   { href: '/authors', label: 'authors' },
@@ -7,6 +8,14 @@ const links = [
 ];
 
 const Navbar = () => {
+
+  const { userId } = auth();
+  if (userId) {
+    console.log(userId);
+  } else {
+    console.log("no user logged in");
+  }
+
   return (
     <nav className="bg-base-300 py-4">
       <div className="navbar px-8 max-w-6xl mx-auto flex-col sm:flex-row">

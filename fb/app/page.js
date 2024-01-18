@@ -5,24 +5,24 @@ import { getAuthors } from '@/utils/actions';
 
 const HomePage = async () => {
 
-  try {
-    //await connectToDB();
+  // try {
+  //   //await connectToDB();
 
-    // cache no-store is necessary. otherwise, you'll get the very first fetch every time--i think.
+  //   // cache no-store is necessary. otherwise, you'll get the very first fetch every time--i think.
 
-    // const response = await fetch('http://localhost:3000/api/contestants', { cache: 'no-store' });
-    // const data = await response.json();
-    // console.log(data);
+  //   // const response = await fetch('http://localhost:3000/api/contestants', { cache: 'no-store' });
+  //   // const data = await response.json();
+  //   // console.log(data);
 
-    let authors = await getAuthors();
-    if (authors) {
-      console.log(authors);;
-    } else {
-      console.log('no');;
-    }
-  } catch (error) {
-    console.log(error);
-  }
+  //   let authors = await getAuthors();
+  //   if (authors) {
+  //     console.log(authors);;
+  //   } else {
+  //     console.log('no');;
+  //   }
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
   return (
     <div className="shadow-2xl shadow-cyan-500  bg-cyan-500">
