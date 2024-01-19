@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { auth, currentUser } from "@clerk/nextjs";
+import { auth, currentUser, SignOutButton } from "@clerk/nextjs";
+
 
 const links = [
   { href: '/authors', label: 'authors' },
@@ -7,14 +8,16 @@ const links = [
   // { href: '/my-page', label: 'my page' }
 ];
 
-const Navbar = () => {
+const Navbar = async () => {
 
   const { userId } = auth();
-  if (userId) {
-    console.log(userId);
-  } else {
-    console.log("no user logged in");
-  }
+  const user = await currentUser();
+
+  // if (userId) {
+  //   console.log(user.emailAddresses[0].id, userId);
+  // } else {
+  //   console.log("no user logged in");
+  // }
 
   return (
     <nav className="bg-base-300 py-4">
@@ -33,6 +36,14 @@ const Navbar = () => {
             )
           })}
         </ul>
+        {userId ? (
+          <div className="btn btn-primary shadow-2xl shadow-zinc-500">
+            <SignOutButton />
+          </div>) : (
+          <div>
+            <h1> No User </h1>
+          </div>
+        )}
       </div>
     </nav>
   )
