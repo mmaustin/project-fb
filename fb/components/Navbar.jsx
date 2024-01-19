@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { auth, currentUser, SignOutButton } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { checkSignOut } from "@/utils/actions";
 
 
 
@@ -47,7 +48,7 @@ const Navbar = async () => {
         {userId ? (
           <div className="btn btn-primary shadow-2xl shadow-zinc-500">
             {user.emailAddresses[0].emailAddress}
-            <SignOutButton signOutCallback={homePageRedirect} />
+            <SignOutButton />
           </div>) : (
           <div>
             <h1> No User </h1>

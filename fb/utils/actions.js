@@ -65,7 +65,7 @@ export const getAllWorks = async () => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 export const getAuthorsWorks = async (authorId) => {
   try {
@@ -74,5 +74,9 @@ export const getAuthorsWorks = async (authorId) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const checkSignOut = async () => {
+  console.log('sign out');
 }
 
