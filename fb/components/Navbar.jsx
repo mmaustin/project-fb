@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { auth, currentUser, SignOutButton } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
+
 
 
 const links = [
@@ -9,6 +11,12 @@ const links = [
 ];
 
 const Navbar = async () => {
+
+  const homePageRedirect = async () => {
+    'use server'
+    console.log('home page');
+    redirect('/')
+  }
 
   const { userId } = auth();
   const user = await currentUser();
@@ -38,7 +46,8 @@ const Navbar = async () => {
         </ul>
         {userId ? (
           <div className="btn btn-primary shadow-2xl shadow-zinc-500">
-            <SignOutButton />
+            {user.emailAddresses[0].emailAddress}
+            <SignOutButton signOutCallback={homePageRedirect} />
           </div>) : (
           <div>
             <h1> No User </h1>
