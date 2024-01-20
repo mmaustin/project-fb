@@ -76,7 +76,4 @@ export const getAuthorsWorks = async (authorId) => {
   }
 };
 
-export const checkSignOut = async () => {
-  console.log('sign out');
-}
 
