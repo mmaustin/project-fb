@@ -10,7 +10,7 @@ const links = [
 
 const Navbar = async () => {
 
-  const { userId } = auth();
+  //const { userId } = auth();
   const user = await currentUser();
 
   return (
@@ -30,10 +30,12 @@ const Navbar = async () => {
             )
           })}
         </ul>
-        <div className="px-4 flex items-center gap-2">
-          <UserButton afterSignOutUrl="/" />
-          <p>{user.emailAddresses[0].emailAddress}</p>
-        </div>
+        {user &&
+          <div className="px-4 flex items-center gap-2">
+            <UserButton afterSignOutUrl="/" />
+            <p>{user.emailAddresses[0].emailAddress}</p>
+          </div>
+        }
       </div>
     </nav>
   )
