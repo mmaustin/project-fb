@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { auth, currentUser, SignOutButton } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
-import { checkSignOut } from "@/utils/actions";
+import { auth, currentUser, UserButton, SignOutButton } from "@clerk/nextjs";
+//import { redirect } from "next/navigation";
+//import { checkSignOut } from "@/utils/actions";
 
 
 
@@ -13,11 +13,11 @@ const links = [
 
 const Navbar = async () => {
 
-  const homePageRedirect = async () => {
-    'use server'
-    console.log('home page');
-    redirect('/')
-  }
+  // const homePageRedirect = async () => {
+  //   'use server'
+  //   console.log('home page');
+  //   redirect('/')
+  // }
 
   const { userId } = auth();
   const user = await currentUser();
@@ -45,7 +45,7 @@ const Navbar = async () => {
             )
           })}
         </ul>
-        {userId ? (
+        {/* {userId ? (
           <div className="btn btn-primary shadow-2xl shadow-zinc-500">
             {user.emailAddresses[0].emailAddress}
             <SignOutButton />
@@ -53,7 +53,10 @@ const Navbar = async () => {
           <div>
             <h1> No User </h1>
           </div>
-        )}
+        )} */}
+        <div className="px-4 flex items-center gap-2">
+          <UserButton afterSignOutUrl="/" />
+        </div>
       </div>
     </nav>
   )
