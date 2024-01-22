@@ -4,9 +4,10 @@ import { createWork } from "@/utils/actions";
 import { useFormStatus, useFormState } from 'react-dom';
 
 const initialState = { message: null };
+const apple = 'apple'
 
-const WorkForm = ({ authorId }) => {
-  const sendWithAuthorId = createWork.bind(null, authorId)
+const WorkForm = ({ authorId, apple }) => {
+  const sendWithAuthorId = createWork.bind(null, authorId, apple);
 
   const [state, formAction] = useFormState(sendWithAuthorId, initialState);
 

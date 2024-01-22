@@ -24,10 +24,9 @@ const AuthorForm = () => {
   const [state, formAction] = useFormState(createAuthor, initialState);
 
   return (
-    <form ref={ref} action={() => {
-      formAction;
-      ref?.current.reset();
-    }}>
+    <form action={formAction
+      //ref?.current.reset();
+    }>
       {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null}
       <div className=" w-full">
         <input type="text" className="input input-bordered join-item w-full" placeholder="Name" name="name" required />

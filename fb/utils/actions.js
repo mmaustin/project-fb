@@ -36,7 +36,7 @@ export const createAuthor = async (prevState, formData) => {
   }
 };
 
-export const createWork = async (authorId, prevState, formData) => {
+export const createWork = async (authorId, apple, prevState, formData) => {
 
   const title = formData.get('title')
   const genre = formData.get('genre');
@@ -45,6 +45,7 @@ export const createWork = async (authorId, prevState, formData) => {
   const createdBy = authorId;
 
   try {
+    console.log(apple);
     await connectToDB();
     await Work.create({
       title, genre, synopsis, wordCount, createdBy
