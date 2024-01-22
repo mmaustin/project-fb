@@ -36,26 +36,29 @@ export const createAuthor = async (prevState, formData) => {
   }
 };
 
-export const createWork = async (array, prevState, formData) => {
+export const createWork = async (argsArray, prevState, formData) => {
 
   const title = formData.get('title')
   const genre = formData.get('genre');
   const synopsis = formData.get('synopsis');
   const wordCount = formData.get('wordCount');
-  const createdBy = array[0];
+  const createdBy = argsArray[0];
 
   try {
-    console.log(array);
+    //console.log(array);
     await connectToDB();
     await Work.create({
       title, genre, synopsis, wordCount, createdBy
     })
 
+    //argsArray[1]?.current.reset();
     revalidatePath(`/authors/${createdBy}`);
+    formData.delete('title');
     //console.log(title, genre, synopsis, wordCount, createdBy);
-    return { message: 'success' };
+    return //{ message: 'success' };
   } catch (error) {
-    return { message: 'error' };
+    console.log(error);
+    return //{ message: 'error' };
   }
 };
 
