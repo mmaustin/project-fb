@@ -1,6 +1,7 @@
 "use client"
 
 import { createAuthor } from "@/utils/actions";
+import { useRef } from "react";
 //import { useEffect } from "react";
 import { useFormStatus, useFormState } from 'react-dom';
 
@@ -18,10 +19,15 @@ const initialState = { message: null };
 
 const AuthorForm = () => {
 
+  const ref = useRef(null);
+
   const [state, formAction] = useFormState(createAuthor, initialState);
 
   return (
-    <form action={formAction}>
+    <form ref={ref} action={() => {
+      formAction;
+      ref?.current.reset();
+    }}>
       {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null}
       <div className=" w-full">
         <input type="text" className="input input-bordered join-item w-full" placeholder="Name" name="name" required />
