@@ -5,18 +5,21 @@ import { useRef } from "react";
 import { useFormStatus, useFormState } from 'react-dom';
 
 
-const initialState = { message: null };
+//const initialState = { message: null };
 
 
 const WorkForm = ({ authorId }) => {
   const ref = useRef(null);
-  const sendWithAuthorId = createWork.bind(null, [authorId, ref]);
+  //const sendWithAuthorId = createWork.bind(null, authorId);
 
-  const [state, formAction] = useFormState(sendWithAuthorId, initialState);
+  //const [state, formAction] = useFormState(sendWithAuthorId, initialState);
 
   return (
-    <form action={formAction}>
-      {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null}
+    <form ref={ref} action={async formData => {
+      await createWork(formData);
+      ref?.current.reset();
+    }}>
+      {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
       <div className=" w-full">
         <input type="text" className="input input-bordered join-item w-full" placeholder="title" name="title" required />
         <input type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" required />
