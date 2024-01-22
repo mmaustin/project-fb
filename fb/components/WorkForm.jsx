@@ -1,13 +1,16 @@
 "use client"
 
 import { createWork } from "@/utils/actions";
+import { useRef } from "react";
 import { useFormStatus, useFormState } from 'react-dom';
 
-const initialState = { message: null };
-const apple = 'apple'
 
-const WorkForm = ({ authorId, apple }) => {
-  const sendWithAuthorId = createWork.bind(null, authorId, apple);
+const initialState = { message: null };
+
+
+const WorkForm = ({ authorId }) => {
+  const ref = useRef(null);
+  const sendWithAuthorId = createWork.bind(null, [authorId, ref]);
 
   const [state, formAction] = useFormState(sendWithAuthorId, initialState);
 
