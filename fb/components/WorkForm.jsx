@@ -1,7 +1,7 @@
 "use client"
 
 import { createWork } from "@/utils/actions";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useFormStatus, useFormState } from 'react-dom';
 
 
@@ -10,16 +10,18 @@ const initialState = { message: null };
 
 const WorkForm = ({ authorId }) => {
   const ref = useRef(null);
-  const sendWithAuthorId = createWork.bind(null, authorId);
+  //const sendWithAuthorId = createWork.bind(null, authorId);
 
-  const [state, formAction] = useFormState(sendWithAuthorId, initialState);
+  //const [state, formAction] = useFormState(sendWithAuthorId, initialState);
+
+  const [state, setState] = useState(initialState);
 
   return (
-    <form ref={ref} action={() => {
-      formAction;
-      //await createWork(authorId, formData);
-      ref?.current.reset();
-    }}>
+    <form ref={ref} action={//formAction
+      async (formData) => {
+        await createWork(authorId, formData);
+        ref?.current.reset()
+      }}>
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
       <div className=" w-full">
         <input type="text" className="input input-bordered join-item w-full" placeholder="title" name="title" required />
