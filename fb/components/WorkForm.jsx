@@ -10,21 +10,26 @@ const initialState = { message: null };
 
 const WorkForm = ({ authorId }) => {
   const ref = useRef(null);
-  const sendWithAuthorId = createWork.bind(null, authorId);
+  //const sendWithAuthorId = createWork.bind(null, authorId);
 
-  const [state, formAction] = useFormState(sendWithAuthorId, initialState);
+  const checkFormState = async (authorId, prevState, formData) => {
+    "use server"
+    console.log(authorId, formData);
+  }
+
+  const [state, formAction] = useFormState(checkFormState, initialState);
 
   //const [state, setState] = useState(initialState);
 
   return (
-    <form ref={ref} action={//formAction
-      async () => {
-        await formAction
-        //await createWork(authorId, formData);
-        setTimeout(() => {
-          ref?.current.reset();
-        }, 2000)
-      }}>
+    <form ref={ref} action={formAction
+      // async () => {
+      //   await formAction
+      //   //await createWork(authorId, formData);
+      //   setTimeout(() => {
+      //     ref?.current.reset();
+      //   }, 2000)
+    }>
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
       <div className=" w-full">
         <input type="text" className="input input-bordered join-item w-full" placeholder="title" name="title" required />
