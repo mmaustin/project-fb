@@ -36,7 +36,7 @@ export const createAuthor = async (prevState, formData) => {
   }
 };
 
-export const createWork = async (authorId, formData) => {
+export const createWork = async (authorId, prevState, formData) => {
 
   const title = formData.get('title')
   const genre = formData.get('genre');
@@ -44,7 +44,8 @@ export const createWork = async (authorId, formData) => {
   const wordCount = formData.get('wordCount');
   // const createdBy = authorId;
 
-  console.log(authorId, title, genre, synopsis, wordCount);
+  //console.log(authorId, title, genre, synopsis, wordCount);
+  console.log('say something!');
 
   // try {
   //   //console.log(array);
