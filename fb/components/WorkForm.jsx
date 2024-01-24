@@ -5,18 +5,19 @@ import { useRef } from "react";
 import { useFormStatus, useFormState } from 'react-dom';
 
 
-//const initialState = { message: null };
+const initialState = { message: null };
 
 
 const WorkForm = ({ authorId }) => {
   const ref = useRef(null);
-  //const sendWithAuthorId = createWork.bind(null, authorId);
+  const sendWithAuthorId = createWork.bind(null, authorId);
 
-  //const [state, formAction] = useFormState(sendWithAuthorId, initialState);
+  const [state, formAction] = useFormState(sendWithAuthorId, initialState);
 
   return (
-    <form ref={ref} action={async formData => {
-      await createWork(formData);
+    <form ref={ref} action={() => {
+      formAction;
+      //await createWork(authorId, formData);
       ref?.current.reset();
     }}>
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
