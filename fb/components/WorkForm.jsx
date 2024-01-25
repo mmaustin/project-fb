@@ -5,32 +5,30 @@ import { useRef, useState } from "react";
 import { useFormStatus, useFormState } from 'react-dom';
 
 
-const initialState = { message: null };
+const initialState = { number: 1 };
 
 
 const WorkForm = ({ authorId }) => {
   const ref = useRef(null);
-  //const sendWithAuthorId = createWork.bind(null, authorId);
+  const sendWithAuthorId = createWork.bind(null, authorId);
 
-  const checkFormState = async (authorId, prevState, formData) => {
-    "use server"
-    console.log(authorId, formData);
-  }
 
-  const [state, formAction] = useFormState(checkFormState, initialState);
+  const [state, formAction] = useFormState(sendWithAuthorId, initialState);
 
-  //const [state, setState] = useState(initialState);
+  const [stat, setStat] = useState(1);
+
 
   return (
-    <form ref={ref} action={formAction
-      // async () => {
-      //   await formAction
-      //   //await createWork(authorId, formData);
-      //   setTimeout(() => {
-      //     ref?.current.reset();
-      //   }, 2000)
-    }>
+    <form ref={ref} action={//formAction
+      function () {
+        //ref?.current.reset();
+        //formAction;
+        setStat(stat + 1);
+        //await createWork(authorId, formData);
+      }}>
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
+      {state.number > stat ? setTimeout(() => { <p>success</p> }, 2000) : setTimeout(() => { <p>error</p> }, 2000)}
+      {stat}
       <div className=" w-full">
         <input type="text" className="input input-bordered join-item w-full" placeholder="title" name="title" required />
         <input type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" required />
@@ -41,4 +39,4 @@ const WorkForm = ({ authorId }) => {
     </form>
   )
 }
-export default WorkForm
+export default WorkForm;
