@@ -1,9 +1,9 @@
-import { getAuthors } from '@/utils/actions';
+//import { getAuthors } from '@/utils/actions';
 //import { connectToDB } from '@/utils/database';
 //import Image from 'next/image';
 
 
-const HomePage = async () => {
+const HomePage = () => {
 
   // try {
   //   //await connectToDB();
@@ -25,8 +25,14 @@ const HomePage = async () => {
   // }
 
   return (
-    <div className="shadow-2xl shadow-cyan-500  bg-cyan-500">
-      <h1 className="text-2xl">Home Page</h1>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content text-center">
+        <div className="max-w-md">
+          <h1 className="text-5xl font-bold text-primary">
+            Welcome, Writers!  Never Forget An Idea Again!!
+          </h1>
+        </div>
+      </div>
     </div>
   )
 }
