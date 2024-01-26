@@ -46,6 +46,7 @@ export const createWork = async (authorId, prevState, formData) => {
 
   //console.log(authorId, title, genre, synopsis, wordCount);
   console.log(authorId, prevState, title, genre, synopsis, wordCount);
+  return { number: 0 }
   //return wordCount;
 
   // try {

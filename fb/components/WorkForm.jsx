@@ -19,16 +19,18 @@ const WorkForm = ({ authorId }) => {
 
 
   return (
-    <form ref={ref} action={//formAction
-      function () {
-        //ref?.current.reset();
-        //formAction;
-        setStat(stat + 1);
-        //await createWork(authorId, formData);
-      }}>
+    <form ref={ref} action={formAction
+      //function () {
+      //ref?.current.reset();
+      //formAction;
+      //setStat(stat + 1);
+      //await createWork(authorId, formData);
+    }>
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
-      {state.number > stat ? setTimeout(() => { <p>success</p> }, 2000) : setTimeout(() => { <p>error</p> }, 2000)}
-      {stat}
+
+      {state.number > stat && <p>success</p>}
+      {state.number < stat && <p>error</p>}
+
       <div className=" w-full">
         <input type="text" className="input input-bordered join-item w-full" placeholder="title" name="title" required />
         <input type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" required />
