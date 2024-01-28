@@ -1,5 +1,8 @@
 //import { getAuthors } from '@/utils/actions';
 //import { connectToDB } from '@/utils/database';
+
+import Link from "next/link";
+
 //import Image from 'next/image';
 
 
@@ -28,8 +31,9 @@ const HomePage = () => {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content text-center">
         <div className="max-w-md">
-          <h1 className="text-5xl font-bold text-primary">
-            Welcome, Writers!  Never Forget An Idea Again!!
+          <h1 className="text-6xl font-bold text-primary">
+            <p className="py-6 text-3xl leading-loose">Welcome, Writers!  Never Forget An Idea Again!!</p>
+            <Link href="/authors" className="btn btn-secondary">Enter The Center</Link>
           </h1>
         </div>
       </div>
