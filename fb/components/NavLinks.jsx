@@ -4,11 +4,12 @@ import Link from "next/link";
 const links = [
   { href: '/authors', label: 'authors' },
   { href: '/works', label: 'works' },
-  { href: '/encouragements', label: 'encouragements' }
+  { href: '/encouragements', label: 'encouragements' },
+  { href: '/', label: 'home' }
 ];
 
 const NavLinks = () => {
-  return <div className="menu text-base-content">
+  return <ul className="menu text-base-content">
     {links.map(link => {
       return (
         <li key={link.href}>
@@ -18,6 +19,6 @@ const NavLinks = () => {
         </li>
       )
     })}
-  </div>
+  </ul>
 }
 export default NavLinks;
