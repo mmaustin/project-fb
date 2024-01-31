@@ -13,7 +13,13 @@ const ThemeToggle = () => {
   const [theme, setTheme] = useState(themes.winter);
 
   return (
-    <button className="btn btn-primary btn-sm">Toggle</button>
+    <button className="btn btn-outline btn-sm">
+      {theme === 'winter' ? (
+        <BsMoonFill className="h-4 w-4" />
+      ) : (
+        <BsSunFill className="h-4 w-4" />
+      )}
+    </button>
   )
 }
 export default ThemeToggle;
