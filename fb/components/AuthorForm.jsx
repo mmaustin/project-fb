@@ -1,9 +1,9 @@
 "use client"
 
 import { createAuthor } from "@/utils/actions";
-import { useRef } from "react";
+//import { useRef } from "react";
 //import { useEffect } from "react";
-import { useFormStatus, useFormState } from 'react-dom';
+//import { useFormStatus, useFormState } from 'react-dom';
 
 const SubmitBtn = () => {
   const { pending } = useFormStatus();
@@ -15,16 +15,20 @@ const SubmitBtn = () => {
   )
 };
 //[action.payload.name]: action.payload.value,
-const initialState = { message: null };
+//const initialState = { message: null };
 
 const AuthorForm = () => {
 
-  const ref = useRef(null);
+  // const ref = useRef(null);
+  // const [state, formAction] = useFormState(createAuthor, initialState);
 
-  const [state, formAction] = useFormState(createAuthor, initialState);
+  const handleSubmit = async () => {
+    const formData = new FormData();
+    console.log(formData);
+  }
 
   return (
-    <form action={formAction
+    <form action={handleSubmit
       //ref?.current.reset();
     }>
       {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null}
