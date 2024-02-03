@@ -3,8 +3,7 @@
 import { createAuthor } from "@/utils/actions";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-
-//import { useRef } from "react";
+import { useRef, useState } from "react";
 //import { useEffect } from "react";
 //import { useFormStatus, useFormState } from 'react-dom';
 
@@ -21,8 +20,14 @@ import toast from "react-hot-toast";
 //const initialState = { message: null };
 
 const AuthorForm = () => {
-  // const ref = useRef(null);
+  const ref = useRef(null);
   // const [state, formAction] = useFormState(createAuthor, initialState);
+
+  const [name, setName] = useState('');
+  const [style, setStyle] = useState('');
+  const [authorInfluence, setAuthorInfluence] = useState('');
+  const [workInfluence, setWorkInfluence] = useState('');
+
 
   const { mutate, isPending, data } = useMutation({
     mutationFn: async (author) => {
@@ -37,22 +42,28 @@ const AuthorForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const author = Object.fromEntries(formData.entries());
-    mutate(author);
+    // const formData = new FormData(e.currentTarget);
+    // const author = Object.fromEntries(formData.entries());
+    mutate({ name, style, authorInfluence, workInfluence });
+    // console.log(formData);
+    setName('');
+    setStyle('');
+    setAuthorInfluence('');
+    setWorkInfluence('');
   }
 
   return (
-    <form onSubmit={handleSubmit}
-    //action={handleSubmit
-    //ref?.current.reset();
-    >
+    <form onSubmit={
+      //ref?.current.reset();
+      handleSubmit
+      //action={handleSubmit
+    }>
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
       <div className=" w-full">
-        <input type="text" className="input input-bordered join-item w-full" placeholder="Name" name="name" required />
-        <input type="text" className="input input-bordered join-item w-full" placeholder="Style" name="style" required />
-        <input type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" required />
-        <input type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" required />
+        <input onChange={(e) => setName(e.target.value)} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="name" value={name} required />
+        <input onChange={(e) => setStyle(e.target.value)} type="text" className="input input-bordered join-item w-full" placeholder="Style" name="style" value={style} required />
+        <input onChange={(e) => setAuthorInfluence(e.target.value)} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorInfluence} required />
+        <input onChange={(e) => setWorkInfluence(e.target.value)} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={workInfluence} required />
         <button className="btn btn-primary join-item" type="submit">Author</button>
       </div>
     </form>
