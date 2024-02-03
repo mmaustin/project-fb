@@ -16,37 +16,61 @@ export const getAuthors = async () => {
   }
 };
 
-export const createAuthor = async (prevState, formData) => {
+// export const createAuthor = async (prevState, formData) => {
 
-  const name = formData.get('name')
-  const style = formData.get('style');
-  const authorInfluence = formData.get('authorInfluence');
-  const workInfluence = formData.get('workInfluence');
+//   const name = formData.get('name')
+//   const style = formData.get('style');
+//   const authorInfluence = formData.get('authorInfluence');
+//   const workInfluence = formData.get('workInfluence');
 
-  try {
-    await connectToDB();
-    await Author.create({
-      name, style, authorInfluence, workInfluence
-    })
+//   try {
+//     await connectToDB();
+//     await Author.create({
+//       name, style, authorInfluence, workInfluence
+//     })
 
-    revalidatePath('authors');
-    return { message: 'success' };
-  } catch (error) {
-    return { message: 'error' };
-  }
+//     revalidatePath('authors');
+//     return { message: 'success' };
+//   } catch (error) {
+//     return { message: 'error' };
+//   }
+// };
+
+export const createAuthor = async ({ name, style, authorInfluence, workInfluence }) => {
+  console.log(name, style, authorInfluence, workInfluence);
+  return null;
+
+  // const name = formData.get('name')
+  // const style = formData.get('style');
+  // const authorInfluence = formData.get('authorInfluence');
+  // const workInfluence = formData.get('workInfluence');
+
+  // try {
+  //   await connectToDB();
+  //   await Author.create({
+  //     name, style, authorInfluence, workInfluence
+  //   })
+
+  //   revalidatePath('authors');
+  //   return { message: 'success' };
+  // } catch (error) {
+  //   return { message: 'error' };
+  // }
 };
 
-export const createWork = async (authorId, prevState, formData) => {
+export const createWork = async ({ name, style, authorInfluence, workInfluence }) => {
+  // console.log(name, style, authorInfluence, workInfluence);
+  // return null;
 
-  const title = formData.get('title')
-  const genre = formData.get('genre');
-  const synopsis = formData.get('synopsis');
-  const wordCount = formData.get('wordCount');
-  const createdBy = authorId;
+  // const title = formData.get('title')
+  // const genre = formData.get('genre');
+  // const synopsis = formData.get('synopsis');
+  // const wordCount = formData.get('wordCount');
+  // const createdBy = authorId;
 
   //console.log(authorId, title, genre, synopsis, wordCount);
-  console.log(authorId, prevState, title, genre, synopsis, wordCount);
-  return { number: 0 }
+  // console.log(authorId, prevState, title, genre, synopsis, wordCount);
+  // return { number: 0 }
   //return wordCount;
 
   // try {

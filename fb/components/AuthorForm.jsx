@@ -1,6 +1,9 @@
 "use client"
 
 import { createAuthor } from "@/utils/actions";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+
 //import { useRef } from "react";
 //import { useEffect } from "react";
 //import { useFormStatus, useFormState } from 'react-dom';
@@ -18,15 +21,25 @@ import { createAuthor } from "@/utils/actions";
 //const initialState = { message: null };
 
 const AuthorForm = () => {
-
   // const ref = useRef(null);
   // const [state, formAction] = useFormState(createAuthor, initialState);
 
-  const handleSubmit = async (e) => {
+  const { mutate, isPending, data } = useMutation({
+    mutationFn: async (author) => {
+      const newAuthor = await createAuthor(author);
+      if (newAuthor) {
+        toast.success('New Author Created!');
+        return newAuthor;
+      }
+      toast.error('Something went wrong. Try again.');
+    },
+  });
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const author = Object.fromEntries(formData.entries());
-    console.log(author);
+    mutate(author);
   }
 
   return (
