@@ -31,6 +31,9 @@ const AuthorList = async () => {
           <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs" >
             Your Page
           </Link>
+          <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs" >
+            Edit Author
+          </Link>
         </div>
       })}
     </div>

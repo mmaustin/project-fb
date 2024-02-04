@@ -1,5 +1,6 @@
 import WorkForm from "@/components/WorkForm";
 import WorksList from "@/components/WorksList";
+import Link from "next/link";
 
 
 const AuthorPage = ({ params }) => {
