@@ -1,12 +1,13 @@
 "use client"
 
 import { editAuthor } from "@/utils/actions";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useState } from "react";
 
 
-const EditAuthorForm = ({ authorId }) => {
+const EditAuthorForm = ({ author }) => {
+  console.log(author);
 
 
   const [name, setName] = useState('');

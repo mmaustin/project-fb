@@ -16,6 +16,15 @@ export const getAuthors = async () => {
   }
 };
 
+export const getSingleAuthor = async (authorId) => {
+  try {
+    await connectToDB();
+    return await Author.findOne({ _id: authorId });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // export const createAuthor = async (prevState, formData) => {
 
 //   const name = formData.get('name')
