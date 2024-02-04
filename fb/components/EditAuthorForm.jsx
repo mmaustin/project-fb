@@ -6,9 +6,8 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 
 
-const EditAuthorForm = ({ params }) => {
+const EditAuthorForm = ({ authorId }) => {
 
-  const authorParamId = params.id;
 
   const [name, setName] = useState('');
   const [style, setStyle] = useState('');
@@ -30,7 +29,7 @@ const EditAuthorForm = ({ params }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    mutate({ name, style, authorInfluence, workInfluence, authorParamId });
+    mutate({ name, style, authorInfluence, workInfluence, authorId });
 
     setName('');
     setStyle('');

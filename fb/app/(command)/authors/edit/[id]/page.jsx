@@ -3,13 +3,15 @@ import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query
 
 
 
-const EditAuthor = () => {
+const EditAuthor = ({ params }) => {
+  const authorParamId = params.id;
+
   const queryClient = new QueryClient();
 
   return (
     <>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <EditAuthorForm />
+        <EditAuthorForm authorId={authorParamId} />
       </HydrationBoundary>
     </>
   )
