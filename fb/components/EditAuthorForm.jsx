@@ -7,13 +7,14 @@ import { useState } from "react";
 
 
 const EditAuthorForm = ({ author }) => {
-  console.log(author);
+  // console.log(author);
+  //const authorId = author.aId;
 
-
-  const [name, setName] = useState('');
-  const [style, setStyle] = useState('');
-  const [authorInfluence, setAuthorInfluence] = useState('');
-  const [workInfluence, setWorkInfluence] = useState('');
+  const [name, setName] = useState(author.aName);
+  const [style, setStyle] = useState(author.aStyle);
+  const [authorInfluence, setAuthorInfluence] = useState(author.aAuthorInfluence);
+  const [workInfluence, setWorkInfluence] = useState(author.aWorkInfluence);
+  const [authorId, setAuthorId] = useState(author.aId);
 
 
   const { mutate, isPending, data } = useMutation({
@@ -29,13 +30,13 @@ const EditAuthorForm = ({ author }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    //console.log(author.aId);
     mutate({ name, style, authorInfluence, workInfluence, authorId });
 
-    setName('');
-    setStyle('');
-    setAuthorInfluence('');
-    setWorkInfluence('');
+    // setName('');
+    // setStyle('');
+    // setAuthorInfluence('');
+    // setWorkInfluence('');
   }
 
   return (
