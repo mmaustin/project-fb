@@ -37,7 +37,7 @@ export const getAuthors = async () => {
 // };
 
 export const createAuthor = async ({ name, style, authorInfluence, workInfluence }) => {
-  console.log(name, style, authorInfluence, workInfluence);
+  //console.log(name, style, authorInfluence, workInfluence);
   // return null;
 
   try {
@@ -51,6 +51,11 @@ export const createAuthor = async ({ name, style, authorInfluence, workInfluence
   } catch (error) {
     return null;
   }
+};
+
+export const editAuthor = async ({ name, style, authorInfluence, workInfluence, autorId }) => {
+  console.log(name, style, authorInfluence, workInfluence);
+  return null;
 };
 
 export const createWork = async ({ name, style, authorInfluence, workInfluence }) => {
