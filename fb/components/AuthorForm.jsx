@@ -23,6 +23,21 @@ const AuthorForm = () => {
   const ref = useRef(null);
   // const [state, formAction] = useFormState(createAuthor, initialState);
 
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   style: "",
+  //   authorInfluence: "",
+  //   workInfluence: "",
+  // });
+
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevFormData) => ({
+  //     ...prevFormData,
+  //     [name]: value,
+  //   }));
+  // };
+
   const [name, setName] = useState('');
   const [style, setStyle] = useState('');
   const [authorInfluence, setAuthorInfluence] = useState('');

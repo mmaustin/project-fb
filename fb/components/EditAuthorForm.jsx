@@ -4,6 +4,7 @@ import { editAuthor } from "@/utils/actions";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import { redirect } from 'next/navigation';
 
 
 const EditAuthorForm = ({ author }) => {
@@ -21,6 +22,7 @@ const EditAuthorForm = ({ author }) => {
     mutationFn: async (author) => {
       const updatedAuthor = await editAuthor(author);
       if (updatedAuthor) {
+
         toast.success('Author Updated');
         return updatedAuthor;
       }
@@ -32,7 +34,7 @@ const EditAuthorForm = ({ author }) => {
     e.preventDefault();
     //console.log(author.aId);
     mutate({ name, style, authorInfluence, workInfluence, authorId });
-
+    //redirect('/authors');
     // setName('');
     // setStyle('');
     // setAuthorInfluence('');
