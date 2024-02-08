@@ -23,7 +23,7 @@ const AuthorForm = () => {
   const ref = useRef(null);
   // const [state, formAction] = useFormState(createAuthor, initialState);
 
-  const [formData, setFormData] = useState({
+  const [authorData, setAuthorData] = useState({
     authorName: "",
     style: "",
     authorInfluence: "",
@@ -32,8 +32,8 @@ const AuthorForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
+    setAuthorData((prevAuthorData) => ({
+      ...prevAuthorData,
       [name]: value,
     }));
   };
@@ -59,12 +59,19 @@ const AuthorForm = () => {
     e.preventDefault();
     // const formData = new FormData(e.currentTarget);
     // const author = Object.fromEntries(formData.entries());
-    mutate({ authorName, style, authorInfluence, workInfluence });
+    mutate(authorData);
     // console.log(formData);
-    setName('');
-    setStyle('');
-    setAuthorInfluence('');
-    setWorkInfluence('');
+    // setName('');
+    // setStyle('');
+    // setAuthorInfluence('');
+    // setWorkInfluence('');
+    setAuthorData({
+      authorName: "",
+      style: "",
+      authorInfluence: "",
+      workInfluence: ""
+    });
+    //console.log(authorData);
   }
 
   return (
@@ -75,10 +82,10 @@ const AuthorForm = () => {
     }>
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
       <div className=" w-full">
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="authorName" value={authorName} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Style" name="style" value={style} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorInfluence} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={workInfluence} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="authorName" value={authorData.authorName} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Style" name="style" value={authorData.style} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
         <button className="btn btn-primary join-item" type="submit">Author</button>
       </div>
     </form>
