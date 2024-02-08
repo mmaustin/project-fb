@@ -45,18 +45,18 @@ export const getSingleAuthor = async (authorId) => {
 //   }
 // };
 
-export const createAuthor = async ({ name, style, authorInfluence, workInfluence }) => {
+export const createAuthor = async ({ authorName, style, authorInfluence, workInfluence }) => {
   //console.log(name, style, authorInfluence, workInfluence);
   // return null;
 
   try {
     await connectToDB();
     const author = await Author.create({
-      name, style, authorInfluence, workInfluence
+      authorName, style, authorInfluence, workInfluence
     })
 
     revalidatePath('authors');
-    return { authorName: author.name };
+    return { newAuthorName: author.authorName };
   } catch (error) {
     return null;
   }
