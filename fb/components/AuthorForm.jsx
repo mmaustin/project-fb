@@ -3,7 +3,8 @@
 import { createAuthor } from "@/utils/actions";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { auth } from "@clerk/nextjs";
 //import { useEffect } from "react";
 //import { useFormStatus, useFormState } from 'react-dom';
 
@@ -20,8 +21,9 @@ import { useRef, useState } from "react";
 //const initialState = { message: null };
 
 const AuthorForm = () => {
-  const ref = useRef(null);
   // const [state, formAction] = useFormState(createAuthor, initialState);
+
+  const { userId } = auth();
 
   const [authorData, setAuthorData] = useState({
     authorName: "",
@@ -29,6 +31,8 @@ const AuthorForm = () => {
     authorInfluence: "",
     workInfluence: "",
   });
+
+  const [authUser, placeholder] = useState(userId);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -75,11 +79,7 @@ const AuthorForm = () => {
   }
 
   return (
-    <form onSubmit={
-      //ref?.current.reset();
-      handleSubmit
-      //action={handleSubmit
-    }>
+    <form onSubmit={handleSubmit}>
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
       <div className=" w-full">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="authorName" value={authorData.authorName} required />
