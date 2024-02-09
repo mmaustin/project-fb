@@ -30,9 +30,8 @@ const AuthorForm = () => {
     style: "",
     authorInfluence: "",
     workInfluence: "",
+    authUser: userId,
   });
-
-  const [authUser, placeholder] = useState(userId);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -69,12 +68,13 @@ const AuthorForm = () => {
     // setStyle('');
     // setAuthorInfluence('');
     // setWorkInfluence('');
-    setAuthorData({
+    setAuthorData(prevAuthorData => ({
+      ...prevAuthorData,
       authorName: "",
       style: "",
       authorInfluence: "",
       workInfluence: ""
-    });
+    }));
     //console.log(authorData);
   }
 
@@ -86,7 +86,9 @@ const AuthorForm = () => {
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Style" name="style" value={authorData.style} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
+        <input hidden type="text" className="input input-bordered join-item w-full" name="authUser" value={authorData.authUser} required />
         <button className="btn btn-primary join-item" type="submit">Author</button>
+
       </div>
     </form>
   )
