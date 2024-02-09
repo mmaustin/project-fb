@@ -6,7 +6,7 @@ import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query
 const ShowAuthors = async () => {
   const queryClient = new QueryClient();
 
-  //const { userId } = auth();
+  const { userId } = auth();
 
   //const user = await currentUser();
   //Both values remain the same after repeated logout/logins, good for createdBy model attributes
@@ -14,9 +14,9 @@ const ShowAuthors = async () => {
   return (
     <>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <AuthorForm />
+        <AuthorForm authUser={userId} />
       </HydrationBoundary>
-      <AuthorList />
+      {/* <AuthorList /> */}
     </>
     // <div className="max-w-lg">
     //   <AuthorForm />

@@ -21,7 +21,7 @@ const AuthorList = async () => {
             {author.authorName}
           </h4>
           <h4 className="text-lg capitalize">
-            {author.style}
+            {author.aboutMe}
           </h4>
           <h4 className="text-lg capitalize">
             {author.authorInfluence}

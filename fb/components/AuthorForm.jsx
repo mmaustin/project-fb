@@ -4,7 +4,7 @@ import { createAuthor } from "@/utils/actions";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import { auth } from "@clerk/nextjs";
+//import { auth } from "@clerk/nextjs";
 //import { useEffect } from "react";
 //import { useFormStatus, useFormState } from 'react-dom';
 
@@ -20,18 +20,19 @@ import { auth } from "@clerk/nextjs";
 //[action.payload.name]: action.payload.value,
 //const initialState = { message: null };
 
-const AuthorForm = () => {
+const AuthorForm = ({ authUser }) => {
   // const [state, formAction] = useFormState(createAuthor, initialState);
 
-  const { userId } = auth();
+  //const { userId } = auth();
 
   const [authorData, setAuthorData] = useState({
     authorName: "",
-    style: "",
+    aboutMe: "",
     authorInfluence: "",
     workInfluence: "",
-    authUser: userId,
+    authUser
   });
+  //console.log(authUser);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -71,7 +72,7 @@ const AuthorForm = () => {
     setAuthorData(prevAuthorData => ({
       ...prevAuthorData,
       authorName: "",
-      style: "",
+      aboutMe: "",
       authorInfluence: "",
       workInfluence: ""
     }));
@@ -83,10 +84,10 @@ const AuthorForm = () => {
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
       <div className=" w-full">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="authorName" value={authorData.authorName} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Style" name="style" value={authorData.style} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
-        <input hidden type="text" className="input input-bordered join-item w-full" name="authUser" value={authorData.authUser} required />
+        <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Tell Us About Yourself" name="aboutMe" value={authorData.aboutMe} required />
+        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={authorData.authUser} required />
         <button className="btn btn-primary join-item" type="submit">Author</button>
 
       </div>
