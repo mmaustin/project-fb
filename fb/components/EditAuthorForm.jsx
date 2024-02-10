@@ -17,7 +17,7 @@ const EditAuthorForm = ({ author }) => {
   // const [workInfluence, setWorkInfluence] = useState(author.aWorkInfluence);
   // const [authorId, setAuthorId] = useState(author.aId);
 
-  const { aAuthorName, aAboutMe, aAuthorInfluence, aWorkInfluence, aAuthUser, aPublicProfile } = author;
+  const { aId, aAuthorName, aAboutMe, aAuthorInfluence, aWorkInfluence, aAuthUser, aPublicProfile } = author;
 
   const [authorData, setAuthorData] = useState({
     authorName: aAuthorName,
@@ -25,7 +25,8 @@ const EditAuthorForm = ({ author }) => {
     authorInfluence: aAuthorInfluence,
     workInfluence: aWorkInfluence,
     authUser: aAuthUser,
-    publicProfile: aPublicProfile
+    publicProfile: aPublicProfile,
+    authorId: aId,
   });
 
   const profileOptions = ['Public', 'Private'].map((opt, i) => {
