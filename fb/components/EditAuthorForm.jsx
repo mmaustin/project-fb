@@ -11,12 +11,36 @@ const EditAuthorForm = ({ author }) => {
   // console.log(author);
   //const authorId = author.aId;
 
-  const [name, setName] = useState(author.aName);
-  const [style, setStyle] = useState(author.aStyle);
-  const [authorInfluence, setAuthorInfluence] = useState(author.aAuthorInfluence);
-  const [workInfluence, setWorkInfluence] = useState(author.aWorkInfluence);
-  const [authorId, setAuthorId] = useState(author.aId);
+  // const [name, setName] = useState(author.aName);
+  // const [style, setStyle] = useState(author.aStyle);
+  // const [authorInfluence, setAuthorInfluence] = useState(author.aAuthorInfluence);
+  // const [workInfluence, setWorkInfluence] = useState(author.aWorkInfluence);
+  // const [authorId, setAuthorId] = useState(author.aId);
 
+  const { aAuthorName, aAboutMe, aAuthorInfluence, aWorkInfluence, aAuthUser, aPublicProfile } = author;
+
+  const [authorData, setAuthorData] = useState({
+    authorName: aAuthorName,
+    aboutMe: aAboutMe,
+    authorInfluence: aAuthorInfluence,
+    workInfluence: aWorkInfluence,
+    authUser: aAuthUser,
+    publicProfile: aPublicProfile
+  });
+
+  const profileOptions = ['Public', 'Private'].map((opt, i) => {
+    return (
+      <option key={`${opt}: ${i}`} value={opt}>{opt}</option>
+    )
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setAuthorData((prevAuthorData) => ({
+      ...prevAuthorData,
+      [name]: value,
+    }));
+  };
 
   const { mutate, isPending, data } = useMutation({
     mutationFn: async (author) => {
@@ -33,7 +57,7 @@ const EditAuthorForm = ({ author }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.log(author.aId);
-    mutate({ name, style, authorInfluence, workInfluence, authorId });
+    mutate(authorData);
     //redirect('/authors');
     // setName('');
     // setStyle('');
@@ -44,10 +68,13 @@ const EditAuthorForm = ({ author }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className=" w-full">
-        <input onChange={(e) => setName(e.target.value)} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="name" value={name} required />
-        <input onChange={(e) => setStyle(e.target.value)} type="text" className="input input-bordered join-item w-full" placeholder="Style" name="style" value={style} required />
-        <input onChange={(e) => setAuthorInfluence(e.target.value)} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorInfluence} required />
-        <input onChange={(e) => setWorkInfluence(e.target.value)} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={workInfluence} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="authorName" value={authorData.authorName} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Style" name="aboutMe" value={authorData.aboutMe} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
+        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="publicProfile" value={authorData.publicProfile} >
+          {profileOptions}
+        </select>
         <button className="btn btn-primary join-item" type="submit">Author</button>
       </div>
     </form>

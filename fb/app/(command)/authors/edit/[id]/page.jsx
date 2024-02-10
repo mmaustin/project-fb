@@ -6,9 +6,9 @@ import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query
 const EditAuthor = async ({ params }) => {
   const authorParamId = params.id;
 
-  let author = await getSingleAuthor(authorParamId);
+  const author = await getSingleAuthor(authorParamId);
   //const authors = await getAuthors();
-  const retrievedAuthor = { aId: authorParamId, aName: author.name, aStyle: author.style, aAuthorInfluence: author.authorInfluence, aWorkInfluence: author.workInfluence }
+  const retrievedAuthor = { aId: authorParamId, aAuthorName: author.authorName, aAboutMe: author.aboutMe, aAuthorInfluence: author.authorInfluence, aWorkInfluence: author.workInfluence, aAuthUser: author.authUser, aPublicProfile: author.publicProfile }
 
   const queryClient = new QueryClient();
 

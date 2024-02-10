@@ -29,6 +29,9 @@ const AuthorList = async () => {
           <h4 className="text-lg capitalize">
             {author.workInfluence}
           </h4>
+          <h4 className="text-lg capitalize">
+            {author.publicProfile}
+          </h4>
           <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs" >
             Your Page
           </Link>

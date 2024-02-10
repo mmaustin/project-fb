@@ -62,22 +62,25 @@ export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workI
   }
 };
 
-export const editAuthor = async ({ name, style, authorInfluence, workInfluence, authorId }) => {
+export const editAuthor = async ({ authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile }) => {
+  console.log(authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile);
+  return null;
 
-  try {
-    await connectToDB();
-    const author = await Author.findById(authorId);
-    author.name = name;
-    author.style = style;
-    author.authorInfluence = authorInfluence;
-    author.workInfluence = workInfluence;
 
-    await author.save();
+  // try {
+  //   await connectToDB();
+  //   const author = await Author.findById(authorId);
+  //   author.name = name;
+  //   author.style = style;
+  //   author.authorInfluence = authorInfluence;
+  //   author.workInfluence = workInfluence;
 
-    return { authorName: author.name };
-  } catch (error) {
-    return null;
-  }
+  //   await author.save();
+
+  //   return { authorName: author.name };
+  // } catch (error) {
+  //   return null;
+  // }
 };
 
 export const createWork = async ({ name, style, authorInfluence, workInfluence }) => {

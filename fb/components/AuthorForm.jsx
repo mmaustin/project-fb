@@ -96,7 +96,7 @@ const AuthorForm = ({ authUser }) => {
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
         <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Tell Us About Yourself" name="aboutMe" value={authorData.aboutMe} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={authorData.authUser} required />
-        Public By Default: <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="publicProfile" value={authorData.publicProfile} >
+        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="publicProfile" value={authorData.publicProfile} >
           {/* <option >Public or Private?</option> */}
           {profileOptions}
         </select>
