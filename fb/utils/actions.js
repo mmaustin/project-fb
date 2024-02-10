@@ -46,20 +46,20 @@ export const getSingleAuthor = async (authorId) => {
 // };
 
 export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile }) => {
-  console.log(authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile);
-  return null;
+  // console.log(authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile);
+  // return null;
 
-  // try {
-  //   await connectToDB();
-  //   const author = await Author.create({
-  //     authorName, aboutMe, authorInfluence, workInfluence, authUser
-  //   })
+  try {
+    await connectToDB();
+    const author = await Author.create({
+      authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile
+    })
 
-  //   revalidatePath('authors');
-  //   return { newAuthorName: author.authorName };
-  // } catch (error) {
-  //   return null;
-  // }
+    revalidatePath('authors');
+    return { newAuthorName: author.authorName };
+  } catch (error) {
+    return null;
+  }
 };
 
 export const editAuthor = async ({ name, style, authorInfluence, workInfluence, authorId }) => {
