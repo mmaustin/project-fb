@@ -30,9 +30,16 @@ const AuthorForm = ({ authUser }) => {
     aboutMe: "",
     authorInfluence: "",
     workInfluence: "",
-    authUser
+    authUser,
+    publicProfile: 'Public'
   });
   //console.log(authUser);
+
+  const profileOptions = ['Public', 'Private'].map((opt, i) => {
+    return (
+      <option key={`${opt}: ${i}`} value={opt}>{opt}</option>
+    )
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -74,7 +81,8 @@ const AuthorForm = ({ authUser }) => {
       authorName: "",
       aboutMe: "",
       authorInfluence: "",
-      workInfluence: ""
+      workInfluence: "",
+      publicProfile: 'Public'
     }));
     //console.log(authorData);
   }
@@ -88,6 +96,10 @@ const AuthorForm = ({ authUser }) => {
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
         <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Tell Us About Yourself" name="aboutMe" value={authorData.aboutMe} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={authorData.authUser} required />
+        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="publicProfile" value={authorData.publicProfile} >
+          <option disabled selected>Public Profile?</option>
+          {profileOptions}
+        </select>
         <button className="btn btn-primary join-item" type="submit">Author</button>
 
       </div>
