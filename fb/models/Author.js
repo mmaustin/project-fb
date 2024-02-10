@@ -27,6 +27,11 @@ const AuthorSchema = mongoose.Schema(
     authUser: {
       type: String,
       required: true,
+    },
+    publicProfile: {
+      type: String,
+      enum: ['Public', 'Private'],
+      default: 'Public'
     }
   },
   { timestamps: true }
