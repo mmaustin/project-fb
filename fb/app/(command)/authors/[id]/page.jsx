@@ -9,7 +9,7 @@ const AuthorPage = ({ params }) => {
     <div>
       <p>Author's Page</p>
       <WorkForm authorId={authorParamId} />
-      <WorksList authorId={authorParamId} />
+      {/* <WorksList authorId={authorParamId} /> */}
     </div>
   )
 }

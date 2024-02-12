@@ -14,12 +14,23 @@ const WorkSchema = mongoose.Schema(
     },
     synopsis: {
       type: String,
-      required: true,
+      minLength: 5,
+      maxLength: 250,
+      default: 'Still Conceptualizing, Patience!',
       trim: true,
     },
-    wordCount: {
-      type: Number,
-      default: 0
+    authUser: {
+      type: String,
+      required: true
+    },
+    authorName: {
+      type: String,
+      required: true
+    },
+    writingStage: {
+      type: String,
+      enum: ['Brainstorming', 'Drafting', 'Editing'],
+      default: 'Brainstorming'
     },
     createdBy: {
       type: mongoose.Types.ObjectId,
