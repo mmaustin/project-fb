@@ -68,14 +68,8 @@ const AuthorForm = ({ authUser }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const formData = new FormData(e.currentTarget);
-    // const author = Object.fromEntries(formData.entries());
+
     mutate(authorData);
-    // console.log(formData);
-    // setName('');
-    // setStyle('');
-    // setAuthorInfluence('');
-    // setWorkInfluence('');
     setAuthorData(prevAuthorData => ({
       ...prevAuthorData,
       authorName: "",
@@ -84,7 +78,6 @@ const AuthorForm = ({ authUser }) => {
       workInfluence: "",
       publicProfile: "Public"
     }));
-    //console.log(authorData);
   }
 
   return (
