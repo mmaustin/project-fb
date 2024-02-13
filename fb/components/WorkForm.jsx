@@ -22,7 +22,7 @@ const WorkForm = ({ workAuthor }) => {
 
   console.log(workData);
 
-  const profileOptions = ['Brainstorming', 'Drafting', 'Editing'].map((opt, i) => {
+  const writingStateOptions = ['Brainstorming', 'Drafting', 'Editing'].map((opt, i) => {
     return (
       <option key={`${opt}: ${i}`} value={opt}>{opt}</option>
     )
@@ -61,19 +61,22 @@ const WorkForm = ({ workAuthor }) => {
   };
 
   return (
-    <div>
-      work it out!
-    </div>
-    // <form>
-
-    //   <div className=" w-full">
-    //     <input type="text" className="input input-bordered join-item w-full" placeholder="title" name="title" required />
-    //     <input type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" required />
-    //     <input type="text" className="input input-bordered join-item w-full" placeholder="synopsis" name="synopsis" required />
-    //     <input type="number" className="input input-bordered join-item w-full" placeholder="word count" name="wordCount" />
-    //     <button type="submit">Create Work</button>
-    //   </div>
-    // </form>
+    <form onSubmit={handleSubmit}>
+      {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
+      <div className=" w-full">
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Title" name="title" value={workData.title} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" value={workData.genre} required />
+        <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Synopsis" name="synopsis" value={workData.synopsis} required />
+        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={workData.authUser} required />
+        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={workData.authorName} required />
+        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={workData.createdBy} required />
+        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="writingState" value={workData.writingState} >
+          {/* <option >Public or Private?</option> */}
+          {writingStateOptions}
+        </select>
+        <button className="btn btn-primary join-item" type="submit">Author</button>
+      </div>
+    </form>
   )
 }
 export default WorkForm;
