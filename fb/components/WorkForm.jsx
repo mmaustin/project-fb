@@ -1,14 +1,26 @@
 "use client"
 
-import { createWork, getSingleAuthor } from "@/utils/actions";
+import { createWork } from "@/utils/actions";
 import { useState } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
 
 const WorkForm = ({ workAuthor }) => {
   // const workAuthor = await getSingleAuthor(authorId);
-  console.log(workAuthor);
+  //console.log(workAuthor);
+
+  const [workData, setWorkData] = useState({
+    title: "",
+    genre: "",
+    synopsis: "",
+    authUser: workAuthor.aAuthUser,
+    authorName: workAuthor.aAuthorName,
+    writingState: "Brainstorming",
+    createdBy: workAuthor.aId
+  });
+
+  console.log(workData);
 
   return (
     <div>
