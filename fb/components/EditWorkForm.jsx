@@ -1,9 +1,9 @@
 
 
 
-const EditWorkForm = () => {
+const EditWorkForm = ({ editWork }) => {
   return (
-    <div>Edit Work Form</div>
+    <div>{editWork.title}</div>
   )
 }
 export default EditWorkForm;

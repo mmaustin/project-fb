@@ -8,14 +8,13 @@ const WorksList = async ({ authorId, authorName }) => {
 
   if (authorId) {
     allAuthorsWorks = await getAuthorsWorks(authorId);
+  } else {
+    allAuthorsWorks = await getAllWorks();
   }
-  // } else {
-  //   allAuthorsWorks = await getAllWorks();
-  // }
 
   if (allAuthorsWorks.length === 0) {
     return (
-      <h2 className="mt-8 font-medium text-lg">{authorName}, create your first work!</h2>
+      <h2 className="mt-8 font-medium text-lg">No One Is Writing!</h2>
     )
   }
 
