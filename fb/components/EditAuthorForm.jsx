@@ -76,7 +76,7 @@ const EditAuthorForm = ({ author }) => {
         <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="publicProfile" value={authorData.publicProfile} >
           {profileOptions}
         </select>
-        <button className="btn btn-primary join-item" type="submit">Author</button>
+        <button className="btn btn-primary join-item" type="submit">Edit Author</button>
       </div>
     </form>
   )

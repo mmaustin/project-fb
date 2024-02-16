@@ -84,37 +84,20 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
   }
 };
 
-export const createWork = async ({ name, style, authorInfluence, workInfluence }) => {
-  // console.log(name, style, authorInfluence, workInfluence);
-  // return null;
+export const createWork = async ({ title, genre, synopsis, authUser, authorName, writingState, createdBy }) => {
+  //console.log(title, genre, synopsis, authUser, authorName, writingState, createdBy);
 
-  // const title = formData.get('title')
-  // const genre = formData.get('genre');
-  // const synopsis = formData.get('synopsis');
-  // const wordCount = formData.get('wordCount');
-  // const createdBy = authorId;
+  try {
+    await connectToDB();
+    const work = await Work.create({
+      title, genre, synopsis, authUser, authorName, writingState, createdBy
+    })
 
-  //console.log(authorId, title, genre, synopsis, wordCount);
-  // console.log(authorId, prevState, title, genre, synopsis, wordCount);
-  // return { number: 0 }
-  //return wordCount;
-
-  // try {
-  //   //console.log(array);
-  //   await connectToDB();
-  //   await Work.create({
-  //     title, genre, synopsis, wordCount, createdBy
-  //   })
-
-  //   //argsArray[1]?.current.reset();
-  //   revalidatePath(`/authors/${createdBy}`);
-  //   //formData.delete('title');
-  //   //console.log(title, genre, synopsis, wordCount, createdBy);
-  //   return //{ message: 'success' };
-  // } catch (error) {
-  //   console.log(error);
-  //   return //{ message: 'error' };
-  // }
+    revalidatePath(`authors/${createdBy}`);
+    return { newWorkTitle: work.title };
+  } catch (error) {
+    return null;
+  }
 };
 
 export const getAllWorks = async () => {

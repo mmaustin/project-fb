@@ -51,7 +51,7 @@ const WorkForm = ({ workAuthor }) => {
     e.preventDefault();
 
     mutate(workData);
-    setAuthorData(prevWorkData => ({
+    setWorkData(prevWorkData => ({
       ...prevWorkData,
       title: "",
       genre: "",
@@ -74,7 +74,7 @@ const WorkForm = ({ workAuthor }) => {
           {/* <option >Public or Private?</option> */}
           {writingStateOptions}
         </select>
-        <button className="btn btn-primary join-item" type="submit">Author</button>
+        <button className="btn btn-primary join-item" type="submit">New Work</button>
       </div>
     </form>
   )
