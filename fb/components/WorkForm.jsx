@@ -20,7 +20,6 @@ const WorkForm = ({ workAuthor }) => {
     createdBy: workAuthor.aId
   });
 
-  console.log(workData);
 
   const writingStateOptions = ['Brainstorming', 'Drafting', 'Editing'].map((opt, i) => {
     return (

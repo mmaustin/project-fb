@@ -33,10 +33,16 @@ const WorksList = async ({ authorId, authorName }) => {
             {work.synopsis}
           </h4>
           <h4 className="text-lg capitalize">
-            {work.wordCount}
+            {work.authorName}
+          </h4>
+          <h4 className="text-lg capitalize">
+            {work.writingStage}
           </h4>
           <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs" >
-            {work.title}
+            Work Page
+          </Link>
+          <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs" >
+            Edit Work
           </Link>
         </div>
       })}

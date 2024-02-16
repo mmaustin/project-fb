@@ -3,8 +3,8 @@ import { getSingleWork } from "@/utils/actions";
 
 
 const EditWork = async ({ params }) => {
-  const work = await getSingleWork();
-  console.log(work);
+  const work = await getSingleWork(params.id);
+
 
   return (
     <>
