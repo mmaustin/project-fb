@@ -25,25 +25,6 @@ export const getSingleAuthor = async (authorId) => {
   }
 };
 
-// export const createAuthor = async (prevState, formData) => {
-
-//   const name = formData.get('name')
-//   const style = formData.get('style');
-//   const authorInfluence = formData.get('authorInfluence');
-//   const workInfluence = formData.get('workInfluence');
-
-//   try {
-//     await connectToDB();
-//     await Author.create({
-//       name, style, authorInfluence, workInfluence
-//     })
-
-//     revalidatePath('authors');
-//     return { message: 'success' };
-//   } catch (error) {
-//     return { message: 'error' };
-//   }
-// };
 
 export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile }) => {
   // console.log(authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile);
@@ -97,6 +78,15 @@ export const createWork = async ({ title, genre, synopsis, authUser, authorName,
     return { newWorkTitle: work.title };
   } catch (error) {
     return null;
+  }
+};
+
+export const getSingleWork = async (workId) => {
+  try {
+    await connectToDB();
+    return await Work.findOne({ _id: workId });
+  } catch (error) {
+    console.log(error);
   }
 };
 
