@@ -19,7 +19,7 @@ const AuthorPage = async ({ params }) => {
       <HydrationBoundary state={dehydrate(queryClient)} >
         <WorkForm workAuthor={retrievedAuthor} />
       </HydrationBoundary>
-      <WorksList authorId={authorParamId} />
+      <WorksList authorId={authorParamId} authorName={aAuthorName} />
     </div>
   )
 }

@@ -1,7 +1,10 @@
+import { getSingleWork } from "@/utils/actions";
 
 
+const SingleWorkPage = async ({ params }) => {
+  const work = params.id;
+  console.log(work);
 
-const SingleWorkPage = () => {
   return (
     <div>This is where notes will be made.</div>
   )

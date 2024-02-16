@@ -1,20 +1,21 @@
 import { getAuthorsWorks, getAllWorks } from "@/utils/actions";
-//import Link from "next/link";
+import Link from "next/link";
 
 
 
-const WorksList = async ({ authorId }) => {
+const WorksList = async ({ authorId, authorName }) => {
   let allAuthorsWorks;
 
   if (authorId) {
     allAuthorsWorks = await getAuthorsWorks(authorId);
-  } else {
-    allAuthorsWorks = await getAllWorks();
   }
+  // } else {
+  //   allAuthorsWorks = await getAllWorks();
+  // }
 
   if (allAuthorsWorks.length === 0) {
     return (
-      <h2 className="mt-8 font-medium text-lg">Author has created no works . . . </h2>
+      <h2 className="mt-8 font-medium text-lg">{authorName}, create your first work!</h2>
     )
   }
 
@@ -34,9 +35,9 @@ const WorksList = async ({ authorId }) => {
           <h4 className="text-lg capitalize">
             {work.wordCount}
           </h4>
-          {/* <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs" >
-            Your Page
-          </Link> */}
+          <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs" >
+            {work.title}
+          </Link>
         </div>
       })}
     </div>
