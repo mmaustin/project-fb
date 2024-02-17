@@ -34,6 +34,23 @@ const EditWorkForm = ({ workToEdit }) => {
     }));
   };
 
+  const { mutate, isPending, data } = useMutation({
+    mutationFn: async (work) => {
+      const editedWork = await editWork(work);
+      if (editedWork) {
+        toast.success('Work Successfully Edited!');
+        return editedWork;
+      }
+      toast.error('Something went wrong. Try again.');
+    },
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    mutate(workData);
+  };
+
   return (
     <div>{workToEdit.title}</div>
   )

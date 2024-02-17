@@ -61,7 +61,6 @@ const WorkForm = ({ workAuthor }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
       <div className=" w-full">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Title" name="title" value={workData.title} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" value={workData.genre} required />
