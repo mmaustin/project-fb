@@ -48,11 +48,25 @@ const EditWorkForm = ({ workToEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    mutate(workData);
+    mutate(editWorkData);
   };
 
   return (
-    <div>{workToEdit.title}</div>
+    <form onSubmit={handleSubmit}>
+      <div className=" w-full">
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Title" name="title" value={editWorkData.title} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" value={editWorkData.genre} required />
+        <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Synopsis" name="synopsis" value={editWorkData.synopsis} required />
+        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={editWorkData.authUser} required />
+        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={editWorkData.authorName} required />
+        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={editWorkData.createdBy} required />
+        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="writingState" value={editWorkData.writingState} >
+          {/* <option >Public or Private?</option> */}
+          {writingStateOptions}
+        </select>
+        <button className="btn btn-primary join-item" type="submit">Edit Work</button>
+      </div>
+    </form>
   )
 }
 export default EditWorkForm;
