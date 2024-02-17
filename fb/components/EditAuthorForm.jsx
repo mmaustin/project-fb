@@ -8,14 +8,6 @@ import { redirect } from 'next/navigation';
 
 
 const EditAuthorForm = ({ author }) => {
-  // console.log(author);
-  //const authorId = author.aId;
-
-  // const [name, setName] = useState(author.aName);
-  // const [style, setStyle] = useState(author.aStyle);
-  // const [authorInfluence, setAuthorInfluence] = useState(author.aAuthorInfluence);
-  // const [workInfluence, setWorkInfluence] = useState(author.aWorkInfluence);
-  // const [authorId, setAuthorId] = useState(author.aId);
 
   const { aId, aAuthorName, aAboutMe, aAuthorInfluence, aWorkInfluence, aAuthUser, aPublicProfile } = author;
 
@@ -57,13 +49,8 @@ const EditAuthorForm = ({ author }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(author.aId);
+
     mutate(authorData);
-    //redirect('/authors');
-    // setName('');
-    // setStyle('');
-    // setAuthorInfluence('');
-    // setWorkInfluence('');
   }
 
   return (

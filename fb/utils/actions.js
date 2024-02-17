@@ -65,6 +65,11 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
   }
 };
 
+export const editWork = async ({ title, genre, synopsis, authorName, authUser, writingStage, createdBy }) => {
+  console.log(title, genre, synopsis, authorName, authUser, writingStage, createdBy);
+  return null;
+};
+
 export const createWork = async ({ title, genre, synopsis, authUser, authorName, writingState, createdBy }) => {
   //console.log(title, genre, synopsis, authUser, authorName, writingState, createdBy);
 

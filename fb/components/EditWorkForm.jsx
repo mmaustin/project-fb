@@ -1,9 +1,12 @@
+"use client"
 
 
+const EditWorkForm = ({ workToEdit }) => {
 
-const EditWorkForm = ({ editWork }) => {
+  const { title, genre, synopsis, authorName, authUser, writingStage, createdBy } = workToEdit;
+
   return (
-    <div>{editWork.title}</div>
+    <div>{workToEdit.title}</div>
   )
 }
 export default EditWorkForm;

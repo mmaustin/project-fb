@@ -11,7 +11,7 @@ const EditWork = async ({ params }) => {
   return (
     <>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <EditWorkForm editWork={work} />
+        <EditWorkForm workToEdit={work} />
       </HydrationBoundary>
     </>
   )
