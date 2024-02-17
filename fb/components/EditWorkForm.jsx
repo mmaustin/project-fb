@@ -8,17 +8,17 @@ import toast from "react-hot-toast";
 
 const EditWorkForm = ({ workToEdit }) => {
 
-  const { _id, title, genre, synopsis, authorName, authUser, writingStage, createdBy } = workToEdit;
+  const { workId, workTitle, workGenre, workSynopsis, workAuthorName, workAuthUser, workWritingStage, workCreatedBy } = workToEdit;
 
   const [editWorkData, setEditWorkData] = useState({
-    title,
-    genre,
-    synopsis,
-    authorName,
-    authUser,
-    writingStage,
-    createdBy,
-    _id
+    workId,
+    workTitle,
+    workGenre,
+    workSynopsis,
+    workAuthUser,
+    workAuthorName,
+    workWritingStage,
+    workCreatedBy
   });
 
   const writingStateOptions = ['Brainstorming', 'Drafting', 'Editing'].map((opt, i) => {
@@ -55,13 +55,13 @@ const EditWorkForm = ({ workToEdit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className=" w-full">
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Title" name="title" value={editWorkData.title} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" value={editWorkData.genre} required />
-        <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Synopsis" name="synopsis" value={editWorkData.synopsis} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Title" name="workTitle" value={editWorkData.workTitle} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="genre" name="workGenre" value={editWorkData.workGenre} required />
+        <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Synopsis" name="workSynopsis" value={editWorkData.workSynopsis} required />
         {/* <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={editWorkData.authUser} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={editWorkData.authorName} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={editWorkData.createdBy} required /> */}
-        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="writingState" value={editWorkData.writingState} >
+        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="workWritingStage" value={editWorkData.workWritingStage} >
           {/* <option >Public or Private?</option> */}
           {writingStateOptions}
         </select>
