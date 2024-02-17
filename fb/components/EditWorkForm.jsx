@@ -15,10 +15,7 @@ const EditWorkForm = ({ workToEdit }) => {
     workTitle,
     workGenre,
     workSynopsis,
-    workAuthUser,
-    workAuthorName,
-    workWritingStage,
-    workCreatedBy
+    workWritingStage
   });
 
   const writingStateOptions = ['Brainstorming', 'Drafting', 'Editing'].map((opt, i) => {

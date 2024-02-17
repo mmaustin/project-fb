@@ -16,7 +16,7 @@ const WorkForm = ({ workAuthor }) => {
     synopsis: "",
     authUser: workAuthor.aAuthUser,
     authorName: workAuthor.aAuthorName,
-    writingState: "Brainstorming",
+    writingStage: "Brainstorming",
     createdBy: workAuthor.aId
   });
 
@@ -55,7 +55,7 @@ const WorkForm = ({ workAuthor }) => {
       title: "",
       genre: "",
       synopsis: "",
-      writingState: "Brainstorming"
+      writingStage: "Brainstorming"
     }));
   };
 
@@ -68,7 +68,7 @@ const WorkForm = ({ workAuthor }) => {
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={workData.authUser} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={workData.authorName} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={workData.createdBy} required />
-        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="writingState" value={workData.writingState} >
+        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="writingStage" value={workData.writingStage} >
           {/* <option >Public or Private?</option> */}
           {writingStateOptions}
         </select>

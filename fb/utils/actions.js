@@ -65,18 +65,32 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
   }
 };
 
-export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, workAuthorName, workAuthUser, workWritingStage, workCreatedBy }) => {
-  console.log(workId, workTitle, workGenre, workSynopsis, workAuthorName, workAuthUser, workWritingStage, workCreatedBy);
-  return null;
+export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, workWritingStage }) => {
+  // console.log(workId, workTitle, workGenre, workSynopsis, workWritingStage);
+  // return null;
+  try {
+    await connectToDB();
+    const work = await Work.findById(workId);
+    work.title = workTitle;
+    work.genre = workGenre;
+    work.synopsis = workSynopsis;
+    work.workWritingStage;
+
+    await work.save();
+
+    return { editWorkTitle: work.title };
+  } catch (error) {
+    return null;
+  }
 };
 
-export const createWork = async ({ title, genre, synopsis, authUser, authorName, writingState, createdBy }) => {
+export const createWork = async ({ title, genre, synopsis, authUser, authorName, writingStage, createdBy }) => {
   //console.log(title, genre, synopsis, authUser, authorName, writingState, createdBy);
 
   try {
     await connectToDB();
     const work = await Work.create({
-      title, genre, synopsis, authUser, authorName, writingState, createdBy
+      title, genre, synopsis, authUser, authorName, writingStage, createdBy
     })
 
     revalidatePath(`authors/${createdBy}`);
