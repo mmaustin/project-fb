@@ -6,9 +6,15 @@ import { useState } from "react"
 import toast from "react-hot-toast"
 
 
-const NoteForm = () => {
+const NoteForm = ({ workProperties }) => {
+  //console.log(authUser, authorName, authorId);
+  console.log(workProperties.authorName);
   return (
-    <div>Note Form</div>
+    <div className="px-6 py-6">
+      <p>{workProperties.authUser}</p>
+      <p>{workProperties.authorName}</p>
+      <p>{workProperties.authorId}</p>
+    </div>
   )
 }
 export default NoteForm
