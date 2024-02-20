@@ -127,4 +127,7 @@ export const getAuthorsWorks = async (authorId) => {
   }
 };
 
-
+export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
+  console.log(content, category, createdBy, authUser, authorName, authorId);
+  return null;
+}
