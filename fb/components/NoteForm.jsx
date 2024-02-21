@@ -25,6 +25,25 @@ const NoteForm = ({ workProperties }) => {
     )
   });
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNoteData((prevNoteData) => ({
+      ...prevNoteData,
+      [name]: value,
+    }));
+  };
+
+  const { mutate, isPending, data } = useMutation({
+    mutationFn: async (note) => {
+      const newNote = await createWork(note);
+      if (newNote) {
+        toast.success('New Note Created!');
+        return newNote;
+      }
+      toast.error('Something went wrong. Try again.');
+    },
+  });
+
   return (
     <div className="px-6 py-6">
       <p>{workProperties.authUser}</p>
