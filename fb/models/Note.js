@@ -46,5 +46,5 @@ const NoteSchema = mongoose.Schema(
 );
 
 //const Contestant = mongoose.model("Contestant", ContestantSchema);
-const Work = mongoose.models.Work || mongoose.model("Work", WorkSchema);
-export default Work;
+const Note = mongoose.models.Note || mongoose.model("Note", NoteSchema);
+export default Note;

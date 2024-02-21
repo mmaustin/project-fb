@@ -5,6 +5,7 @@ import Author from "@/models/Author";
 import { connectToDB } from "./database";
 import { revalidatePath } from "next/cache";
 import Work from "@/models/Work";
+import Note from "@/models/Note";
 
 
 export const getAuthors = async () => {
@@ -128,6 +129,18 @@ export const getAuthorsWorks = async (authorId) => {
 };
 
 export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
-  console.log(content, category, createdBy, authUser, authorName, authorId);
-  return null;
+  // console.log(content, category, createdBy, authUser, authorName, authorId);
+  // return null;
+
+  try {
+    await connectToDB();
+    const note = await Note.create({
+      content, category, authUser, authorName, authorId, createdBy
+    })
+
+    revalidatePath(`works/${createdBy}`);
+    return { newNoteCategory: note.category };
+  } catch (error) {
+    return null;
+  }
 }
