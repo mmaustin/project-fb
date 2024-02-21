@@ -14,7 +14,7 @@ const NoteForm = ({ workProperties }) => {
   const [noteData, setNoteData] = useState({
     content: "",
     category: "Musings",
-    createdBy: workProperties._id,
+    createdBy: workProperties.workId,
     authUser: workProperties.authUser,
     authorName: workProperties.authorName,
     authorId: workProperties.authorId
@@ -36,7 +36,7 @@ const NoteForm = ({ workProperties }) => {
 
   const { mutate, isPending, data } = useMutation({
     mutationFn: async (note) => {
-      const newNote = await createWork(note);
+      const newNote = await createNote(note);
       if (newNote) {
         toast.success('New Note Created!');
         return newNote;
@@ -49,7 +49,7 @@ const NoteForm = ({ workProperties }) => {
     e.preventDefault();
 
     mutate(noteData);
-    setWorkData(prevNoteData => ({
+    setNoteData(prevNoteData => ({
       ...prevNoteData,
       content: "",
       category: "Musings",

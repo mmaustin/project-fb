@@ -8,7 +8,7 @@ const SingleWorkPage = async ({ params }) => {
 
   const work = await getSingleWork(params.id);
 
-  const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString() };
+  const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString(), workId: work._id.toString() };
   // console.log(noteWorkProperties);
   return (
     <>
