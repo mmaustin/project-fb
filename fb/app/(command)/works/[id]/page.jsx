@@ -32,7 +32,7 @@ const SingleWorkPage = async ({ params }) => {
           Edit Work
         </Link>
       </div>
-      <div className="px-6 py-6">
+      <div className="px-6 py-6 border border-base-300 rounded-lf shadow-lg" >
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
