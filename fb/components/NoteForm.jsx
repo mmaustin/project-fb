@@ -9,6 +9,7 @@ import toast from "react-hot-toast"
 const NoteForm = ({ workProperties }) => {
   //console.log(authUser, authorName, authorId);
   //console.log(workProperties.authorName);
+  console.log(workProperties);
 
   const [noteData, setNoteData] = useState({
     content: "",
@@ -44,12 +45,28 @@ const NoteForm = ({ workProperties }) => {
     },
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    mutate(noteData);
+    setWorkData(prevNoteData => ({
+      ...prevNoteData,
+      content: "",
+      category: "Musings",
+    }));
+  };
+
   return (
-    <div className="px-6 py-6">
-      <p>{workProperties.authUser}</p>
-      <p>{workProperties.authorName}</p>
-      <p>{workProperties.authorId}</p>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div className=" w-full">
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Content" name="content" value={noteData.content} required />
+        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="category" value={noteData.category} >
+          {/* <option >Public or Private?</option> */}
+          {categoryOptions}
+        </select>
+        <button className="btn btn-primary join-item" type="submit">New Note</button>
+      </div>
+    </form>
   )
 }
 export default NoteForm
