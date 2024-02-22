@@ -6,6 +6,8 @@ import { connectToDB } from "./database";
 import { revalidatePath } from "next/cache";
 import Work from "@/models/Work";
 import Note from "@/models/Note";
+import Thought from "@/models/Thought";
+
 
 
 export const getAuthors = async () => {
@@ -129,13 +131,13 @@ export const getAuthorsWorks = async (authorId) => {
 };
 
 export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
-  // console.log(content, category, createdBy, authUser, authorName, authorId);
+  console.log(content, category, createdBy, authUser, authorName, authorId);
   // return null;
 
   try {
     await connectToDB();
     const note = await Note.create({
-      content, category, authUser, authorName, authorId, createdBy
+      content, category, createdBy, authUser, authorName, authorId
     })
 
     revalidatePath(`works/${createdBy}`);

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const NoteSchema = mongoose.Schema(
+const ThoughtSchema = mongoose.Schema(
   {
     content: {
       type: String,
@@ -8,25 +8,35 @@ const NoteSchema = mongoose.Schema(
       maxLength: 100,
       trim: true,
       required: true
-    },
+    }
+  },
+  {
     category: {
       type: String,
       enum: ['Musings', 'Character', 'Plot', 'Setting'],
       default: 'Musings'
-    },
+    }
+  },
+  {
     createdBy: {
       type: mongoose.Types.ObjectId,
       ref: 'Work',
       required: true,
-    },
+    }
+  },
+  {
     authUser: {
       type: String,
       required: true
-    },
+    }
+  },
+  {
     authorName: {
       type: String,
       required: true
-    },
+    }
+  },
+  {
     authorId: {
       type: String,
       required: true
@@ -36,5 +46,5 @@ const NoteSchema = mongoose.Schema(
 );
 
 //const Contestant = mongoose.model("Contestant", ContestantSchema);
-const Note = mongoose.models.Note || mongoose.model("Note", NoteSchema);
-export default Note;
+const Thought = mongoose.models.Thought || mongoose.model("Thought", ThoughtSchema);
+export default Thought;

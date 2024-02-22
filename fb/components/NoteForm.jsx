@@ -60,6 +60,7 @@ const NoteForm = ({ workProperties }) => {
     <form onSubmit={handleSubmit}>
       <div className=" w-full">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Content" name="content" value={noteData.content} required />
+        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={noteData.createdBy} required />
         <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="category" value={noteData.category} >
           {/* <option >Public or Private?</option> */}
           {categoryOptions}
