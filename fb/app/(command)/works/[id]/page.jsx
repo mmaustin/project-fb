@@ -37,7 +37,9 @@ const SingleWorkPage = async ({ params }) => {
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
-        <NoteList workId={work._id.toSTring()} />
+      </div>
+      <div className="px-6 py-6 border border-base-300 rounded-lf shadow-lg" >
+        <NoteList workId={params.id} />
       </div>
     </>
   )
