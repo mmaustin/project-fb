@@ -1,4 +1,5 @@
 import NoteForm from "@/components/NoteForm";
+import NoteList from "@/components/NoteList";
 import { getSingleWork } from "@/utils/actions";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import Link from "next/link";
@@ -36,6 +37,7 @@ const SingleWorkPage = async ({ params }) => {
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
+        <NoteList workId={work._id.toSTring()} />
       </div>
     </>
   )
