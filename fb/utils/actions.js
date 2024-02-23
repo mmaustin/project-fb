@@ -6,7 +6,6 @@ import { connectToDB } from "./database";
 import { revalidatePath } from "next/cache";
 import Work from "@/models/Work";
 import Note from "@/models/Note";
-import Thought from "@/models/Thought";
 
 
 
@@ -146,3 +145,12 @@ export const createNote = async ({ content, category, createdBy, authUser, autho
     return null;
   }
 }
+
+export const getWorkNotes = async (workId) => {
+  try {
+    await connectToDB();
+    return await Note.find({ createdBy: workId });
+  } catch (error) {
+    console.log(error);
+  }
+};
