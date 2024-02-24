@@ -159,5 +159,5 @@ export const getWorkNotes = async (workId) => {
 
 export const globalDelete = async () => {
   console.log('help');
-  //redirect('/authors');
+  redirect('/authors');
 };

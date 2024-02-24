@@ -3,8 +3,8 @@
 import { globalDelete } from "@/utils/actions";
 
 
-const GlobalDelete = () => {
-
+const GlobalDelete = ({ noteId }) => {
+  console.log(noteId);
   const deleteHandler = () => {
     globalDelete();
   }
