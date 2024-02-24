@@ -6,6 +6,8 @@ import { connectToDB } from "./database";
 import { revalidatePath } from "next/cache";
 import Work from "@/models/Work";
 import Note from "@/models/Note";
+import { redirect } from "next/navigation";
+
 
 
 
@@ -153,4 +155,8 @@ export const getWorkNotes = async (workId) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const globalDelete = async () => {
+  redirect('/authors');
 };
