@@ -132,7 +132,7 @@ export const getAuthorsWorks = async (authorId) => {
 };
 
 export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
-  console.log(content, category, createdBy, authUser, authorName, authorId);
+  //console.log(content, category, createdBy, authUser, authorName, authorId);
   // return null;
 
   try {
@@ -157,7 +157,14 @@ export const getWorkNotes = async (workId) => {
   }
 };
 
-export const globalDelete = async () => {
-  console.log('help');
-  redirect('/authors');
+export const globalDelete = async (noteId, workID) => {
+  //console.log(noteId, workID);
+  //redirect('/authors');
+  try {
+    await connectToDB();
+    await Note.findByIdAndDelete(noteId)
+    revalidatePath(`works/${workID}`);
+  } catch (error) {
+    console.log(error);
+  }
 };

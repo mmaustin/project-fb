@@ -21,7 +21,7 @@ const NoteList = async ({ workId }) => {
       <h4 className="text-lg capitalize">
         {note.content}
       </h4>
-      <GlobalDelete noteId={noteID} />
+      <GlobalDelete noteId={noteID} workID={workId} />
     </div>
   })
 

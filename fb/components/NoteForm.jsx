@@ -9,7 +9,7 @@ import toast from "react-hot-toast"
 const NoteForm = ({ workProperties }) => {
   //console.log(authUser, authorName, authorId);
   //console.log(workProperties.authorName);
-  console.log(workProperties);
+  //console.log(workProperties);
 
   const [noteData, setNoteData] = useState({
     content: "",

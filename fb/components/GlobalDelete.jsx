@@ -3,10 +3,10 @@
 import { globalDelete } from "@/utils/actions";
 
 
-const GlobalDelete = ({ noteId }) => {
-  console.log(noteId);
-  const deleteHandler = () => {
-    globalDelete();
+const GlobalDelete = ({ noteId, workID }) => {
+  const deleteHandler = async () => {
+
+    await globalDelete(noteId, workID);
   }
 
   return (
