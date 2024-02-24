@@ -1,4 +1,5 @@
-import { getWorkNotes } from "@/utils/actions"
+import { getWorkNotes } from "@/utils/actions";
+import GlobalDelete from "./GlobalDelete";
 
 
 const NoteList = async ({ workId }) => {
@@ -21,6 +22,7 @@ const NoteList = async ({ workId }) => {
           <h4 className="text-lg capitalize">
             {note.content}
           </h4>
+          <GlobalDelete />
         </div>
       })}
     </div>
