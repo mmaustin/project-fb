@@ -169,13 +169,14 @@ export const noteDelete = async (noteId, workID) => {
   }
 };
 
-export const deleteWork = async (workId) => {
-  try {
-    await connectToDB();
-    await Note.deleteMany({ createdBy: workId });
-    await Work.findByIdAndDelete(workId);
-    redirect('/authors');
-  } catch (error) {
-    console.log(error);
-  }
+export const workDelete = async (workId) => {
+  console.log(workId);
+  // try {
+  //   await connectToDB();
+  //   await Note.deleteMany({ createdBy: workId });
+  //   await Work.findByIdAndDelete(workId);
+  //   redirect('/authors');
+  // } catch (error) {
+  //   console.log(error);
+  // };
 };
