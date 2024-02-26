@@ -1,5 +1,5 @@
 import { getWorkNotes } from "@/utils/actions";
-import WorkDelete from "./WorkDelete";
+import NoteDelete from "./NoteDelete";
 
 const NoteList = async ({ workId }) => {
 
@@ -20,7 +20,7 @@ const NoteList = async ({ workId }) => {
       <h4 className="text-lg capitalize">
         {note.content}
       </h4>
-      <WorkDelete noteId={noteID} workID={workId} />
+      <NoteDelete noteId={noteID} workID={workId} />
     </div>
   })
 

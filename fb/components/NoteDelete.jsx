@@ -1,16 +1,16 @@
 'use client'
 
-import { workDelete } from "@/utils/actions";
+import { noteDelete } from "@/utils/actions";
 
 
-const WorkDelete = ({ noteId, workID }) => {
+const NoteDelete = ({ noteId, workID }) => {
   const deleteHandler = async () => {
 
-    await workDelete(noteId, workID);
+    await noteDelete(noteId, workID);
   }
 
   return (
     <button onClick={deleteHandler} className="btn btn-primary join-item" type="button">Delete</button>
   )
 }
-export default WorkDelete;
+export default NoteDelete;
