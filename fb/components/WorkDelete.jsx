@@ -1,16 +1,16 @@
 'use client'
 
-import { globalDelete } from "@/utils/actions";
+import { workDelete } from "@/utils/actions";
 
 
-const GlobalDelete = ({ noteId, workID }) => {
+const WorkDelete = ({ noteId, workID }) => {
   const deleteHandler = async () => {
 
-    await globalDelete(noteId, workID);
+    await workDelete(noteId, workID);
   }
 
   return (
     <button onClick={deleteHandler} className="btn btn-primary join-item" type="button">Delete</button>
   )
 }
-export default GlobalDelete
+export default WorkDelete;

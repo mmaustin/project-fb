@@ -157,7 +157,7 @@ export const getWorkNotes = async (workId) => {
   }
 };
 
-export const globalDelete = async (noteId, workID) => {
+export const workDelete = async (noteId, workID) => {
   //console.log(noteId, workID);
   //redirect('/authors');
   try {
