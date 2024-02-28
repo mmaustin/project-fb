@@ -1,6 +1,7 @@
 'use client'
 
 import { workDelete } from "@/utils/actions";
+import { redirect } from "next/navigation";
 
 
 const WorkDelete = ({ workId }) => {
@@ -8,6 +9,7 @@ const WorkDelete = ({ workId }) => {
   const deleteHandler = async () => {
 
     await workDelete(workId);
+    //redirect('/authors');
   }
 
   return (
