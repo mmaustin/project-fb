@@ -175,8 +175,10 @@ export const workDelete = async (workId) => {
     await connectToDB();
     await Note.deleteMany({ createdBy: workId });
     await Work.findByIdAndDelete(workId);
-    revalidatePath('/works');
+    //revalidatePath('/works');
   } catch (error) {
     console.log(error);
+  } finally {
+    redirect('/authors');
   };
 };
