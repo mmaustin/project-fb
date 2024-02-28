@@ -37,6 +37,7 @@ const NoteForm = ({ workProperties }) => {
   const { mutate, isPending, data } = useMutation({
     mutationFn: async (note) => {
       const newNote = await createNote(note);
+      console.log(newNote);
       if (newNote) {
         toast.success('New Note Created!');
         return newNote;

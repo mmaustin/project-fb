@@ -132,15 +132,15 @@ export const getAuthorsWorks = async (authorId) => {
 };
 
 export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
-  //console.log(content, category, createdBy, authUser, authorName, authorId);
+  console.log(content, category, createdBy, authUser, authorName, authorId);
   // return null;
-
+  console.log('help');
   try {
     await connectToDB();
     const note = await Note.create({
       content, category, createdBy, authUser, authorName, authorId
     })
-
+    console.log(note);
     revalidatePath(`works/${createdBy}`);
     return { newNoteCategory: note.category };
   } catch (error) {
