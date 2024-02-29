@@ -1,6 +1,6 @@
 import { getAuthors } from "@/utils/actions";
-
 import Link from "next/link";
+import AuthorDelete from "./AuthorDelete";
 //import { connectToDB } from "@/utils/database";
 
 const AuthorList = async () => {
@@ -14,6 +14,7 @@ const AuthorList = async () => {
   };
 
   const authorsList = allAuthors.map(author => {
+    let authorID = author._id.toString();
     return <div key={author._id} className="flex-col justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lf shadow-lg">
       <h4 className="text-lg capitalize">
         {author.authorName}
@@ -36,6 +37,7 @@ const AuthorList = async () => {
       <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs" >
         Edit Author
       </Link>
+      <AuthorDelete authorId={authorID} />
     </div>
   })
 
