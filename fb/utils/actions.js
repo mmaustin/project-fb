@@ -182,3 +182,17 @@ export const workDelete = async (workId) => {
     redirect('/authors');
   };
 };
+
+export const authorDelete = async (authorId) => {
+  console.log(authorId);
+  // try {
+  //   await connectToDB();
+  //   await Note.deleteMany({ createdBy: workId });
+  //   await Work.findByIdAndDelete(workId);
+  //   //revalidatePath('/works');
+  // } catch (error) {
+  //   console.log(error);
+  // } finally {
+  //   redirect('/authors');
+  // };
+};
