@@ -4,7 +4,6 @@ import { workDelete } from "@/utils/actions";
 
 
 const WorkDelete = ({ workId }) => {
-  console.log(workId);
   const deleteHandler = async () => {
 
     await workDelete(workId);

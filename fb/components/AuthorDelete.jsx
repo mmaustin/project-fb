@@ -1,7 +1,8 @@
+'use client'
+
 import { authorDelete } from "@/utils/actions";
 
 const AuthorDelete = ({ authorId }) => {
-  console.log(authorId);
 
   const deleteHandler = async () => {
     await authorDelete(authorId);
