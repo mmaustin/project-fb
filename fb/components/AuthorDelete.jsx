@@ -1,9 +1,14 @@
+import { authorDelete } from "@/utils/actions";
 
+const AuthorDelete = ({ authorId }) => {
+  console.log(authorId);
 
+  const deleteHandler = async () => {
+    await authorDelete(authorId);
+  }
 
-const AuthorDelete = () => {
   return (
-    <div>Author Delete</div>
+    <button onClick={deleteHandler} className="btn btn-success" type="button">Delete</button>
   )
 };
 export default AuthorDelete;

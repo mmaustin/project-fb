@@ -1,7 +1,6 @@
 'use client'
 
 import { workDelete } from "@/utils/actions";
-import { redirect } from "next/navigation";
 
 
 const WorkDelete = ({ workId }) => {
