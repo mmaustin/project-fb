@@ -3,6 +3,7 @@ import WorksList from "@/components/WorksList";
 import Link from "next/link";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import { getSingleAuthor } from "@/utils/actions";
+import AuthorDelete from "@/components/AuthorDelete";
 
 
 const AuthorPage = async ({ params }) => {
@@ -20,6 +21,9 @@ const AuthorPage = async ({ params }) => {
         <WorkForm workAuthor={retrievedAuthor} />
       </HydrationBoundary>
       <WorksList authorId={authorParamId} authorName={author.authorName} />
+      <div>
+        <AuthorDelete authorId={authorParamId} />
+      </div>
     </div>
   )
 }

@@ -185,14 +185,14 @@ export const workDelete = async (workId) => {
 
 export const authorDelete = async (authorId) => {
   console.log(authorId);
-  // try {
-  //   await connectToDB();
-  //   await Note.deleteMany({ createdBy: workId });
-  //   await Work.findByIdAndDelete(workId);
-  //   //revalidatePath('/works');
-  // } catch (error) {
-  //   console.log(error);
-  // } finally {
-  //   redirect('/authors');
-  // };
+  try {
+    await connectToDB();
+    await Note.deleteMany({ authorId: authorId });
+    await Work.deleteMany({ createdBy: authorId });
+    await Author.findByIdAndDelete(authorId);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    redirect('/authors');
+  };
 };
