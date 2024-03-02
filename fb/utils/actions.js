@@ -7,6 +7,7 @@ import { revalidatePath } from "next/cache";
 import Work from "@/models/Work";
 import Note from "@/models/Note";
 import { redirect } from "next/navigation";
+import { z } from "zod";
 
 
 
@@ -33,9 +34,12 @@ export const getSingleAuthor = async (authorId) => {
 export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile }) => {
   // console.log(authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile);
   // return null;
-
+  const ZodAuthor = z.object({
+    authorName: z.string().min(5),
+  })
   try {
     await connectToDB();
+    ZodAuthor.parse({ authorName })
     const author = await Author.create({
       authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile
     })
@@ -43,7 +47,7 @@ export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workI
     revalidatePath('authors');
     return { newAuthorName: author.authorName };
   } catch (error) {
-    return null;
+    return { error: error.issues[0].message };
   }
 };
 

@@ -58,11 +58,11 @@ const AuthorForm = ({ authUser }) => {
   const { mutate, isPending, data } = useMutation({
     mutationFn: async (author) => {
       const newAuthor = await createAuthor(author);
-      if (newAuthor) {
+      if (newAuthor.newAuthorName) {
         toast.success('New Author Created!');
         return newAuthor;
       }
-      toast.error('Something went wrong. Try again.');
+      toast.error(newAuthor.error);
     },
   });
 
