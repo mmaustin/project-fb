@@ -95,13 +95,25 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
 export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, workWritingStage }) => {
   // console.log(workId, workTitle, workGenre, workSynopsis, workWritingStage);
   // return null;
+
+  const ZodWork = z.object({
+    title: z.string(),
+    genre: z.string(),
+    synopsis: z.string().min(5).max(250),
+  });
+
   try {
     await connectToDB();
+
+    ZodWork.parse({ title });
+    ZodWork.parse({ genre });
+    ZodWork.parse({ synopsis });
+
     const work = await Work.findById(workId);
     work.title = workTitle;
     work.genre = workGenre;
     work.synopsis = workSynopsis;
-    work.workWritingStage;
+    work.writingStage = workWritingStage;
 
     await work.save();
 
@@ -113,9 +125,19 @@ export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, wor
 
 export const createWork = async ({ title, genre, synopsis, authUser, authorName, writingStage, createdBy }) => {
   //console.log(title, genre, synopsis, authUser, authorName, writingState, createdBy);
+  const ZodWork = z.object({
+    title: z.string(),
+    genre: z.string(),
+    synopsis: z.string().min(5).max(250),
+  });
 
   try {
     await connectToDB();
+
+    ZodWork.parse({ title });
+    ZodWork.parse({ genre });
+    ZodWork.parse({ synopsis });
+
     const work = await Work.create({
       title, genre, synopsis, authUser, authorName, writingStage, createdBy
     })
@@ -157,7 +179,7 @@ export const getAuthorsWorks = async (authorId) => {
 export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
   console.log(content, category, createdBy, authUser, authorName, authorId);
   // return null;
-  console.log('help');
+
   try {
     await connectToDB();
     const note = await Note.create({
