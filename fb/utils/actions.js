@@ -35,11 +35,19 @@ export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workI
   // console.log(authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile);
   // return null;
   const ZodAuthor = z.object({
-    authorName: z.string().min(5),
-  })
+    authorName: z.string(),
+    aboutMe: z.string().min(5),
+    authorInfluence: z.string(),
+    workInfluence: z.string(),
+  });
   try {
     await connectToDB();
-    ZodAuthor.parse({ authorName })
+
+    ZodAuthor.parse({ authorName });
+    ZodAuthor.parse({ aboutMe });
+    ZodAuthor.parse({ authorInfluence });
+    ZodAuthor.parse({ workInfluence });
+
     const author = await Author.create({
       authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile
     })
@@ -54,10 +62,21 @@ export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workI
 export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluence, workInfluence, publicProfile }) => {
   // console.log(authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile);
   // return null;
-
+  const ZodAuthor = z.object({
+    authorName: z.string(),
+    aboutMe: z.string().min(5),
+    authorInfluence: z.string(),
+    workInfluence: z.string(),
+  });
 
   try {
     await connectToDB();
+
+    ZodAuthor.parse({ authorName });
+    ZodAuthor.parse({ aboutMe });
+    ZodAuthor.parse({ authorInfluence });
+    ZodAuthor.parse({ workInfluence });
+
     const author = await Author.findById(authorId);
     author.authorName = authorName;
     author.aboutMe = aboutMe;
