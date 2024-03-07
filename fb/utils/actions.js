@@ -88,21 +88,22 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
 };
 
 export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, workWritingStage }) => {
-  // console.log(workId, workTitle, workGenre, workSynopsis, workWritingStage);
+  //console.log(workId, workTitle, workGenre, workSynopsis, workWritingStage);
   // return null;
 
   const ZodWork = z.object({
-    title: z.string(),
-    genre: z.string(),
-    synopsis: z.string().min(5).max(250),
+    workTitle: z.string(),
+    workGenre: z.string(),
+    workSynopsis: z.string().min(5).max(250),
   });
 
   try {
     await connectToDB();
-
-    ZodWork.parse({ title, genre, synopsis });
+    ZodWork.parse({ workTitle, workGenre, workSynopsis });
+    //console.log('jack');
 
     const work = await Work.findById(workId);
+    //console.log('jack');
     work.title = workTitle;
     work.genre = workGenre;
     work.synopsis = workSynopsis;
