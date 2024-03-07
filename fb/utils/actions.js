@@ -1,6 +1,5 @@
 'use server'
 
-//import Contestant from "@/models/Contestant";
 import Author from "@/models/Author";
 import { connectToDB } from "./database";
 import { revalidatePath } from "next/cache";
@@ -8,9 +7,6 @@ import Work from "@/models/Work";
 import Note from "@/models/Note";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-
-
-
 
 export const getAuthors = async () => {
   try {
@@ -30,10 +26,8 @@ export const getSingleAuthor = async (authorId) => {
   }
 };
 
-
 export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile }) => {
-  // console.log(typeof authorName, typeof aboutMe, typeof authorInfluence, typeof workInfluence, authUser, typeof publicProfile);
-  // return null;
+
   const ZodAuthor = z.object({
     authorName: z.string().min(1),
     aboutMe: z.string().min(5).max(500),
@@ -58,8 +52,7 @@ export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workI
 };
 
 export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluence, workInfluence, publicProfile }) => {
-  // console.log(authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile);
-  // return null;
+
   const ZodAuthor = z.object({
     authorName: z.string(),
     aboutMe: z.string().min(50).max(500),
@@ -87,38 +80,7 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
   }
 };
 
-export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, workWritingStage }) => {
-  //console.log(workId, workTitle, workGenre, workSynopsis, workWritingStage);
-  // return null;
-
-  const ZodWork = z.object({
-    workTitle: z.string(),
-    workGenre: z.string(),
-    workSynopsis: z.string().min(5).max(250),
-  });
-
-  try {
-    await connectToDB();
-    ZodWork.parse({ workTitle, workGenre, workSynopsis });
-    //console.log('jack');
-
-    const work = await Work.findById(workId);
-    //console.log('jack');
-    work.title = workTitle;
-    work.genre = workGenre;
-    work.synopsis = workSynopsis;
-    work.writingStage = workWritingStage;
-
-    await work.save();
-
-    return { editWorkTitle: work.title };
-  } catch (error) {
-    return null;
-  }
-};
-
 export const createWork = async ({ title, genre, synopsis, authUser, authorName, writingStage, createdBy }) => {
-  //console.log(title, genre, synopsis, authUser, authorName, writingState, createdBy);
   const ZodWork = z.object({
     title: z.string(),
     genre: z.string(),
@@ -140,6 +102,33 @@ export const createWork = async ({ title, genre, synopsis, authUser, authorName,
     return null;
   }
 };
+
+export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, workWritingStage }) => {
+  const ZodWork = z.object({
+    workTitle: z.string(),
+    workGenre: z.string(),
+    workSynopsis: z.string().min(5).max(250),
+  });
+
+  try {
+    await connectToDB();
+    ZodWork.parse({ workTitle, workGenre, workSynopsis });
+
+    const work = await Work.findById(workId);
+
+    work.title = workTitle;
+    work.genre = workGenre;
+    work.synopsis = workSynopsis;
+    work.writingStage = workWritingStage;
+
+    await work.save();
+
+    return { editWorkTitle: work.title };
+  } catch (error) {
+    return null;
+  }
+};
+
 
 export const getSingleWork = async (workId) => {
   try {
@@ -169,8 +158,6 @@ export const getAuthorsWorks = async (authorId) => {
 };
 
 export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
-  //console.log(content, category, createdBy, authUser, authorName, authorId);
-  // return null;
   const ZodNote = z.object({
     content: z.string().min(20).max(100)
   });
@@ -201,8 +188,6 @@ export const getWorkNotes = async (workId) => {
 };
 
 export const noteDelete = async (noteId, workID) => {
-  //console.log(noteId, workID);
-  //redirect('/authors');
   try {
     await connectToDB();
     await Note.findByIdAndDelete(noteId)
@@ -213,12 +198,10 @@ export const noteDelete = async (noteId, workID) => {
 };
 
 export const workDelete = async (workId) => {
-  //console.log(workId);
   try {
     await connectToDB();
     await Note.deleteMany({ createdBy: workId });
     await Work.findByIdAndDelete(workId);
-    //revalidatePath('/works');
   } catch (error) {
     console.log(error);
   } finally {
