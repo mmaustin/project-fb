@@ -10,10 +10,10 @@ const HomePage = () => {
   //   // console.log(data);
 
   return (
-    <div className="hero min-h-screen bg-base-100">
+    <div className="hero min-h-screen bg-">
       <div className="hero-content text-center">
         <div className="max-w-md">
-          <h1 className="text-6xl font-bold text-primary">
+          <h1 className="text-6xl font-bold ">
             <p className="py-6 text-3xl leading-loose">Welcome, Writers!  Never Forget An Idea Again!!</p>
             <Link href="/authors" className="btn btn-secondary">Enter The Center</Link>
           </h1>
