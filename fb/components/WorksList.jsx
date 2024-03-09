@@ -21,7 +21,7 @@ const WorksList = async ({ authorId, authorName }) => {
 
   const displayWorks = allAuthorsWorks.map(work => {
     let workID = work._id.toString();
-    return <div key={work._id} className="flex-col justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lf shadow-lg">
+    return <div key={work._id} className="w-3/6 flex-col justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lf shadow-lg">
       <h4 className="text-lg capitalize">
         {work.title}
       </h4>
@@ -50,7 +50,7 @@ const WorksList = async ({ authorId, authorName }) => {
   //see NoteList component, have to iterate over allAuthorsWorks array outside of jsx in order to access the work._id.  Need to pass it as a prop to WorkDelete component.
 
   return (
-    <div className="mt-8">
+    <div className="mt-2 w-full flex justify-center">
       {displayWorks}
     </div>
   )

@@ -15,12 +15,12 @@ const AuthorList = async () => {
 
   const authorsList = allAuthors.map(author => {
     let authorID = author._id.toString();
-    return <div key={author._id} className="flex-col justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lf shadow-lg">
+    return <div key={author._id} className="lg:w-3/6 flex-col justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lf shadow-lg">
       <h4 className="text-lg capitalize">
         {author.authorName}
       </h4>
       <h4 className="text-lg capitalize">
-        {author.aboutMe}
+        {author.aboutMe.slice(0, 10)} . . .
       </h4>
       <h4 className="text-lg capitalize">
         {author.authorInfluence}
@@ -42,7 +42,7 @@ const AuthorList = async () => {
   })
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 w-full flex justify-center">
       {authorsList}
     </div>
   )

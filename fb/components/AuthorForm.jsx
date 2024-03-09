@@ -81,9 +81,9 @@ const AuthorForm = ({ authUser }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="w-full flex justify-center">
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
-      <div className=" w-full">
+      <div className=" lg:w-3/6">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="authorName" value={authorData.authorName} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
