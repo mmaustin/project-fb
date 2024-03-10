@@ -32,13 +32,15 @@ const AuthorList = async () => {
         {/* <h4 className="text-md capitalize">
           {author.publicProfile}
         </h4> */}
-        <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs" >
-          Your Page
-        </Link>
-        <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs border-x-base-100" >
-          Edit Author
-        </Link>
-        <AuthorDelete authorId={authorID} />
+        <div className="">
+          <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs rounded-lg" >
+            Your Page
+          </Link>
+          <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
+            Edit Author
+          </Link>
+          <AuthorDelete authorId={authorID} />
+        </div>
       </div>
     }
   })
