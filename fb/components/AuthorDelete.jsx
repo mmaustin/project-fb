@@ -9,7 +9,7 @@ const AuthorDelete = ({ authorId }) => {
   }
 
   return (
-    <button onClick={deleteHandler} className="btn btn-success" type="button">Delete Author</button>
+    <button onClick={deleteHandler} className="btn btn-error btn-xs" type="button">Delete Author</button>
   )
 };
 export default AuthorDelete;

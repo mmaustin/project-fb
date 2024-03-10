@@ -16,11 +16,11 @@ const AuthorList = async () => {
   const authorsList = allAuthors.map(author => {
     if (author.publicProfile === "Public") {
       let authorID = author._id.toString();
-      return <div key={author._id} className="w-full flex-col justify-center items-center px-6 py-4 mb-4 border border-base-300 rounded-lf shadow-lg">
+      return <div key={author._id} className="w-full flex-col justify-center items-center px-6 py-4 mb-4 border border-base-300 rounded-lg shadow-lg">
         <h4 className="text-md capitalize">
           {author.authorName}
         </h4>
-        <h4 className="tooltip text-md capitalize" data-tip={author.aboutMe}>
+        <h4 className="tooltip text-md capitalize text-info" data-tip={author.aboutMe}>
           <p>About Me</p>
         </h4>
         <h4 className="text-md capitalize">
@@ -44,7 +44,7 @@ const AuthorList = async () => {
   })
 
   return (
-    <div className="mt-8 w-3/4 border-2 flex flex-col justify-center items-center">
+    <div className="mt-8 w-3/4 flex flex-col justify-center items-center">
       {authorsList}
     </div>
   )
