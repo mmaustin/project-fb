@@ -23,10 +23,10 @@ const AuthorList = async () => {
         <h4 className="tooltip text-md capitalize text-info" data-tip={author.aboutMe}>
           <p>About Me</p>
         </h4>
-        <h4 className="text-md capitalize">
+        <h4 className="hidden md:block lg:block text-md capitalize">
           {author.authorInfluence}
         </h4>
-        <h4 className="text-md capitalize">
+        <h4 className="hidden md:block lg:block text-md capitalize">
           {author.workInfluence}
         </h4>
         {/* <h4 className="text-md capitalize">
@@ -35,7 +35,7 @@ const AuthorList = async () => {
         <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs" >
           Your Page
         </Link>
-        <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs" >
+        <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs border-x-base-100" >
           Edit Author
         </Link>
         <AuthorDelete authorId={authorID} />
