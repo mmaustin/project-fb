@@ -17,10 +17,10 @@ export const getAuthors = async () => {
   }
 };
 
-export const authUserCheck = async (authUserId) => {
+export const authUserCheck = async (userId) => {
   try {
     await connectToDB();
-    return await Author.findOne({ authUser: authUserId });
+    return await Author.find({ authUser: userId });
   } catch (error) {
     console.log(error);
   }

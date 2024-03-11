@@ -1,12 +1,23 @@
 import AuthorForm from "@/components/AuthorForm";
 import AuthorList from "@/components/AuthorList";
+import UserHasAuthor from "@/components/UserHasAuthor";
+import { authUserCheck } from "@/utils/actions";
 import { auth, currentUser } from "@clerk/nextjs";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
+
 
 const ShowAuthors = async () => {
   const queryClient = new QueryClient();
 
   const { userId } = auth();
+  const authUser = await authUserCheck(userId);
+  //console.log(authUser);
+
+  if (authUser) {
+    return (
+      <UserHasAuthor />
+    )
+  };
 
   //const user = await currentUser();
   //Both values remain the same after repeated logout/logins, good for createdBy model attributes
