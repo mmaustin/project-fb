@@ -13,9 +13,9 @@ const ShowAuthors = async () => {
   const authUser = await authUserCheck(userId);
   //console.log(authUser);
 
-  if (authUser) {
+  if (authUser.length >= 1) {
     return (
-      <UserHasAuthor />
+      <UserHasAuthor establishedAuthor={userId} />
     )
   };
 
