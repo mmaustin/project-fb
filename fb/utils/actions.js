@@ -17,6 +17,15 @@ export const getAuthors = async () => {
   }
 };
 
+export const authUserCheck = async (authUserId) => {
+  try {
+    await connectToDB();
+    return await Author.findOne({ authUser: authUserId });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const getSingleAuthor = async (authorId) => {
   try {
     await connectToDB();
