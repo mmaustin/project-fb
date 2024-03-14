@@ -78,12 +78,12 @@ const AuthorForm = ({ authUser }) => {
       workInfluence: "",
       publicProfile: "Public"
     }));
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
+    <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center md:bg-base-300 lg:bg-blue-300">
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
-      <div className="w-3/4">
+      <div className="w-3/4 md:w-1/2 ">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Name" name="authorName" value={authorData.authorName} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />

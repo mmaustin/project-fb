@@ -10,14 +10,14 @@ const ShowAuthors = async () => {
   const queryClient = new QueryClient();
 
   const { userId } = auth();
-  const authUser = await authUserCheck(userId);
-  //console.log(authUser);
+  // const authUser = await authUserCheck(userId);
+  // //console.log(authUser);
 
-  if (authUser.length >= 1) {
-    return (
-      <UserHasAuthor establishedAuthor={userId} />
-    )
-  };
+  // if (authUser.length >= 1) {
+  //   return (
+  //     <UserHasAuthor establishedAuthor={userId} />
+  //   )
+  // };
 
   //const user = await currentUser();
   //Both values remain the same after repeated logout/logins, good for createdBy model attributes
