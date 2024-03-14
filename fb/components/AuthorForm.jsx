@@ -81,13 +81,13 @@ const AuthorForm = ({ authUser }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center md:bg-base-300 lg:bg-blue-300">
+    <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
-      <div className="w-3/4 md:w-1/2 ">
+      <div className="w-80 md:w-96">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Name" name="authorName" value={authorData.authorName} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
-        <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full rounded-lg" placeholder="Tell Us About Yourself" name="aboutMe" value={authorData.aboutMe} required />
+        <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg" placeholder="Tell Us About Yourself" name="aboutMe" value={authorData.aboutMe} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={authorData.authUser} required />
         <select onChange={handleInputChange} className="select select-primary join-item w-full rounded-lg" name="publicProfile" value={authorData.publicProfile} >
           {/* <option >Public or Private?</option> */}
