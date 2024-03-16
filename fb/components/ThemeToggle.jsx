@@ -5,7 +5,10 @@ import { BsMoonFill, BsSunFill } from 'react-icons/bs';
 
 const themes = {
   lofi: 'lofi',
-  black: 'black'
+  black: 'black',
+  colors: {
+    blue: '#fad'
+  }
   // winter: 'winter',
   // dracula: 'dracula'
 }
