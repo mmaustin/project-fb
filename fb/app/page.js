@@ -10,13 +10,14 @@ const HomePage = () => {
   //   // console.log(data);
 
   return (
-    <div className="hero min-h-screen bg-">
+    <div className="hero min-h-screen ">
       <div className="hero-content text-center">
-        <div className="max-w-md">
-          <h1 className="text-6xl font-bold ">
-            <p className="py-6 text-3xl leading-loose">Welcome, Writers!  Never Forget An Idea Again!!</p>
-            <Link href="/authors" className="btn btn-secondary">Enter The Center</Link>
+        <div className="max-w-3xl">
+          <h1 className="text-6xl font-bold uppercase border-t-2 border-dotted">
+            Novel Ideas
+            <p className="py-6 text-xl font-normal leading-loose normal-case border-t-2 border-dotted">Stop relying on sticky notes, napkins, and your "perfect" memory. Store all of your notes here.  Your book will thank you.</p>
           </h1>
+          <Link href="/authors" className="btn btn-secondary rounded-lg ">Get Started</Link>
         </div>
       </div>
     </div>
