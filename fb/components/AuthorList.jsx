@@ -6,7 +6,7 @@ import { auth } from "@clerk/nextjs";
 
 const AuthorList = async () => {
   const { userId } = auth();
-  //console.log(userId);
+
   const allAuthors = await getAuthors();
 
   if (allAuthors.length === 0) {
@@ -31,9 +31,6 @@ const AuthorList = async () => {
         <h4 className="hidden md:block lg:block text-md capitalize">
           {author.workInfluence}
         </h4>
-        {/* <h4 className="text-md capitalize">
-          {author.publicProfile}
-        </h4> */}
         {userId === author.authUser &&
           // remember, all of these will show up, because i'm the only user making author objects
           <div className="">
