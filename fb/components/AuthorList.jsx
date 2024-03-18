@@ -6,7 +6,6 @@ import { auth } from "@clerk/nextjs";
 
 const AuthorList = async () => {
   const { userId } = auth();
-
   const allAuthors = await getAuthors();
 
   if (allAuthors.length === 0) {

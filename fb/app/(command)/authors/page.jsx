@@ -16,7 +16,9 @@ const ShowAuthors = async () => {
 
   if (authUser.length >= 1) {
     return (
-      <UserHasAuthor establishedAuthor={userId} />
+      <div className="w-full flex flex-col justify-center items-center">
+        <UserHasAuthor establishedAuthor={userId} />
+      </div>
     )
   };
 

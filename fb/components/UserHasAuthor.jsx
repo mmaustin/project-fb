@@ -12,7 +12,7 @@ const UserHasAuthor = async ({ establishedAuthor }) => {
   const authorID = author[0]?._id.toString();
 
   return (
-    <div className="w-full mx-8 md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
+    <div className="w-80 mx-8 md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
       <h4 className="text-md capitalize">
         {author[0]?.authorName}
       </h4>
