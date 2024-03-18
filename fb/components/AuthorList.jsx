@@ -1,10 +1,12 @@
 import { getAuthors } from "@/utils/actions";
 import Link from "next/link";
 import AuthorDelete from "./AuthorDelete";
+import { auth } from "@clerk/nextjs";
 //import { connectToDB } from "@/utils/database";
 
 const AuthorList = async () => {
-
+  const { userId } = auth();
+  //console.log(userId);
   const allAuthors = await getAuthors();
 
   if (allAuthors.length === 0) {
@@ -32,15 +34,18 @@ const AuthorList = async () => {
         {/* <h4 className="text-md capitalize">
           {author.publicProfile}
         </h4> */}
-        <div className="">
-          <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs rounded-lg" >
-            Your Page
-          </Link>
-          <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
-            Edit Author
-          </Link>
-          <AuthorDelete authorId={authorID} />
-        </div>
+        {userId === author.authUser &&
+          // remember, all of these will show up, because i'm the only user making author objects
+          <div className="">
+            <Link href={`/authors/${author._id}`} className="btn btn-accent btn-xs rounded-lg" >
+              Your Page
+            </Link>
+            <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
+              Edit Author
+            </Link>
+            <AuthorDelete authorId={authorID} />
+          </div>
+        }
       </div>
     }
   })
