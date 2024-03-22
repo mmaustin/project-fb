@@ -15,8 +15,8 @@ const AuthorPage = async ({ params }) => {
 
   const authorParamId = params.id;
   return (
-    <div>
-      <p>Author's Page</p>
+    <div className="w-full flex flex-col justify-center items-center">
+      <p>{author.authorName}</p>
       <HydrationBoundary state={dehydrate(queryClient)} >
         <WorkForm workAuthor={retrievedAuthor} />
       </HydrationBoundary>

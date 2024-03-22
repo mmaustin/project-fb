@@ -60,8 +60,8 @@ const WorkForm = ({ workAuthor }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className=" w-full">
+    <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
+      <div className="w-80 md:w-96">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Title" name="title" value={workData.title} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" value={workData.genre} required />
         <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Synopsis" name="synopsis" value={workData.synopsis} required />
