@@ -4,6 +4,7 @@ import UserHasAuthor from "@/components/UserHasAuthor";
 import { authUserCheck } from "@/utils/actions";
 import { auth, currentUser } from "@clerk/nextjs";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
+import { redirect } from "next/navigation";
 
 
 const ShowAuthors = async () => {
@@ -15,11 +16,12 @@ const ShowAuthors = async () => {
   // //console.log(authUser);
 
   if (authUser.length >= 1) {
-    return (
-      <div className="w-full flex flex-col justify-center items-center">
-        <UserHasAuthor establishedAuthor={userId} />
-      </div>
-    )
+    redirect(`/authors/${userId}`)
+    // return (
+    //   <div className="w-full flex flex-col justify-center items-center">
+    //     <UserHasAuthor establishedAuthor={userId} />
+    //   </div>
+    // )
   };
 
   //const user = await currentUser();
