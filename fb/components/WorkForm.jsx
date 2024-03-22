@@ -23,7 +23,7 @@ const WorkForm = ({ workAuthor }) => {
 
   const writingStateOptions = ['Brainstorming', 'Drafting', 'Editing'].map((opt, i) => {
     return (
-      <option key={`${opt}: ${i}`} value={opt}>{opt}</option>
+      <option className="m-0" key={`${opt}: ${i}`} value={opt}>{opt}</option>
     )
   });
 
@@ -62,17 +62,17 @@ const WorkForm = ({ workAuthor }) => {
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       <div className="w-80 md:w-96">
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Title" name="title" value={workData.title} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="genre" name="genre" value={workData.genre} required />
-        <input onChange={handleInputChange} type="textarea" className="input input-bordered join-item w-full" placeholder="Synopsis" name="synopsis" value={workData.synopsis} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Title" name="title" value={workData.title} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="genre" name="genre" value={workData.genre} required />
+        <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg" placeholder="Synopsis" name="synopsis" value={workData.synopsis} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={workData.authUser} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={workData.authorName} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={workData.createdBy} required />
-        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="writingStage" value={workData.writingStage} >
+        <select onChange={handleInputChange} className="select select-primary join-item w-full rounded-lg" name="writingStage" value={workData.writingStage} >
           {/* <option >Public or Private?</option> */}
           {writingStateOptions}
         </select>
-        <button className="btn btn-primary join-item" type="submit">New Work</button>
+        <button className="btn btn-accent btn-xs join-item rounded-lg" type="submit">New Work</button>
       </div>
     </form>
   )
