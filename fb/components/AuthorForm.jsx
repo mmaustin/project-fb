@@ -83,7 +83,7 @@ const AuthorForm = ({ authUser }) => {
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       {/* {state.message !== 'a' ? <p className="mb-2">{state.message}</p> : null} */}
-      <div className="w-80 md:w-96">
+      <div className="w-80 md:w-96 flex flex-col">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Name" name="authorName" value={authorData.authorName} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
@@ -93,7 +93,7 @@ const AuthorForm = ({ authUser }) => {
           {/* <option >Public or Private?</option> */}
           {profileOptions}
         </select>
-        <button className="btn btn-accent btn-xs join-item rounded-lg" type="submit">Create Author</button>
+        <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">Create Author</button>
 
       </div>
     </form>

@@ -23,7 +23,7 @@ const WorkForm = ({ workAuthor }) => {
 
   const writingStateOptions = ['Brainstorming', 'Drafting', 'Editing'].map((opt, i) => {
     return (
-      <option className="m-0" key={`${opt}: ${i}`} value={opt}>{opt}</option>
+      <option key={`${opt}: ${i}`} value={opt}>{opt}</option>
     )
   });
 
@@ -61,7 +61,7 @@ const WorkForm = ({ workAuthor }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
-      <div className="w-80 md:w-96">
+      <div className="w-80 md:w-96 flex flex-col">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Title" name="title" value={workData.title} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="genre" name="genre" value={workData.genre} required />
         <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg" placeholder="Synopsis" name="synopsis" value={workData.synopsis} required />
@@ -72,7 +72,7 @@ const WorkForm = ({ workAuthor }) => {
           {/* <option >Public or Private?</option> */}
           {writingStateOptions}
         </select>
-        <button className="btn btn-accent btn-xs join-item rounded-lg" type="submit">New Work</button>
+        <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">New Work</button>
       </div>
     </form>
   )
