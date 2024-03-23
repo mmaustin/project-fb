@@ -11,7 +11,7 @@ const WorkDelete = ({ workId }) => {
   }
 
   return (
-    <button onClick={deleteHandler} className="btn btn-success" type="button">Delete</button>
+    <button onClick={deleteHandler} className="btn border-t-indigo-300 btn-xs rounded-lg" type="button">Delete</button>
   )
 }
 export default WorkDelete;
