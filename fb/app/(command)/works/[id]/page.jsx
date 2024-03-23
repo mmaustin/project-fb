@@ -13,15 +13,15 @@ const SingleWorkPage = async ({ params }) => {
   // console.log(noteWorkProperties);
   return (
     <div className="w-96 flex flex-col justify-center items-center">
-      <div key={work._id} className="w-full mx-8 md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
+      <div key={work._id} className="w-full mx-8 md:w-96 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
         <h4 className="text-lg capitalize">
           {work.title}
         </h4>
         <h4 className="text-lg capitalize">
           {work.genre}
         </h4>
-        <h4 className="text-lg capitalize">
-          {work.synopsis}
+        <h4 className="tooltip text-md capitalize text-info" data-tip={work.synopsis}>
+          Synopsis
         </h4>
         <h4 className="text-lg capitalize">
           {work.authorName}
@@ -29,16 +29,16 @@ const SingleWorkPage = async ({ params }) => {
         <h4 className="text-lg capitalize">
           {work.writingStage}
         </h4>
-        <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs" >
+        <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs join-item rounded-lg" >
           Edit Work
         </Link>
       </div>
-      <div className="px-6 py-6 border border-base-300 rounded-lf shadow-lg" >
+      <div className="px-6 py-6 mb-6 border border-base-300 rounded-lg shadow-lg" >
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
       </div>
-      <div className="px-6 py-6 border border-base-300 rounded-lf shadow-lg" >
+      <div className="px-6 py-6 border border-base-300 rounded-lg shadow-lg" >
         <NoteList workId={params.id} />
       </div>
     </div>
