@@ -47,7 +47,7 @@ const AuthorList = async () => {
   })
 
   return (
-    <div className="mt-8 w-96 lg:w-full flex flex-wrap justify-center items-center md:flex-wrap ">
+    <div className="mt-8 w-96 lg:w-full flex flex-wrap justify-center items-center md:flex-wrap">
       {authorsList}
     </div>
   )

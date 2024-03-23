@@ -54,7 +54,7 @@ const WorksList = async ({ authorId, authorName }) => {
   //see NoteList component, have to iterate over allAuthorsWorks array outside of jsx in order to access the work._id.  Need to pass it as a prop to WorkDelete component.
 
   return (
-    <div className="mt-2 w-96 flex justify-center">
+    <div className="mt-8 w-96 lg:w-full flex flex-wrap justify-center items-center md:flex-wrap">
       {displayWorks}
     </div>
   )
