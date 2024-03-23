@@ -28,12 +28,14 @@ const WorksList = async ({ authorId, authorName }) => {
       <h4 className="text-lg capitalize">
         {work.genre}
       </h4>
-      <h4 className="text-lg capitalize">
-        {work.synopsis}
+      <h4 className="tooltip text-md capitalize text-info" data-tip={work.synopsis}>
+        Synopsis
       </h4>
-      <h4 className="text-lg capitalize">
-        {work.authorName}
-      </h4>
+      {authorName !== work.authorName &&
+        <h4 className="text-lg capitalize">
+          {work.authorName}
+        </h4>
+      }
       <h4 className="text-lg capitalize">
         {work.writingStage}
       </h4>
