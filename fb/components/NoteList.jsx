@@ -13,7 +13,7 @@ const NoteList = async ({ workId }) => {
 
   const displayNotes = workNotes.map(note => {
     let noteID = note._id.toString();
-    return <div key={note._id} className="w-full  md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
+    return <div key={note._id} className="w-80 mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
       <h4 className="text-lg capitalize">
         {note.category}
       </h4>

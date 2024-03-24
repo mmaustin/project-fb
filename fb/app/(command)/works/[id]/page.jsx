@@ -13,7 +13,7 @@ const SingleWorkPage = async ({ params }) => {
   // console.log(noteWorkProperties);
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <div key={work._id} className="w-full mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
+      <div key={work._id} className="w-80 md:w-96 mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
         <h4 className="text-lg capitalize">
           {work.title}
         </h4>
@@ -33,12 +33,12 @@ const SingleWorkPage = async ({ params }) => {
           Edit Work
         </Link>
       </div>
-      <div className="w-full mx-8 md:w-96 flex flex-col justify-center items-start px-6 py-4 mb-4 rounded-lg shadow-lg" >
+      <div className="w-80 mx-8 md:w-96 flex flex-col justify-center items-start px-6 py-4 mb-4 rounded-lg shadow-lg" >
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
       </div>
-      <div className="w-full" >
+      <div className="" >
         <NoteList workId={params.id} />
       </div>
     </div>
