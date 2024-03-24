@@ -60,13 +60,13 @@ const NoteForm = ({ workProperties }) => {
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       <div className="w-80 md:w-96 flex flex-col">
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Content" name="content" value={noteData.content} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Content" name="content" value={noteData.content} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={noteData.createdBy} required />
-        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="category" value={noteData.category} >
+        <select onChange={handleInputChange} className="select select-primary join-item w-full rounded-lg" name="category" value={noteData.category} >
           {/* <option >Public or Private?</option> */}
           {categoryOptions}
         </select>
-        <button className="btn btn-primary join-item" type="submit">New Note</button>
+        <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">New Note</button>
       </div>
     </form>
   )

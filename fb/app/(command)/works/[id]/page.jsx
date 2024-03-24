@@ -33,12 +33,12 @@ const SingleWorkPage = async ({ params }) => {
           Edit Work
         </Link>
       </div>
-      <div className="px-6 py-6 mb-6 border border-base-300 rounded-lg shadow-lg" >
+      <div className="w-full mx-8 md:w-96 flex flex-col justify-center items-start px-6 py-4 mb-4 rounded-lg shadow-lg" >
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
       </div>
-      <div className="px-6 py-6 border border-base-300 rounded-lg shadow-lg" >
+      <div className="w-full mx-8 md:w-96 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg" >
         <NoteList workId={params.id} />
       </div>
     </div>
