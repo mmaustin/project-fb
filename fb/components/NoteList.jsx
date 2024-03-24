@@ -17,8 +17,8 @@ const NoteList = async ({ workId }) => {
       <h4 className="text-lg capitalize">
         {note.category}
       </h4>
-      <h4 className="text-lg capitalize">
-        {note.content}
+      <h4 className="tooltip tooltip-top text-info text-md capitalize" data-tip={note.content}>
+        Content
       </h4>
       <NoteDelete noteId={noteID} workID={workId} />
     </div>
