@@ -12,8 +12,8 @@ const SingleWorkPage = async ({ params }) => {
   const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString(), workId: work._id.toString() };
   // console.log(noteWorkProperties);
   return (
-    <div className="w-96 flex flex-col justify-center items-center">
-      <div key={work._id} className="w-full mx-8 md:w-96 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
+    <div className="w-full flex flex-col justify-center items-center">
+      <div key={work._id} className="w-full mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
         <h4 className="text-lg capitalize">
           {work.title}
         </h4>
@@ -38,7 +38,7 @@ const SingleWorkPage = async ({ params }) => {
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
       </div>
-      <div className="w-full mx-8 md:w-96 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg" >
+      <div className="w-full" >
         <NoteList workId={params.id} />
       </div>
     </div>

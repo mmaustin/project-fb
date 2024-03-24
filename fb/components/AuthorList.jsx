@@ -52,4 +52,4 @@ const AuthorList = async () => {
     </div>
   )
 }
-export default AuthorList
+export default AuthorList;
