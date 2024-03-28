@@ -22,6 +22,9 @@ const AuthorPage = async ({ params }) => {
       </HydrationBoundary>
       <WorksList authorId={authorParamId} authorName={author.authorName} />
       <div>
+        <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
+          Edit Author
+        </Link>
         <AuthorDelete authorId={authorParamId} />
       </div>
     </div>
