@@ -18,28 +18,28 @@ const WorksList = async ({ authorId, authorName }) => {
       <h2 className="mt-8 font-medium text-lg">No One Is Writing!</h2>
     )
   };
-
+  //w-full mx-8 md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg
   const displayWorks = allAuthorsWorks.map(work => {
     let workID = work._id.toString();
-    return <div key={work._id} className="w-full mx-8 md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
-      <h4 className="text-lg capitalize">
+    return <div key={work._id} className="carousel-item w-full mx-8 md:w-80 flex flex-col justify-center items-start rounded-lg shadow-lg">
+      <h4 className="text-lg capitalize ml-2">
         {work.title}
       </h4>
-      <h4 className="text-lg capitalize">
+      <h4 className="text-lg capitalize ml-2">
         {work.genre}
       </h4>
-      <h4 className="tooltip text-md capitalize text-info" data-tip={work.synopsis}>
+      <h4 className="tooltip text-md capitalize text-info ml-2" data-tip={work.synopsis}>
         Synopsis
       </h4>
       {authorName !== work.authorName &&
-        <h4 className="text-lg capitalize">
+        <h4 className="text-lg capitalize ml-2">
           {work.authorName}
         </h4>
       }
-      <h4 className="text-lg capitalize">
+      <h4 className="text-lg capitalize ml-2">
         {work.writingStage}
       </h4>
-      <div className="">
+      <div className="mb-2 ml-2">
         <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs rounded-lg" >
           Work Page
         </Link>
@@ -52,9 +52,10 @@ const WorksList = async ({ authorId, authorName }) => {
   })
 
   //see NoteList component, have to iterate over allAuthorsWorks array outside of jsx in order to access the work._id.  Need to pass it as a prop to WorkDelete component.
+  //mt-8 w-96 lg:w-full flex flex-wrap justify-center items-center md:flex-wrap
 
   return (
-    <div className="mt-8 w-96 lg:w-full flex flex-wrap justify-center items-center md:flex-wrap">
+    <div className="carousel rounded-box w-96">
       {displayWorks}
     </div>
   )
