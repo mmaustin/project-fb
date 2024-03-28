@@ -54,16 +54,16 @@ const EditAuthorForm = ({ author }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className=" w-full">
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Name" name="authorName" value={authorData.authorName} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Style" name="aboutMe" value={authorData.aboutMe} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
-        <select onChange={handleInputChange} className="select select-primary w-full max-w-xs" name="publicProfile" value={authorData.publicProfile} >
+    <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
+      <div className="w-80 md:w-96 flex flex-col">
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Name" name="authorName" value={authorData.authorName} required />
+        <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg" placeholder="Style" name="aboutMe" value={authorData.aboutMe} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Influenced By" name="authorInfluence" value={authorData.authorInfluence} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="A Favorite Work" name="workInfluence" value={authorData.workInfluence} required />
+        <select onChange={handleInputChange} className="input input-bordered join-item w-full rounded-lg" name="publicProfile" value={authorData.publicProfile} >
           {profileOptions}
         </select>
-        <button className="btn btn-primary join-item" type="submit">Edit Author</button>
+        <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">Edit Author</button>
       </div>
     </form>
   )
