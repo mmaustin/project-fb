@@ -10,7 +10,7 @@ const SingleWorkPage = async ({ params }) => {
   const work = await getSingleWork(params.id);
 
   const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString(), workId: work._id.toString() };
-  // console.log(noteWorkProperties);
+
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div key={work._id} className="w-80 md:w-96 mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
