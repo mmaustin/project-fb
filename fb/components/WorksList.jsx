@@ -14,7 +14,7 @@ const WorksList = async ({ authorId, authorName }) => {
 
   if (allAuthorsWorks.length === 0) {
     return (
-      <h2 className="mt-8 font-medium text-lg">No One Is Writing!</h2>
+      <h2 className="mt-8 font-medium text-lg capitalize">unfortunately, there are no works to display.</h2>
     )
   };
   //w-full mx-8 md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg
