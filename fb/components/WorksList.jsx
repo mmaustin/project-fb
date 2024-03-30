@@ -54,7 +54,7 @@ const WorksList = async ({ authorId, authorName }) => {
   //mt-8 w-96 lg:w-full flex flex-wrap justify-center items-center md:flex-wrap
 
   return (
-    <div className="carousel rounded-box w-full mt-4 mb-4 shadow-2xl">
+    <div className="carousel rounded-box  mt-4 mb-4 shadow-2xl">
       {displayWorks}
     </div>
   )

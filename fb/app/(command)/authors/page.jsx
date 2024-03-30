@@ -14,14 +14,14 @@ const ShowAuthors = async () => {
 
   const authUser = await authUserCheck(userId);
 
-  if (authUser.length >= 1) {
-    redirect(`/authors/${authUser[0]._id}`)
-    // return (
-    //   <div className="w-full flex flex-col justify-center items-center">
-    //     <UserHasAuthor establishedAuthor={userId} />
-    //   </div>
-    // )
-  };
+  // if (authUser.length >= 1) {
+  //   redirect(`/authors/${authUser[0]._id}`)
+  //   // return (
+  //   //   <div className="w-full flex flex-col justify-center items-center">
+  //   //     <UserHasAuthor establishedAuthor={userId} />
+  //   //   </div>
+  //   // )
+  // };
 
   //const user = await currentUser();
   //Both values remain the same after repeated logout/logins, good for createdBy model attributes
