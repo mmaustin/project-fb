@@ -21,21 +21,21 @@ const WorksList = async ({ authorId, authorName }) => {
   const displayWorks = allAuthorsWorks.map(work => {
     let workID = work._id.toString();
     return <div key={work._id} className="carousel-item w-full mx-8  flex flex-col justify-center items-start rounded-lg shadow-lg">
-      <h4 className="text-lg capitalize ml-2">
+      <h4 className="text-md capitalize ml-2">
         {work.title}
       </h4>
-      <h4 className="text-lg capitalize ml-2">
+      <h4 className="text-md capitalize ml-2">
         {work.genre}
       </h4>
       <h4 className=" text-md capitalize text-info ml-2">
         {work.synopsis}
       </h4>
       {authorName !== work.authorName &&
-        <h4 className="text-lg capitalize ml-2">
+        <h4 className="text-md capitalize ml-2">
           {work.authorName}
         </h4>
       }
-      <h4 className="text-lg capitalize ml-2">
+      <h4 className="text-md capitalize ml-2">
         {work.writingStage}
       </h4>
       <div className="mb-2 ml-2">
