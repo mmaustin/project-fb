@@ -14,10 +14,11 @@ const AuthorList = async () => {
     )
   };
   //carousel-item w-full mx-8 md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg
-  const authorsList = allAuthors.map(author => {
+  const authorsList = allAuthors.map((author, i) => {
     if (author.publicProfile === "Public") {
       let authorID = author._id.toString();
       return <div key={author._id} className="carousel-item w-full mx-8 flex flex-col justify-center items-start rounded-lg shadow-lg mt-2">
+        <h6 className="ml-2 font-semibold underline">{`${i + 1} of ${allAuthors.length}`}</h6>
         <h4 className="text-md capitalize ml-2">
           {author.authorName}
         </h4>
