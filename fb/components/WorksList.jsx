@@ -17,7 +17,7 @@ const WorksList = async ({ authorId, authorName }) => {
       <h2 className="mt-8 font-medium text-lg capitalize">unfortunately, there are no works to display.</h2>
     )
   };
-  //w-full mx-8 md:w-80 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg
+
   const displayWorks = allAuthorsWorks.map(work => {
     let workID = work._id.toString();
     return <div key={work._id} className="carousel-item w-full mx-8  flex flex-col justify-center items-start rounded-lg shadow-lg">
@@ -49,9 +49,6 @@ const WorksList = async ({ authorId, authorName }) => {
       </div>
     </div>
   })
-
-  //see NoteList component, have to iterate over allAuthorsWorks array outside of jsx in order to access the work._id.  Need to pass it as a prop to WorkDelete component.
-  //mt-8 w-96 lg:w-full flex flex-wrap justify-center items-center md:flex-wrap
 
   return (
     <div className="carousel rounded-box  mt-4 mb-4 shadow-2xl">

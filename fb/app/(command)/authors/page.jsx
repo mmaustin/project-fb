@@ -15,17 +15,9 @@ const ShowAuthors = async () => {
   const authUser = await authUserCheck(userId);
 
   if (authUser.length >= 1) {
-    redirect(`/authors/${authUser[0]._id}`)
-    // return (
-    //   <div className="w-full flex flex-col justify-center items-center">
-    //     <UserHasAuthor establishedAuthor={userId} />
-    //   </div>
-    // )
+    redirect(`/authors/${authUser[0]._id}`);
   };
 
-  //const user = await currentUser();
-  //Both values remain the same after repeated logout/logins, good for createdBy model attributes
-  //console.log(userId, user.primaryEmailAddressId);
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <HydrationBoundary state={dehydrate(queryClient)}>
@@ -34,10 +26,6 @@ const ShowAuthors = async () => {
       <p className="capitalize mt-4 font-semibold underline">Fellow Authors</p>
       <AuthorList />
     </div>
-    // <div className="max-w-lg">
-    //   <AuthorForm />
-    //   <AuthorList />
-    // </div>
   )
 }
 export default ShowAuthors;

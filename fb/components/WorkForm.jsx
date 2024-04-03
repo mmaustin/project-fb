@@ -7,8 +7,6 @@ import toast from "react-hot-toast";
 
 
 const WorkForm = ({ workAuthor }) => {
-  // const workAuthor = await getSingleAuthor(authorId);
-  //console.log(workAuthor);
 
   const [workData, setWorkData] = useState({
     title: "",
@@ -69,7 +67,6 @@ const WorkForm = ({ workAuthor }) => {
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={workData.authorName} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={workData.createdBy} required />
         <select onChange={handleInputChange} className="select select-primary join-item w-full rounded-lg" name="writingStage" value={workData.writingStage} >
-          {/* <option >Public or Private?</option> */}
           {writingStateOptions}
         </select>
         <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">New Work</button>
