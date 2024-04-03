@@ -20,8 +20,8 @@ const SingleWorkPage = async ({ params }) => {
         <h4 className="text-lg capitalize">
           {work.genre}
         </h4>
-        <h4 className="tooltip text-md capitalize text-info" data-tip={work.synopsis}>
-          Synopsis
+        <h4 className="text-md capitalize text-info">
+          {work.synopsis}
         </h4>
         <h4 className="text-lg capitalize">
           {work.authorName}

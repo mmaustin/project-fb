@@ -55,6 +55,7 @@ const EditAuthorForm = ({ author }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
+      <p className="capitalize font-semibold m-4 underline">edit your attributes</p>
       <div className="w-80 md:w-96 flex flex-col">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Name" name="authorName" value={authorData.authorName} required />
         <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg" placeholder="Style" name="aboutMe" value={authorData.aboutMe} required />
