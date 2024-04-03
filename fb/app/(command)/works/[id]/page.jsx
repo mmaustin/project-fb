@@ -13,7 +13,7 @@ const SingleWorkPage = async ({ params }) => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <div key={work._id} className="w-80 md:w-96 mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 border rounded-lg shadow-lg">
+      <div key={work._id} className="w-80 md:w-96 mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 rounded-lg shadow-lg">
         <h4 className="text-lg capitalize">
           {work.title}
         </h4>

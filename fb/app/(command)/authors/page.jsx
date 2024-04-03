@@ -31,6 +31,7 @@ const ShowAuthors = async () => {
       <HydrationBoundary state={dehydrate(queryClient)}>
         <AuthorForm authUser={userId} />
       </HydrationBoundary>
+      <p className="capitalize mt-4 font-semibold">Fellow Authors</p>
       <AuthorList />
     </div>
     // <div className="max-w-lg">
