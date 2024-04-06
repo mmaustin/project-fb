@@ -1,11 +1,15 @@
 import { getAuthorWithAuth } from "@/utils/actions";
+import AuthorNotesDisplay from "./AuthorNotesDisplay";
 
 const AuthorChart = async ({ authorId }) => {
 
   const author = await getAuthorWithAuth(authorId);
-  console.log(author);
+
   return (
-    <div>AuthorChart</div>
+    <div className="">
+      <div className="capitalize font-bold">here are your stats, {author.authorName}!</div>
+      <AuthorNotesDisplay />
+    </div>
   )
 }
 export default AuthorChart;
