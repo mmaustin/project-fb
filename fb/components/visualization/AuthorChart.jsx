@@ -1,7 +1,9 @@
+import { getAuthorWithAuth } from "@/utils/actions";
 
+const AuthorChart = async ({ authorId }) => {
 
-const AuthorChart = () => {
-
+  const author = await getAuthorWithAuth(authorId);
+  console.log(author);
   return (
     <div>AuthorChart</div>
   )

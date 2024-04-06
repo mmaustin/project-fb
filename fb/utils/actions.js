@@ -35,6 +35,15 @@ export const getSingleAuthor = async (authorId) => {
   }
 };
 
+export const getAuthorWithAuth = async (authId) => {
+  try {
+    await connectToDB();
+    return await Author.findOne({ authUser: authId });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile }) => {
 
   const ZodAuthor = z.object({
