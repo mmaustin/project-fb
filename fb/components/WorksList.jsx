@@ -1,24 +1,24 @@
 
-import { getAuthorsWorks, getAllWorks } from "@/utils/actions";
+import { getAuthorsWorks, getAllWorks, getSingleAuthor } from "@/utils/actions";
 import Link from "next/link";
 import WorkDelete from "./WorkDelete";
 
 const WorksList = async ({ authorId, authorName }) => {
-  let allAuthorsWorks;
+  let allRouteWorks;
 
   if (authorId) {
-    allAuthorsWorks = await getAuthorsWorks(authorId);
+    allRouteWorks = await getAuthorsWorks(authorId);
   } else {
-    allAuthorsWorks = await getAllWorks();
+    allRouteWorks = await getAllWorks();
   }
 
-  if (allAuthorsWorks.length === 0) {
+  if (allRouteWorks.length === 0) {
     return (
       <h2 className="mt-8 font-medium text-lg capitalize">unfortunately, there are no works to display.</h2>
     )
   };
 
-  const displayWorks = allAuthorsWorks.map(work => {
+  const displayWorks = allRouteWorks.map(work => {
     let workID = work._id.toString();
     return <div key={work._id} className="carousel-item w-full mx-8  flex flex-col justify-center items-start rounded-lg shadow-lg">
       <h4 className="text-md capitalize ml-2">
@@ -51,9 +51,16 @@ const WorksList = async ({ authorId, authorName }) => {
   })
 
   return (
-    <div className="carousel rounded-box  mt-4 mb-4 shadow-2xl">
-      {displayWorks}
-    </div>
+    <>
+      {!authorId &&
+        <p className="text-lg uppercase font-bold">
+          scroll the works
+        </p>
+      }
+      <div className="carousel rounded-box  mt-4 mb-4 shadow-2xl">
+        {displayWorks}
+      </div>
+    </>
   )
 }
 export default WorksList;
