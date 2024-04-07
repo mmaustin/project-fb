@@ -14,6 +14,9 @@ const NoteList = async ({ workId }) => {
   const displayNotes = workNotes.map(note => {
     let noteID = note._id.toString();
     return <div key={note._id} className="carousel-item w-full mx-8 flex flex-col justify-center items-start rounded-lg shadow-lg mt-2">
+      <h4 className="text-md uppercase ml-2 font-bold">
+        created: {new Date(note.createdAt).toDateString()}
+      </h4>
       <h4 className="text-md capitalize ml-2">
         {note.category}
       </h4>

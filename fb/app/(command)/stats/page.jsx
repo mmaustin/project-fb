@@ -6,7 +6,9 @@ const AuthorStats = () => {
   const { userId } = auth();
 
   return (
-    <AuthorChart authorId={userId} />
+    <div className="w-full">
+      <AuthorChart authorId={userId} />
+    </div>
   )
 }
-export default AuthorStats
+export default AuthorStats;
