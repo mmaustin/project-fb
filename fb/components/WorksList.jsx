@@ -38,15 +38,17 @@ const WorksList = async ({ authorId, authorName }) => {
       <h4 className="text-md capitalize ml-2">
         {work.writingStage}
       </h4>
-      <div className="mb-2 ml-2">
-        <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs rounded-lg" >
-          Work Page
-        </Link>
-        <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
-          Edit Work
-        </Link>
-        <WorkDelete workId={workID} />
-      </div>
+      {authorId &&
+        <div className="mb-2 ml-2">
+          <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs rounded-lg" >
+            Work Page
+          </Link>
+          <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
+            Edit Work
+          </Link>
+          <WorkDelete workId={workID} />
+        </div>
+      }
     </div>
   })
 
