@@ -8,7 +8,9 @@ ChartJS.register(
   ArcElement, Tooltip, Legend, CategoryScale, LinearScale, Title, BarElement
 );
 
-const AuthorNotesDisplay = () => {
+const AuthorNotesDisplay = ({ authorsName }) => {
+  console.log(authorsName);
+
   const [chartData, setChartData] = useState({
     datasets: [],
   });
@@ -32,7 +34,7 @@ const AuthorNotesDisplay = () => {
   return (
     <>
       <div>Author Notes Display</div>
-      <Bar className="border" data={chartData} options={chartOptions} />
+      <Bar className="" data={chartData} options={chartOptions} />
     </>
   )
 }

@@ -205,6 +205,15 @@ export const getWorkNotes = async (workId) => {
   }
 };
 
+export const getAuthorNotes = async (authorsName) => {
+  try {
+    await connectToDB();
+    return await Note.find({ authorName: authorsName });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const noteDelete = async (noteId, workID) => {
   try {
     await connectToDB();

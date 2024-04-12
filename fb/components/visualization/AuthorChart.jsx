@@ -8,7 +8,7 @@ const AuthorChart = async ({ authorId }) => {
   return (
     <div className="">
       <div className="capitalize font-bold">here are your stats, {author.authorName}!</div>
-      <AuthorNotesDisplay />
+      <AuthorNotesDisplay authorsName={author.authorName} />
     </div>
   )
 }

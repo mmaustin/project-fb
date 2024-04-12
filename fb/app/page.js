@@ -1,8 +1,10 @@
 import ThemeToggle from "@/components/ThemeToggle";
+import { auth } from "@clerk/nextjs";
 import Link from "next/link";
 
-
 const HomePage = () => {
+  const { userId } = auth();
+  console.log(userId);
   //   // cache no-store is necessary. otherwise, you'll get the very first fetch every time--i think.
 
   //   // const response = await fetch('http://localhost:3000/api/contestants', { cache: 'no-store' });
@@ -11,9 +13,9 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="m-2">
+      {/* <div className="m-2">
         <ThemeToggle />
-      </div>
+      </div> */}
       <div className="hero min-h-screen ">
         <div className="hero-content text-center">
           <div className="max-w-3xl">
