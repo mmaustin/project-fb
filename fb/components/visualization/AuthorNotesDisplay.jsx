@@ -8,8 +8,8 @@ ChartJS.register(
   ArcElement, Tooltip, Legend, CategoryScale, LinearScale, Title, BarElement
 );
 
-const AuthorNotesDisplay = ({ authorsName }) => {
-  console.log(authorsName);
+const AuthorNotesDisplay = ({ authorsNotes }) => {
+  console.log(authorsNotes);
 
   const [chartData, setChartData] = useState({
     datasets: [],
