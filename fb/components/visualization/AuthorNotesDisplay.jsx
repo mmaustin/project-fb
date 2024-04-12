@@ -34,7 +34,8 @@ const AuthorNotesDisplay = ({ authorsNotes }) => {
   return (
     <>
       <div>Author Notes Display</div>
-      <Bar className="" data={chartData} options={chartOptions} />
+      {/* options={chartOptions} */}
+      <Bar className="" data={chartData} />
     </>
   )
 }
