@@ -27,27 +27,27 @@ const AuthorNotesDisplay = ({ authorsNotes }) => {
     };
   });
 
-  console.log(countObj);
+  //console.log(countObj);
 
-  // const noteData = {
-  //   labels: [
-  //     'Red',
-  //     'Blue',
-  //     'Yellow',
-  //     'Purple'
-  //   ],
-  //   datasets: [{
-  //     label: 'Category Data',
-  //     data: [300, 50, 100],
-  //     backgroundColor: [
-  //       'rgb(255, 99, 132)',
-  //       'rgb(54, 162, 235)',
-  //       'rgb(255, 205, 86)',
-  //       'rgb(160,32,240)'
-  //     ],
-  //     hoverOffset: 4
-  //   }]
-  // };
+  const noteData = {
+    labels: [
+      'Musing',
+      'Character',
+      'Plot',
+      'Setting'
+    ],
+    datasets: [{
+      label: 'Category Count',
+      data: [countObj.musing, countObj.character, countObj.plot, countObj.setting],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)',
+        'rgb(160,32,240)'
+      ],
+      hoverOffset: 4
+    }]
+  };
 
   // const [chartData, setChartData] = useState({
   //   datasets: [],
@@ -73,7 +73,7 @@ const AuthorNotesDisplay = ({ authorsNotes }) => {
     <>
       <div>Author Notes Display</div>
       {/* options={chartOptions} */}
-      {/* <Bar className="" data={chartData} /> */}
+      <Bar className="" data={noteData} />
     </>
   )
 }
