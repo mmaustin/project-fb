@@ -11,7 +11,8 @@ const AuthorChart = async ({ authorId }) => {
   }
 
   const noteContents = notes.map(note => {
-    return { noteContent: note.content, noteCategory: note.category, noteAuthor: note.authorName, createdAt: note.createdAt };
+    let noteCreatedAt = new Date(note.createdAt).toDateString()
+    return { noteContent: note.content, noteCategory: note.category, noteAuthor: note.authorName, createdAt: noteCreatedAt };
   });
 
   return (

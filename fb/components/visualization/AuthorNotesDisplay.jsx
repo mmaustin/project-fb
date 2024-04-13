@@ -9,7 +9,24 @@ ChartJS.register(
 );
 
 const AuthorNotesDisplay = ({ authorsNotes }) => {
-  console.log(authorsNotes);
+
+  let categoryCount = authorsNotes.map(note => {
+    let countObj = { musing: 0, character: 0, plot: 0, setting: 0 };
+    if (note.noteCategory === 'Musings') {
+      return countObj['musing'] += 1;
+    };
+    if (note.noteCategory === 'Character') {
+      return countObj['character'] += 1;
+    };
+    if (note.noteCategory === 'Plot') {
+      return countObj['plot'] += 1;
+    };
+    if (note.noteCategory === 'Setting') {
+      return countObj['setting'] += 1;
+    };
+  });
+
+  console.log(categoryCount);
 
   const [chartData, setChartData] = useState({
     datasets: [],
