@@ -10,49 +10,70 @@ ChartJS.register(
 
 const AuthorNotesDisplay = ({ authorsNotes }) => {
 
-  let categoryCount = authorsNotes.map(note => {
-    let countObj = { musing: 0, character: 0, plot: 0, setting: 0 };
+  const countObj = { musing: 0, character: 0, plot: 0, setting: 0 };
+
+  authorsNotes.map(note => {
     if (note.noteCategory === 'Musings') {
-      return countObj['musing'] += 1;
+      countObj['musing'] += 1;
     };
     if (note.noteCategory === 'Character') {
-      return countObj['character'] += 1;
+      countObj['character'] += 1;
     };
     if (note.noteCategory === 'Plot') {
-      return countObj['plot'] += 1;
+      countObj['plot'] += 1;
     };
     if (note.noteCategory === 'Setting') {
-      return countObj['setting'] += 1;
+      countObj['setting'] += 1;
     };
   });
 
-  console.log(categoryCount);
+  console.log(countObj);
 
-  const [chartData, setChartData] = useState({
-    datasets: [],
-  });
+  // const noteData = {
+  //   labels: [
+  //     'Red',
+  //     'Blue',
+  //     'Yellow',
+  //     'Purple'
+  //   ],
+  //   datasets: [{
+  //     label: 'Category Data',
+  //     data: [300, 50, 100],
+  //     backgroundColor: [
+  //       'rgb(255, 99, 132)',
+  //       'rgb(54, 162, 235)',
+  //       'rgb(255, 205, 86)',
+  //       'rgb(160,32,240)'
+  //     ],
+  //     hoverOffset: 4
+  //   }]
+  // };
 
-  const [chartOptions, setChartOptions] = useState({});
+  // const [chartData, setChartData] = useState({
+  //   datasets: [],
+  // });
 
-  useEffect(() => {
-    setChartData({
-      labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
-      datasets: [
-        {
-          label: 'Sales $',
-          data: [1812, 9876, 8987, 3987, 8765, 9263, 1234],
-          borderColor: 'rgb(54,162,235)',
-          backgroundColor: 'rgb(53,162,235,0.4)',
-        }
-      ]
-    })
-  }, [])
+  // const [chartOptions, setChartOptions] = useState({});
+
+  // useEffect(() => {
+  //   setChartData({
+  //     labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
+  //     datasets: [
+  //       {
+  //         label: 'Sales $',
+  //         data: [1812, 9876, 8987, 3987, 8765, 9263, 1234],
+  //         borderColor: 'rgb(54,162,235)',
+  //         backgroundColor: 'rgb(53,162,235,0.4)',
+  //       }
+  //     ]
+  //   })
+  // }, [])
 
   return (
     <>
       <div>Author Notes Display</div>
       {/* options={chartOptions} */}
-      <Bar className="" data={chartData} />
+      {/* <Bar className="" data={chartData} /> */}
     </>
   )
 }
