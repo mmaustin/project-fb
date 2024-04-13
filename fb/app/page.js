@@ -12,10 +12,10 @@ const HomePage = () => {
   //   // console.log(data);
 
   return (
-    <>
-      {/* <div className="m-2">
+    <div className="flex flex-col justify-center items-start">
+      <div className="m-2 w-40 w align-middle">
         <ThemeToggle />
-      </div> */}
+      </div>
       <div className="hero min-h-screen ">
         <div className="hero-content text-center">
           <div className="max-w-3xl">
@@ -27,7 +27,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 export default HomePage;
