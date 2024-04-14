@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { Bar, Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, Title, BarElement, DoughnutController } from "chart.js";
 
@@ -8,11 +8,11 @@ ChartJS.register(
   ArcElement, Tooltip, Legend, CategoryScale, LinearScale, Title, BarElement, DoughnutController
 );
 
-const AuthorNotesDisplay = ({ authorsNotes }) => {
+const AuthorNotesDisplay = ({ notesToChart }) => {
 
   const countObj = { musing: 0, character: 0, plot: 0, setting: 0 };
 
-  authorsNotes.map(note => {
+  notesToChart.map(note => {
     if (note.noteCategory === 'Musings') {
       countObj['musing'] += 1;
     };
@@ -71,7 +71,7 @@ const AuthorNotesDisplay = ({ authorsNotes }) => {
 
   return (
     <div className="w-1/2 h-1/2">
-      <div>Author Notes Display</div>
+      {/* <div>Author Notes Display</div> */}
       {/* options={chartOptions} */}
       <Doughnut className="" data={noteData} />
     </div>

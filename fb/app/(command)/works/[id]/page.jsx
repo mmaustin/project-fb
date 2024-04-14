@@ -1,6 +1,6 @@
 import NoteForm from "@/components/NoteForm";
 import NoteList from "@/components/NoteList";
-import { getSingleWork } from "@/utils/actions";
+import { getSingleWork, getWorkNotes } from "@/utils/actions";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import Link from "next/link";
 
@@ -8,6 +8,9 @@ const SingleWorkPage = async ({ params }) => {
   const queryClient = new QueryClient();
 
   const work = await getSingleWork(params.id);
+
+  const workNotes = await getWorkNotes(params.id);
+  //console.log(workNotes);
 
   const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString(), workId: work._id.toString() };
 

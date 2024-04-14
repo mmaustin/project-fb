@@ -18,7 +18,7 @@ const AuthorChart = async ({ authorId }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="capitalize font-bold">here are your stats, {author.authorName}!</div>
-      <AuthorNotesDisplay authorsNotes={noteContents} />
+      <AuthorNotesDisplay notesToChart={noteContents} />
     </div>
   )
 }
