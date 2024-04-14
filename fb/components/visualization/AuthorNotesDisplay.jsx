@@ -70,11 +70,11 @@ const AuthorNotesDisplay = ({ authorsNotes }) => {
   // }, [])
 
   return (
-    <>
+    <div className="w-1/2 h-1/2">
       <div>Author Notes Display</div>
       {/* options={chartOptions} */}
       <Doughnut className="" data={noteData} />
-    </>
+    </div>
   )
 }
 export default AuthorNotesDisplay;
