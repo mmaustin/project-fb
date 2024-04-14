@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, Title, BarElement } from "chart.js";
+import { Bar, Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, Title, BarElement, DoughnutController } from "chart.js";
 
 ChartJS.register(
-  ArcElement, Tooltip, Legend, CategoryScale, LinearScale, Title, BarElement
+  ArcElement, Tooltip, Legend, CategoryScale, LinearScale, Title, BarElement, DoughnutController
 );
 
 const AuthorNotesDisplay = ({ authorsNotes }) => {
@@ -45,7 +45,7 @@ const AuthorNotesDisplay = ({ authorsNotes }) => {
         'rgb(255, 205, 86)',
         'rgb(160,32,240)'
       ],
-      hoverOffset: 4
+      hoverOffset: 4,
     }]
   };
 
@@ -73,7 +73,7 @@ const AuthorNotesDisplay = ({ authorsNotes }) => {
     <>
       <div>Author Notes Display</div>
       {/* options={chartOptions} */}
-      <Bar className="" data={noteData} />
+      <Doughnut className="" data={noteData} />
     </>
   )
 }
