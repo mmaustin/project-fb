@@ -1,5 +1,6 @@
 import NoteForm from "@/components/NoteForm";
 import NoteList from "@/components/NoteList";
+import WorkNotesChart from "@/components/visualization/WorkNotesChart";
 import { getSingleWork, getWorkNotes } from "@/utils/actions";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import Link from "next/link";
@@ -11,6 +12,11 @@ const SingleWorkPage = async ({ params }) => {
 
   const workNotes = await getWorkNotes(params.id);
   //console.log(workNotes);
+
+  const noteContents = workNotes.map(note => {
+    let noteCreatedAt = new Date(note.createdAt).toDateString()
+    return { noteContent: note.content, noteCategory: note.category, noteAuthor: note.authorName, createdAt: noteCreatedAt };
+  });
 
   const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString(), workId: work._id.toString() };
 
@@ -44,6 +50,7 @@ const SingleWorkPage = async ({ params }) => {
       <p className="capitalize mt-4 font-semibold underline">notes to {work.title}</p>
       <div className="" >
         <NoteList workId={params.id} />
+        <WorkNotesChart notesToChart={noteContents} />
       </div>
     </div>
   )
