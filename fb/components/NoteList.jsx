@@ -30,7 +30,7 @@ const NoteList = async ({ workId }) => {
   })
   //mt-8 w-96 lg:w-full flex flex-wrap justify-center items-center md:flex-wrap
   return (
-    <div className="w-80 lg:w-96 carousel rounded-box mt-4 mb-4 shadow-2xl">
+    <div className="w-80  md:h-80 carousel rounded-box mt-4 mb-4 shadow-2xl">
       {displayNotes}
     </div>
   )

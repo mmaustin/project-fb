@@ -48,7 +48,7 @@ const SingleWorkPage = async ({ params }) => {
         </HydrationBoundary>
       </div>
       <p className="capitalize my-4 font-semibold underline">{work.title} Notes' Hub</p>
-      <div className="w-80 md:w-full flex flex-col md:flex-row justify-between items-center">
+      <div className="w-80 md:w-full flex flex-col md:flex-row justify-around items-center">
         <div className="" >
           <NoteList workId={params.id} />
         </div>
