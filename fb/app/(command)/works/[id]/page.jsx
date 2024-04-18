@@ -47,12 +47,14 @@ const SingleWorkPage = async ({ params }) => {
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
       </div>
-      <p className="capitalize mt-4 font-semibold underline">notes to {work.title}</p>
-      <div className="" >
-        <NoteList workId={params.id} />
-      </div>
-      <div className="">
-        <WorkNotesChart notesToChart={noteContents} />
+      <p className="capitalize my-4 font-semibold underline">{work.title} Notes' Hub</p>
+      <div className="w-80 md:w-full flex flex-col md:flex-row justify-between items-center">
+        <div className="" >
+          <NoteList workId={params.id} />
+        </div>
+        <div className="">
+          <WorkNotesChart notesToChart={noteContents} />
+        </div>
       </div>
     </div>
   )
