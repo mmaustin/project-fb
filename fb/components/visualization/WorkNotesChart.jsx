@@ -49,7 +49,7 @@ const WorkNotesChart = ({ notesToChart }) => {
   };
 
   return (
-    <div className="w-auto h-auto">
+    <div className="w-80 md:w-96 carousel rounded-box mt-4 mb-4 shadow-2xl flex justify-center items-center">
       <Doughnut className="" data={noteData} />
     </div>
   )
