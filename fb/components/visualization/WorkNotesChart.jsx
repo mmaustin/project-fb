@@ -49,7 +49,7 @@ const WorkNotesChart = ({ notesToChart }) => {
   };
 
   return (
-    <div className="w-1/2 h-1/2">
+    <div className="w-auto h-auto">
       <Doughnut className="" data={noteData} />
     </div>
   )

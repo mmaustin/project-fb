@@ -48,8 +48,11 @@ const SingleWorkPage = async ({ params }) => {
         </HydrationBoundary>
       </div>
       <p className="capitalize mt-4 font-semibold underline">notes to {work.title}</p>
-      <div className="" >
+      <div className="border" >
         <NoteList workId={params.id} />
+
+      </div>
+      <div className="w-80 md:w-96">
         <WorkNotesChart notesToChart={noteContents} />
       </div>
     </div>
