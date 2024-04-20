@@ -1,9 +1,8 @@
-
 import { getAuthorsWorks, getAllWorks, getSingleAuthor } from "@/utils/actions";
 import Link from "next/link";
 import WorkDelete from "./WorkDelete";
 
-const WorksList = async ({ authorId, authorIdAll, authorName }) => {
+const AuthorWorksList = async ({ authorId, authorName }) => {
   let allRouteWorks;
   //This if else is to handle the two cases when I want to display all the works and the one case when I just want to display the author's works.
   if (authorId) {
@@ -69,4 +68,4 @@ const WorksList = async ({ authorId, authorIdAll, authorName }) => {
     </>
   )
 }
-export default WorksList;
+export default AuthorWorksList;

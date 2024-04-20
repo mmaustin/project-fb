@@ -1,13 +1,14 @@
 import WorkForm from "@/components/WorkForm";
-import WorksList from "@/components/WorksList";
+//import WorksList from "@/components/WorksList";
 import Link from "next/link";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import { getSingleAuthor } from "@/utils/actions";
 import AuthorDelete from "@/components/AuthorDelete";
+import AuthorWorksList from "@/components/AuthorWorksList";
 
 
 const AuthorPage = async ({ params }) => {
-  console.log(params);
+  //console.log(params);
   const queryClient = new QueryClient();
   const author = await getSingleAuthor(params.id);
 
@@ -29,7 +30,7 @@ const AuthorPage = async ({ params }) => {
       </HydrationBoundary>
       <p className="capitalize mt-4 font-semibold underline">your works</p>
       <div className="w-80 md:w-96">
-        <WorksList authorId={authorParamId} authorName={author.authorName} />
+        <AuthorWorksList authorId={authorParamId} authorName={author.authorName} />
       </div>
     </div>
   )
