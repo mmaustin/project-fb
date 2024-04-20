@@ -1,21 +1,21 @@
-import { getAuthorsWorks, getAllWorks, getSingleAuthor } from "@/utils/actions";
+import { getAuthorsWorks } from "@/utils/actions";
 import Link from "next/link";
 import WorkDelete from "./WorkDelete";
 
 const AuthorWorksList = async ({ authorId, authorName }) => {
   let allRouteWorks;
   //This if else is to handle the two cases when I want to display all the works and the one case when I just want to display the author's works.
-  if (authorId) {
-    allRouteWorks = await getAuthorsWorks(authorId);
-  } else if (authorIdAll) {
-    allRouteWorks = await getAllWorks();
-  } else {
-    allRouteWorks = await getAllWorks();
-  }
+  // if (authorId) {
+  allRouteWorks = await getAuthorsWorks(authorId);
+  // } else if (authorIdAll) {
+  //   allRouteWorks = await getAllWorks();
+  // } else {
+  //   allRouteWorks = await getAllWorks();
+  // }
 
   if (allRouteWorks.length === 0) {
     return (
-      <h2 className="mt-8 font-medium text-lg capitalize">unfortunately, there are no works to display.</h2>
+      <h2 className="mt-8 font-medium text-lg capitalize">There are no works to display.</h2>
     )
   };
 
@@ -57,11 +57,6 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
 
   return (
     <>
-      {!authorId &&
-        <p className="text-lg uppercase font-bold">
-          scroll the works
-        </p>
-      }
       <div className="carousel rounded-box  mt-4 mb-4 shadow-2xl">
         {displayWorks}
       </div>
