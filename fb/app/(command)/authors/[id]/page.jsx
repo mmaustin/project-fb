@@ -7,6 +7,7 @@ import AuthorDelete from "@/components/AuthorDelete";
 
 
 const AuthorPage = async ({ params }) => {
+  console.log(params);
   const queryClient = new QueryClient();
   const author = await getSingleAuthor(params.id);
 

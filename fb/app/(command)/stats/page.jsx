@@ -6,7 +6,7 @@ const AuthorStats = () => {
   const { userId } = auth();
 
   return (
-    <div className="w-full">
+    <div className="w-96 border">
       <AuthorChart authorId={userId} />
     </div>
   )
