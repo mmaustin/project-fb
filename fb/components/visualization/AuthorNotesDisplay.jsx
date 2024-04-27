@@ -47,8 +47,8 @@ const AuthorNotesDisplay = ({ notesToChart }) => {
   };
 
   return (
-    <div className="w-1/2 h-1/2">
-      <Doughnut className="" data={noteData} />
+    <div className="">
+      <Doughnut className='border' data={noteData} />
     </div>
   )
 }
