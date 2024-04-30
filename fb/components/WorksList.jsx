@@ -21,6 +21,7 @@ const WorksList = async ({ authorId, authorName }) => {
     let workAuthorId = work.createdBy.toString();
     //console.log(workAuthorId);
     return <div key={work._id} className="carousel-item w-full mx-8  flex flex-col justify-center items-start rounded-lg shadow-lg">
+      <h5 className="ml-2 text-info mb-4">{i + 1} of {allRouteWorksLength}</h5>
       {authorName !== work.authorName &&
         <h4 className="text-md capitalize ml-2">
           {work.authorName}
@@ -32,14 +33,14 @@ const WorksList = async ({ authorId, authorName }) => {
       <h4 className="text-md capitalize ml-2">
         {work.genre}
       </h4>
-      <h4 className="text-md capitalize ml-2">
+      <h4 className="text-md capitalize ml-2 mb-2">
         {work.writingStage}
       </h4>
-      <h4 className=" text-md capitalize ml-2">
+      <h4 className=" text-md text-info capitalize ml-2">
         {work.synopsis}
       </h4>
       {authorId === workAuthorId &&
-        <div className="mb-2 ml-2">
+        <div className="my-2 ml-2">
           <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs rounded-lg" >
             Work Page
           </Link>
@@ -49,7 +50,6 @@ const WorksList = async ({ authorId, authorName }) => {
           <WorkDelete workId={workID} />
         </div>
       }
-      <h5 className="ml-2 text-info">{i + 1} of {allRouteWorksLength}</h5>
     </div>
   })
 
