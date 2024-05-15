@@ -9,7 +9,7 @@ const Works = async () => {
   const { _id, authorName } = author;
 
   return (
-    <div className="w-96 md:w-2/3 rounded-lg shadow-2xl flex flex-wrap justify-center items-center">
+    <div className="mx-6 md:mx-0 w-96 md:w-2/3 rounded-lg shadow-2xl flex flex-wrap justify-center items-center">
       <WorksList authorId={_id.toString()} authorName={authorName} />
     </div>
   )
