@@ -57,7 +57,7 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
 
   return (
     <>
-      <div className="carousel rounded-box  mt-4 mb-4 shadow-2xl">
+      <div className="carousel rounded-box w-80 md:w-96  mt-4 mb-4 shadow-2xl">
         {displayWorks}
       </div>
     </>
