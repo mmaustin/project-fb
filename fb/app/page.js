@@ -10,7 +10,6 @@ const HomePage = () => {
       <div className="my-10 w-full flex justify-center items-center">
         <div className="w-full flex justify-between items-center">
           <ThemeToggle />
-          {/* <Link href="/about" className="btn btn-secondary flex w-32 items-center rounded-lg ">About Page</Link> */}
         </div>
       </div>
       <div className="mt-32 flex justify-center items-center">
