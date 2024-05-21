@@ -47,10 +47,10 @@ export const getAuthorWithAuth = async (authId) => {
 export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workInfluence, authUser, publicProfile }) => {
 
   const ZodAuthor = z.object({
-    authorName: z.string().min(1),
+    authorName: z.string().min(1).max(40),
     aboutMe: z.string().min(25).max(250),
-    authorInfluence: z.string().min(1),
-    workInfluence: z.string().min(1),
+    authorInfluence: z.string().min(1).max(40),
+    workInfluence: z.string().min(1).max(40),
   });
   try {
     await connectToDB();
