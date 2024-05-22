@@ -11,7 +11,6 @@ const SingleWorkPage = async ({ params }) => {
   const work = await getSingleWork(params.id);
 
   const workNotes = await getWorkNotes(params.id);
-  //console.log(workNotes);
 
   const noteContents = workNotes.map(note => {
     let noteCreatedAt = new Date(note.createdAt).toDateString()

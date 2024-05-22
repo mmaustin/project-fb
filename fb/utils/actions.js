@@ -187,8 +187,8 @@ export const createNote = async ({ content, category, createdBy, authUser, autho
 
     const note = await Note.create({
       content, category, createdBy, authUser, authorName, authorId
-    })
-    console.log(note);
+    });
+
     revalidatePath(`works/${createdBy}`);
     return { newNoteCategory: note.category };
   } catch (error) {
