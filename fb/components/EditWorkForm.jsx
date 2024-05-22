@@ -52,14 +52,10 @@ const EditWorkForm = ({ workToEdit }) => {
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       <div className="w-80 md:w-96 flex flex-col">
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Title" name="workTitle" value={editWorkData.workTitle} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="genre" name="workGenre" value={editWorkData.workGenre} required />
-        <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg" placeholder="Synopsis" name="workSynopsis" value={editWorkData.workSynopsis} required />
-        {/* <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={editWorkData.authUser} required />
-        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={editWorkData.authorName} required />
-        <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={editWorkData.createdBy} required /> */}
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Title (min: 1, max: 40)" name="workTitle" value={editWorkData.workTitle} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Genre (min: 1, max: 40)" name="workGenre" value={editWorkData.workGenre} required />
+        <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg" placeholder="Synopsis (min: 25, max: 250)" name="workSynopsis" value={editWorkData.workSynopsis} required />
         <select onChange={handleInputChange} className="input input-bordered join-item w-full rounded-lg" name="workWritingStage" value={editWorkData.workWritingStage} >
-          {/* <option >Public or Private?</option> */}
           {writingStateOptions}
         </select>
         <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">Edit Work</button>
