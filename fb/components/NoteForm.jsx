@@ -7,9 +7,6 @@ import toast from "react-hot-toast"
 
 
 const NoteForm = ({ workProperties }) => {
-  //console.log(authUser, authorName, authorId);
-  //console.log(workProperties.authorName);
-  //console.log(workProperties);
 
   const [noteData, setNoteData] = useState({
     content: "",
@@ -37,7 +34,6 @@ const NoteForm = ({ workProperties }) => {
   const { mutate, isPending, data } = useMutation({
     mutationFn: async (note) => {
       const newNote = await createNote(note);
-      console.log(newNote);
       if (newNote) {
         toast.success('New Note Created!');
         return newNote;
@@ -61,7 +57,7 @@ const NoteForm = ({ workProperties }) => {
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       <p className="capitalize font-semibold m-4 underline">add a note</p>
       <div className="w-80 md:w-96 flex flex-col">
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Content (minimum 20 characters)" name="content" value={noteData.content} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Note (min: 10, max: 100)" name="content" value={noteData.content} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={noteData.createdBy} required />
         <select onChange={handleInputChange} className="select select-primary join-item w-full rounded-lg" name="category" value={noteData.category} >
           {categoryOptions}
