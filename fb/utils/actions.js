@@ -100,7 +100,7 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
 
 export const createWork = async ({ title, genre, synopsis, authUser, authorName, writingStage, createdBy }) => {
   const ZodWork = z.object({
-    title: z.string().min(1).max(30),
+    title: z.string().min(1).max(40),
     genre: z.string().min(1).max(30),
     synopsis: z.string().min(25).max(250),
   });

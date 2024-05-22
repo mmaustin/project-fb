@@ -60,9 +60,9 @@ const WorkForm = ({ workAuthor }) => {
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       <div className="w-80 md:w-96 flex flex-col">
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="Title" name="title" value={workData.title} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg" placeholder="genre" name="genre" value={workData.genre} required />
-        <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg" placeholder="Synopsis (min - 5, max - 250)" name="synopsis" value={workData.synopsis} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Title (min: 1, max: 40)" name="title" value={workData.title} required />
+        <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Genre (min: 1, max: 30)" name="genre" value={workData.genre} required />
+        <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg capitalize" placeholder="Synopsis (min: 25, max: 250)" name="synopsis" value={workData.synopsis} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={workData.authUser} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={workData.authorName} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={workData.createdBy} required />
