@@ -4,8 +4,10 @@ import { useState } from "react";
 import { BsMoonFill, BsSunFill } from 'react-icons/bs';
 
 const themes = {
-  lofi: 'lofi',
-  black: 'black',
+  corporate: 'corporate',
+  business: 'business',
+  // lofi: 'lofi',
+  // black: 'black',
   colors: {
     blue: '#fad'
   }
@@ -15,10 +17,10 @@ const themes = {
 
 const ThemeToggle = () => {
 
-  const [theme, setTheme] = useState(themes.lofi);
+  const [theme, setTheme] = useState(themes.corporate);
 
   const toggleTheme = () => {
-    const newTheme = theme === themes.lofi ? themes.black : themes.lofi;
+    const newTheme = theme === themes.corporate ? themes.business : themes.corporate;
     document.documentElement.setAttribute('data-theme', newTheme);
     setTheme(newTheme);
   };
