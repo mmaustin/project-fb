@@ -29,7 +29,7 @@ const AuthorPage = async ({ params }) => {
         <WorkForm workAuthor={retrievedAuthor} />
       </HydrationBoundary>
       <p className="capitalize mt-4 font-semibold underline">your works</p>
-      <div className="w-80 md:w-96">
+      <div className="w-80 md:w-96 border border-neutral-50 rounded-lg shadow-lg">
         <AuthorWorksList authorId={authorParamId} authorName={author.authorName} />
       </div>
     </div>
