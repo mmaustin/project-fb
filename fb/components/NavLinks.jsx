@@ -5,7 +5,7 @@ const links = [
   { href: '/authors', label: 'authors' },
   { href: '/works', label: 'works' },
   { href: '/stats', label: 'stats' },
-  // { href: '/encouragements', label: 'encouragements' },
+  { href: '/activity', label: 'activity' },
   { href: '/', label: 'home' }
 ];
 
