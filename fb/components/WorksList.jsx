@@ -19,14 +19,11 @@ const WorksList = async ({ authorId, authorName }) => {
   const displayWorks = allRouteWorks.map((work, i) => {
     let workID = work._id.toString();
     let workAuthorId = work.createdBy.toString();
-    //console.log(workAuthorId);
     return <div key={work._id} className="carousel-item w-full mx-8  flex flex-col justify-center items-start rounded-lg shadow-lg">
       <h5 className="ml-2 text-info mb-4">{i + 1} of {allRouteWorksLength}</h5>
-      {/* {authorName !== work.authorName && */}
       <h4 className="text-lg capitalize ml-2">
         {work.authorName}
       </h4>
-      {/* } */}
       <h4 className="text-md capitalize underline ml-2">
         {work.title}
       </h4>

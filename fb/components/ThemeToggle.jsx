@@ -6,13 +6,9 @@ import { BsMoonFill, BsSunFill } from 'react-icons/bs';
 const themes = {
   corporate: 'corporate',
   business: 'business',
-  // lofi: 'lofi',
-  // black: 'black',
   colors: {
     blue: '#fad'
   }
-  // winter: 'winter',
-  // dracula: 'dracula'
 }
 
 const ThemeToggle = () => {

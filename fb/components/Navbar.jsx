@@ -9,8 +9,6 @@ const links = [
 ];
 
 const Navbar = async () => {
-
-  //const { userId } = auth();
   const user = await currentUser();
 
   return (

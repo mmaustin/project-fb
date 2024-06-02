@@ -8,7 +8,6 @@ const UserHasAuthor = async ({ establishedAuthor }) => {
   //Remember, this will only be one author in production, but i may have multiple author objects displayed for testing purposes.  DON'T CONFUSE MYSELF WITH THIS!!!
 
   const author = await authUserCheck(establishedAuthor);
-  //console.log(author);
   const authorID = author[0]?._id.toString();
 
   return (

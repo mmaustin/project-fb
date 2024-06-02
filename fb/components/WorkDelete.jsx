@@ -7,7 +7,6 @@ const WorkDelete = ({ workId }) => {
   const deleteHandler = async () => {
 
     await workDelete(workId);
-    //redirect('/authors');
   }
 
   return (

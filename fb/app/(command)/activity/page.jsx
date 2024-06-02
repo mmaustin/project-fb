@@ -8,7 +8,7 @@ const AuthorActivityPage = async () => {
   let authorWorks = await getAuthorsWorks(author._id);
   let authorNotes = await getAuthorNotes(author.authorName);
   let allAuthorAssets = [...authorWorks, ...authorNotes];
-  console.log(allAuthorAssets);
+  // console.log(allAuthorAssets);
 
   return (
     <div>Author Activity Page</div>
