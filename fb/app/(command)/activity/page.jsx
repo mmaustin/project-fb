@@ -22,12 +22,34 @@ const AuthorActivityPage = async () => {
     };
   });
 
-  return (
-    <div className=" w-full ">
-      {/* <p>Author Activity Page</p> */}
-      {/* <div className=" ">{allAuthorAssets}</div> */}
-    </div>
+  // const na = allNotes.map((note, i) => {
+  //   <div key={note._id} className="collapse collapse-arrow bg-base-200">
+  //     <input type="radio" name="notes-accordian" defaultChecked />
+  //     <div className="collapse-title text-xl font-medium">
+  //       {note.category}
+  //     </div>
+  //     <div className="collapse-content">
+  //       {note.content}
+  //     </div>
+  //   </div>
+  // })
 
-  )
+  return (
+    <div className=" h-auto">
+      {
+        allNotes.map((note, i) => {
+          return <div key={note._id} className="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="notes-accordian" defaultChecked />
+            <div className="collapse-title text-xl font-medium">
+              {note.category}
+            </div>
+            <div className="collapse-content">
+              {note.content}
+            </div>
+          </div>
+        })
+      }
+    </div>
+  );
 };
 export default AuthorActivityPage;
