@@ -11,25 +11,21 @@ const AuthorActivityPage = async () => {
   let authorNotes = await getAuthorNotes(author.authorName);
   let authorAssets = [...authorWorks, ...authorNotes];
 
-  // let dateGrid = new Array(10).fill('ok')
-  // console.log(dateGrid);
+  let allWorks = [];
+  let allNotes = [];
 
-  const allAuthorAssets = authorAssets.map((asset, i) => {
+  authorAssets.map(asset => {
     if (asset.title) {
-      return (
-        <h3 key={i}>{new Date(asset.createdAt).toDateString()}</h3>
-      );
+      allWorks.push(asset);
     } else {
-      return (
-        <p key={i}>{asset.content}</p>
-      );
+      allNotes.push(asset);
     };
   });
 
   return (
     <div className=" w-full ">
       {/* <p>Author Activity Page</p> */}
-      <div className=" ">{allAuthorAssets}</div>
+      {/* <div className=" ">{allAuthorAssets}</div> */}
     </div>
 
   )
