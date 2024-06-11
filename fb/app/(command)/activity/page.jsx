@@ -9,15 +9,27 @@ const AuthorActivityPage = async () => {
   let author = await getAuthorWithAuth(userId);
   let authorWorks = await getAuthorsWorks(author._id);
   let authorNotes = await getAuthorNotes(author.authorName);
-  let allAuthorAssets = [...authorWorks, ...authorNotes];
+  let authorAssets = [...authorWorks, ...authorNotes];
 
-  let dateGrid = new Array(10).fill('ok')
-  console.log(dateGrid);
+  // let dateGrid = new Array(10).fill('ok')
+  // console.log(dateGrid);
+
+  const allAuthorAssets = authorAssets.map((asset, i) => {
+    if (asset.title) {
+      return (
+        <h3 key={i}>{new Date(asset.createdAt).toDateString()}</h3>
+      );
+    } else {
+      return (
+        <p key={i}>{asset.content}</p>
+      );
+    };
+  });
 
   return (
     <div className=" w-full ">
       {/* <p>Author Activity Page</p> */}
-      <div className=" ">{dateGrid}</div>
+      <div className=" ">{allAuthorAssets}</div>
     </div>
 
   )
