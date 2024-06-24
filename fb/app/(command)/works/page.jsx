@@ -6,6 +6,11 @@ const Works = async () => {
 
   const { userId } = auth();
   const author = await getAuthorWithAuth(userId);
+
+  if (!author) {
+    return <h3 className="capitalize">you've yet to create an author object</h3>
+  }
+
   const { _id, authorName } = author;
 
   return (

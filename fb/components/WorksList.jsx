@@ -10,7 +10,7 @@ const WorksList = async ({ authorId, authorName }) => {
 
   if (allRouteWorks.length === 0) {
     return (
-      <h2 className="mt-8 font-medium text-lg capitalize">there are no works to display.</h2>
+      <h2 className="mt-8 font-medium text-lg capitalize">there are no works to display!</h2>
     )
   };
 

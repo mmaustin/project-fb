@@ -8,6 +8,10 @@ const AuthorChart = async ({ authorId }) => {
   let notes;
   if (author) {
     notes = await getAuthorNotes(author.authorName);
+  };
+
+  if (!notes) {
+    return <h3 className="capitalize">you've yet to create a note(s)</h3>
   }
 
   const noteContents = notes.map(note => {

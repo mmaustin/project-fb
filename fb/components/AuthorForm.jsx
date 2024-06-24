@@ -65,7 +65,6 @@ const AuthorForm = ({ authUser }) => {
         <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered join-item w-full rounded-lg capitalize" placeholder="Tell Us About Yourself (min: 25, max: 250)" name="aboutMe" value={authorData.aboutMe} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={authorData.authUser} required />
         <select onChange={handleInputChange} className="select select-primary join-item w-full rounded-lg" name="publicProfile" value={authorData.publicProfile} >
-          {/* <option >Public or Private?</option> */}
           {profileOptions}
         </select>
         <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">Create Author</button>
