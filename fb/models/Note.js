@@ -35,6 +35,5 @@ const NoteSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-//const Contestant = mongoose.model("Contestant", ContestantSchema);
 const Note = mongoose.models.Note || mongoose.model("Note", NoteSchema);
 export default Note;

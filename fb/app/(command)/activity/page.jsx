@@ -35,7 +35,7 @@ const AuthorActivityPage = async () => {
   // })
 
   return (
-    <div className=" h-auto">
+    <div className=" h-[200px] border border-r-green">
       {
         allNotes.map((note, i) => {
           return <div key={note._id} className="collapse collapse-arrow bg-base-200">
