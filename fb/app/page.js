@@ -19,6 +19,9 @@ const HomePage = () => {
             <p className="py-6 text-sm md:text-xl font-normal leading-loose normal-case border-t-2 border-dotted">Stop relying on sticky notes, napkins, and your "perfect" memory. Store all of your notes here.  Your book will thank you.</p>
           </h1>
           <Link href="/authors" className="btn btn-secondary flex w-32 items-center rounded-lg ">Get Started</Link>
+          <div className="tooltip tooltip-bottom mt-5" data-tip="info">
+            <button className="btn btn-info rounded-lg capitalize">i</button>
+          </div>
         </div>
       </div>
     </div>
