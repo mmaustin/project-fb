@@ -57,7 +57,7 @@ const AuthorForm = ({ authUser }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
-      <p className="capitalize font-semibold m-4">author form</p>
+      <p className="capitalize font-bold text-xl text-blue m-4">author form</p>
       <div className="w-80 md:w-96 flex flex-col">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Name (min: 1, max: 40)" name="authorName" value={authorData.authorName} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Influenced By (min: 1, max: 40)" name="authorInfluence" value={authorData.authorInfluence} required />

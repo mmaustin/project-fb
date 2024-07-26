@@ -237,7 +237,6 @@ export const workDelete = async (workId) => {
 };
 
 export const authorDelete = async (authorId) => {
-  console.log(authorId);
   try {
     await connectToDB();
     await Note.deleteMany({ authorId: authorId });

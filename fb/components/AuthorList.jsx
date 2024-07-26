@@ -3,6 +3,7 @@ import Link from "next/link";
 import AuthorDelete from "./AuthorDelete";
 import { auth } from "@clerk/nextjs";
 
+
 const AuthorList = async () => {
   const { userId } = auth();
   const allAuthors = await getAuthors();
@@ -17,14 +18,14 @@ const AuthorList = async () => {
     if (author.publicProfile === "Public") {
       let authorID = author._id.toString();
       return <div key={author._id} className="carousel-item w-full mx-8 flex flex-col justify-center items-start rounded-lg shadow-lg mt-2">
-        <h6 className="ml-2 font-semibold underline">{`${i + 1} of ${allAuthors.length}`}</h6>
+        <h6 className="ml-2 font-bold text-blue">{`${i + 1} of ${allAuthors.length}`}</h6>
         <h4 className="text-md capitalize ml-2">
           {author.authorName}
         </h4>
-        <h4 className="text-sm md:text-md capitalize text-info ml-2">
+        <h4 className="text-sm md:text-md capitalize text-info ml-2 tooltip" data-tip="Moto">
           {author.aboutMe}
         </h4>
-        <h4 className="text-md capitalize ml-2">
+        <h4 className="text-md capitalize ml-2 tooltip tooltip-right" data-tip="Biggest Influence">
           {author.authorInfluence}
         </h4>
         <h4 className="text-md capitalize ml-2">
