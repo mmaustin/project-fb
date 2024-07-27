@@ -1,9 +1,12 @@
 import ThemeToggle from "@/components/ThemeToggle";
-import { auth } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+
 
 const HomePage = () => {
   const { userId } = auth();
+
 
   return (
     <div className="mx-5 flex flex-col justify-center items-center">
@@ -16,7 +19,7 @@ const HomePage = () => {
         <div className="max-w-3xl flex flex-col justify-center items-center">
           <h1 className="text-3xl md:text-5xl font-bold uppercase border-t-2 border-dotted text-center">
             Novel Ideas
-            <p className="py-6 text-sm md:text-xl font-normal leading-loose normal-case border-t-2 border-dotted">Stop relying on sticky notes, napkins, and your "perfect" memory. Store all of your notes here.  Your book will thank you!</p>
+            <p className="py-6 text-sm md:text-xl font-normal leading-loose normal-case border-t-2 border-dotted">Stop relying on sticky notes, napkins, and your "perfect" memory. Store all of your notes here.  Your book will thank you.</p>
           </h1>
           <Link href="/authors" className="btn btn-secondary flex w-32 items-center rounded-lg ">Get Started</Link>
           <div className="tooltip tooltip-top mt-10" data-tip="Refresh page, if not redirected upon login.">
