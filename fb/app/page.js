@@ -2,6 +2,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import { auth, currentUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { IoInformationCircle } from "react-icons/io5"
 
 
 const HomePage = () => {
@@ -21,9 +22,12 @@ const HomePage = () => {
             Novel Ideas
             <p className="py-6 text-sm md:text-xl font-normal leading-loose normal-case border-t-2 border-dotted">Stop relying on sticky notes, napkins, and your "perfect" memory. Store all of your notes here.  Your book will thank you.</p>
           </h1>
-          <Link href="/authors" className="btn btn-secondary flex w-32 items-center rounded-lg ">Get Started</Link>
-          <div className="tooltip tooltip-top mt-10" data-tip="Refresh page, if not redirected upon login.">
-            <button className="btn btn-info rounded-lg capitalize">info</button>
+          <div className="flex flex-wrap justify-center items-center">
+            <Link href="/authors" className="btn btn-secondary flex w-32 items-center rounded-lg ">Get Started</Link>
+            <div className="tooltip tooltip-bottom mt-10" data-tip="Outlook Is Not Recommended. May Experience Redirect Issues On Login.">
+              {/* <button className="btn btn-info rounded-lg capitalize">info</button> */}
+              <IoInformationCircle className="m-0" />
+            </div>
           </div>
         </div>
       </div>
