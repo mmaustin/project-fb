@@ -7,7 +7,6 @@ const EditAuthor = async ({ params }) => {
   const authorParamId = params.id;
 
   const author = await getSingleAuthor(authorParamId);
-  //const authors = await getAuthors();
   const retrievedAuthor = { aId: authorParamId, aAuthorName: author.authorName, aAboutMe: author.aboutMe, aAuthorInfluence: author.authorInfluence, aWorkInfluence: author.workInfluence, aAuthUser: author.authUser, aPublicProfile: author.publicProfile }
 
   const queryClient = new QueryClient();

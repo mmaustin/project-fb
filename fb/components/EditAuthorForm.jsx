@@ -4,7 +4,6 @@ import { editAuthor } from "@/utils/actions";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import { redirect } from 'next/navigation';
 
 
 const EditAuthorForm = ({ author }) => {

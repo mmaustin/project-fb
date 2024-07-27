@@ -1,5 +1,4 @@
 import WorkForm from "@/components/WorkForm";
-//import WorksList from "@/components/WorksList";
 import Link from "next/link";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import { getSingleAuthor } from "@/utils/actions";
@@ -8,7 +7,6 @@ import AuthorWorksList from "@/components/AuthorWorksList";
 
 
 const AuthorPage = async ({ params }) => {
-  //console.log(params);
   const queryClient = new QueryClient();
   const author = await getSingleAuthor(params.id);
 

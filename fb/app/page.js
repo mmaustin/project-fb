@@ -1,12 +1,9 @@
 import ThemeToggle from "@/components/ThemeToggle";
-import { auth, currentUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { IoInformationCircle } from "react-icons/io5"
 
 
 const HomePage = () => {
-  const { userId } = auth();
 
 
   return (
@@ -25,7 +22,6 @@ const HomePage = () => {
           <div className="flex flex-wrap justify-center items-center">
             <Link href="/authors" className="btn btn-secondary flex w-32 items-center rounded-lg ">Get Started</Link>
             <div className="tooltip tooltip-bottom mt-10" data-tip="Outlook Is Not Recommended. May Experience Redirect Issues On Login.">
-              {/* <button className="btn btn-info rounded-lg capitalize">info</button> */}
               <IoInformationCircle className="m-0" />
             </div>
           </div>
