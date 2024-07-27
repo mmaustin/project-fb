@@ -1,13 +1,13 @@
 import { getWorkNotes } from "@/utils/actions";
 import NoteDelete from "./NoteDelete";
 
-const NoteList = async ({ workId }) => {
+const NoteList = async ({ workId, workTitle }) => {
 
   const workNotes = await getWorkNotes(workId);
 
   if (workNotes.length === 0) {
     return (
-      <h2 className="mt-8 font-medium text-lg capitalize">there are no notes</h2>
+      <h2 className="mt-8 font-bold text-lg capitalize"><span className="text-blue">{workTitle}</span> has no notes.</h2>
     )
   };
   const displayNotes = workNotes.map(note => {

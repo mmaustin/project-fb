@@ -177,7 +177,7 @@ export const getAuthorsWorks = async (authorId) => {
 
 export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
   const ZodNote = z.object({
-    content: z.string().min(10).max(100)
+    content: z.string().min(20).max(100)
   });
 
   try {

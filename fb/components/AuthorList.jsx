@@ -10,7 +10,7 @@ const AuthorList = async () => {
 
   if (allAuthors.length === 0) {
     return (
-      <h2 className="mt-8 font-medium text-lg">No authors are writing . . . </h2>
+      <h2 className="mt-8 font-bold text-blue text-lg">No authors are writing . . . </h2>
     )
   };
 
@@ -18,7 +18,7 @@ const AuthorList = async () => {
     if (author.publicProfile === "Public") {
       let authorID = author._id.toString();
       return <div key={author._id} className="carousel-item w-full mx-8 flex flex-col justify-center items-start rounded-lg shadow-lg mt-2">
-        <h6 className="ml-2 font-bold text-blue">{`${i + 1} of ${allAuthors.length}`}</h6>
+        <h6 className="ml-2 font-bold text-blue text-lg">{`${i + 1} of ${allAuthors.length}`}</h6>
         <h4 className="text-md capitalize ml-2">
           {author.authorName}
         </h4>

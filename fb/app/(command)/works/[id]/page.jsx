@@ -22,19 +22,19 @@ const SingleWorkPage = async ({ params }) => {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div key={work._id} className="w-80 md:w-96 mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 rounded-lg shadow-lg">
-        <h4 className="text-lg capitalize">
+        <h4 className="text-lg capitalize font-bold">
           {work.authorName}
         </h4>
-        <h4 className="text-lg capitalize underline">
+        <h4 className="text-lg capitalize font-bold text-blue">
           {work.title}
         </h4>
-        <h4 className="text-lg capitalize">
+        <h4 className="text-lg font-bold">
           {work.genre}
         </h4>
-        <h4 className="text-lg capitalize">
+        <h4 className="text-lg font-bold">
           {work.writingStage}
         </h4>
-        <h4 className="text-md capitalize text-info">
+        <h4 className="text-md capitalize font-bold text-blue">
           {work.synopsis}
         </h4>
         <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs join-item rounded-lg" >
@@ -46,10 +46,10 @@ const SingleWorkPage = async ({ params }) => {
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
       </div>
-      <p className="capitalize my-4 font-semibold underline">{work.title} Notes' Hub</p>
+      <p className="capitalize my-4 font-bold text-blue">{work.title} Notes' Hub</p>
       <div className="w-80 md:w-full flex flex-col md:flex-row justify-around items-center">
         <div className="" >
-          <NoteList workId={params.id} />
+          <NoteList workId={params.id} workTitle={work.title} />
         </div>
         <div className="">
           <WorkNotesChart notesToChart={noteContents} />
