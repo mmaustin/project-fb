@@ -4,6 +4,7 @@ import { editAuthor } from "@/utils/actions";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import Link from "next/link";
 
 
 const EditAuthorForm = ({ author }) => {
@@ -63,7 +64,10 @@ const EditAuthorForm = ({ author }) => {
         <select onChange={handleInputChange} className="input input-bordered join-item w-full rounded-lg" name="publicProfile" value={authorData.publicProfile} >
           {profileOptions}
         </select>
-        <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">Edit Author</button>
+        <div className="">
+          <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg mr-2" type="submit">Edit Author</button>
+          <Link href={`/authors/${aId}`} className="w-1/3 btn btn-accent btn-xs rounded-lg">Author Page</Link>
+        </div>
       </div>
     </form>
   )
