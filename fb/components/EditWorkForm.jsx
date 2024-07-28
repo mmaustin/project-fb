@@ -51,6 +51,7 @@ const EditWorkForm = ({ workToEdit }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
+      <p className="capitalize m-4 font-bold text-lg">edit <span className="text-blue">{editWorkData.workTitle}</span></p>
       <div className="w-80 md:w-96 flex flex-col">
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Title (min: 1, max: 40)" name="workTitle" value={editWorkData.workTitle} required />
         <input onChange={handleInputChange} type="text" className="input input-bordered join-item w-full rounded-lg capitalize" placeholder="Genre (min: 1, max: 40)" name="workGenre" value={editWorkData.workGenre} required />
