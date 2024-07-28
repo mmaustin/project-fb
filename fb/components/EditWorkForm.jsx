@@ -2,8 +2,10 @@
 
 import { editWork } from "@/utils/actions";
 import { useMutation } from "@tanstack/react-query";
+import Link from "next/link";
 import { useState } from "react";
 import toast from "react-hot-toast";
+
 
 
 const EditWorkForm = ({ workToEdit }) => {
@@ -59,7 +61,10 @@ const EditWorkForm = ({ workToEdit }) => {
         <select onChange={handleInputChange} className="input input-bordered join-item w-full rounded-lg" name="workWritingStage" value={editWorkData.workWritingStage} >
           {writingStateOptions}
         </select>
-        <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg" type="submit">Edit Work</button>
+        <div className="">
+          <button className="w-1/3 btn btn-accent btn-xs join-item mr-2 rounded-lg" type="submit">Apply Edits</button>
+          <Link href={`/works/${workId}`} className="w-1/3 btn btn-accent btn-xs rounded-lg">Work Page</Link>
+        </div>
       </div>
     </form>
   )
