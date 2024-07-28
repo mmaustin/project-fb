@@ -24,21 +24,21 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
     let workAuthorId = work.createdBy.toString();
     //console.log(workAuthorId);
     return <div key={work._id} className="carousel-item w-full mx-8  flex flex-col justify-center items-start rounded-lg shadow-lg">
-      <h4 className="text-md capitalize ml-2">
+      <h4 className="text-lg font-bold capitalize ml-2">
         {work.title}
       </h4>
-      <h4 className="text-md capitalize ml-2">
+      <h4 className="text-lg font-bold capitalize ml-2">
         {work.genre}
       </h4>
-      <h4 className=" text-md capitalize text-info ml-2">
+      <h4 className=" text-lg font-bold capitalize text-info ml-2">
         {work.synopsis}
       </h4>
-      {authorName !== work.authorName &&
+      {/* {authorName !== work.authorName &&
         <h4 className="text-md capitalize ml-2">
           {work.authorName}
         </h4>
-      }
-      <h4 className="text-md capitalize ml-2">
+      } */}
+      <h4 className="text-lg font-bold capitalize ml-2">
         {work.writingStage}
       </h4>
       {/* {authorId === workAuthorId || authorIdAll === workAuthorId && */}
