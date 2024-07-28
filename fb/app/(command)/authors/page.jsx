@@ -23,7 +23,7 @@ const ShowAuthors = async () => {
       <HydrationBoundary state={dehydrate(queryClient)}>
         <AuthorForm authUser={userId} />
       </HydrationBoundary>
-      <p className="capitalize mt-4 font-bold text-blue">Fellow Authors</p>
+      <p className="capitalize mt-4 font-bold text-blue text-lg">Your Fellow Authors</p>
       <AuthorList />
     </div>
   )

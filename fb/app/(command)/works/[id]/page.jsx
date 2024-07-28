@@ -22,20 +22,20 @@ const SingleWorkPage = async ({ params }) => {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div key={work._id} className="w-80 md:w-96 mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 rounded-lg shadow-lg">
-        <h4 className="text-lg capitalize font-bold">
-          {work.authorName}
-        </h4>
         <h4 className="text-lg capitalize font-bold text-blue">
           {work.title}
         </h4>
-        <h4 className="text-lg font-bold">
-          {work.genre}
+        <h4 className="text-lg capitalize font-bold">
+          {work.authorName}
         </h4>
-        <h4 className="text-lg font-bold">
-          {work.writingStage}
+        <h4 className="text-lg font-bold capitalize">
+          {work.genre}
         </h4>
         <h4 className="text-md capitalize font-bold text-blue">
           {work.synopsis}
+        </h4>
+        <h4 className="text-lg font-bold">
+          {work.writingStage}
         </h4>
         <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs join-item rounded-lg" >
           Edit Work

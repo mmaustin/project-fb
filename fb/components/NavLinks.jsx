@@ -11,7 +11,7 @@ const links = [
 ];
 
 const removeLinks = [
-  { href: '/authors', label: 'authors' },
+  { href: '/authors', label: 'create author' },
   { href: '/', label: 'home' }
 ];
 
