@@ -4,14 +4,7 @@ import WorkDelete from "./WorkDelete";
 
 const AuthorWorksList = async ({ authorId, authorName }) => {
   let allRouteWorks;
-  //This if else is to handle the two cases when I want to display all the works and the one case when I just want to display the author's works.
-  // if (authorId) {
   allRouteWorks = await getAuthorsWorks(authorId);
-  // } else if (authorIdAll) {
-  //   allRouteWorks = await getAllWorks();
-  // } else {
-  //   allRouteWorks = await getAllWorks();
-  // }
 
   if (allRouteWorks.length === 0) {
     return (
@@ -22,7 +15,6 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
   const displayWorks = allRouteWorks.map(work => {
     let workID = work._id.toString();
     let workAuthorId = work.createdBy.toString();
-    //console.log(workAuthorId);
     return <div key={work._id} className="carousel-item w-full mx-8  flex flex-col justify-center items-start rounded-lg shadow-lg">
       <h4 className="text-lg font-bold capitalize ml-2">
         {work.title}
@@ -33,15 +25,9 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
       <h4 className=" text-lg font-bold capitalize text-info ml-2">
         {work.synopsis}
       </h4>
-      {/* {authorName !== work.authorName &&
-        <h4 className="text-md capitalize ml-2">
-          {work.authorName}
-        </h4>
-      } */}
       <h4 className="text-lg font-bold capitalize ml-2">
         {work.writingStage}
       </h4>
-      {/* {authorId === workAuthorId || authorIdAll === workAuthorId && */}
       <div className="mb-2 ml-2">
         <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs rounded-lg" >
           Work Page
