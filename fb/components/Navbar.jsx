@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { auth, currentUser, UserButton, SignOutButton } from "@clerk/nextjs";
+import { currentUser, UserButton } from "@clerk/nextjs";
 
 
 const links = [
   { href: '/authors', label: 'authors' },
   { href: '/works', label: 'works in progress' },
-  // { href: '/my-page', label: 'my page' }
 ];
 
 const Navbar = async () => {

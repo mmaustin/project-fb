@@ -1,5 +1,5 @@
 import EditAuthorForm from '@/components/EditAuthorForm';
-import { getSingleAuthor, getAuthors } from '@/utils/actions';
+import { getSingleAuthor } from '@/utils/actions';
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
 

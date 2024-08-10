@@ -1,8 +1,7 @@
 import AuthorForm from "@/components/AuthorForm";
 import AuthorList from "@/components/AuthorList";
-import UserHasAuthor from "@/components/UserHasAuthor";
 import { authUserCheck } from "@/utils/actions";
-import { auth, currentUser } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import { redirect } from "next/navigation";
 

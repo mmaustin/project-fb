@@ -26,8 +26,6 @@ const WorkNotesChart = ({ notesToChart }) => {
     };
   });
 
-  //console.log(countObj);
-
   const noteData = {
     labels: [
       'Musing',
