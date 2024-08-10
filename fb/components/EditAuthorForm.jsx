@@ -66,7 +66,7 @@ const EditAuthorForm = ({ author }) => {
         </select>
         <div className="">
           <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg mr-2" type="submit">Edit Author</button>
-          <Link href={`/authors/${aId}`} className="w-1/3 btn btn-accent btn-xs rounded-lg">Author Page</Link>
+          <Link href={`/authors/${aId}`} className="w-1/3 btn btn-accent btn-xs rounded-lg">Author Hub</Link>
         </div>
       </div>
     </form>
