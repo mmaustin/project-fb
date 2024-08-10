@@ -92,6 +92,7 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
 
     await author.save();
 
+    revalidatePath(`authors/edit/${authorId}`);
     return { authorName: author.name };
   } catch (error) {
     return null;
