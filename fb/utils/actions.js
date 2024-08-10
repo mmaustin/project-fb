@@ -142,6 +142,7 @@ export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, wor
 
     await work.save();
 
+    revalidatePath(`works/edit/${workId}`);
     return { editWorkTitle: work.title };
   } catch (error) {
     return null;
