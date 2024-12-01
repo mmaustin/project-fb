@@ -7,7 +7,9 @@ const AuthorChart = async ({ authorId }) => {
 
   let notes;
   if (author) {
-    notes = await getAuthorNotes(author.authorName);
+    console.log(author);
+
+    notes = await getAuthorNotes(author.authUser);
   };
 
   if (!notes) {

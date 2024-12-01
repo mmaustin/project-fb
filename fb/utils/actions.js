@@ -207,10 +207,12 @@ export const getWorkNotes = async (workId) => {
   }
 };
 
-export const getAuthorNotes = async (authorsName) => {
+export const getAuthorNotes = async (authorsUserId) => {
   try {
     await connectToDB();
-    return await Note.find({ authorName: authorsName });
+    const notes = await Note.find({ authUser: authorsUserId });
+
+    return notes
   } catch (error) {
     console.log(error);
   }
