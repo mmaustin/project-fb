@@ -12,6 +12,7 @@ const AuthorPage = async ({ params }) => {
 
   const retrievedAuthor = { aId: author._id.toString(), aAuthorName: author.authorName, aAboutMe: author.aboutMe, aAuthorInfluence: author.authorInfluence, aWorkInfluence: author.workInfluence, aAuthUser: author.authUser, aPublicProfile: author.publicProfile };
 
+  const firstName = retrievedAuthor.aAuthorName.split(' ')[0];
 
   const authorParamId = params.id;
   return (
@@ -26,7 +27,7 @@ const AuthorPage = async ({ params }) => {
       <HydrationBoundary state={dehydrate(queryClient)} >
         <WorkForm workAuthor={retrievedAuthor} />
       </HydrationBoundary>
-      <p className="capitalize mt-4 font-bold text-blue text-lg">your works</p>
+      <p className="mt-4 font-bold text-blue text-lg">{firstName}'s Works</p>
       <div className="w-80 md:w-96 border border-neutral-50 rounded-lg shadow-lg">
         <AuthorWorksList authorId={authorParamId} authorName={author.authorName} />
       </div>
