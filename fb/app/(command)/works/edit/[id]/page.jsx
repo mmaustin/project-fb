@@ -11,11 +11,11 @@ const EditWork = async ({ params }) => {
   const queryClient = new QueryClient();
 
   return (
-    <>
+    <div className="w-full flex flex-col justify-center items-center">
       <HydrationBoundary state={dehydrate(queryClient)}>
         <EditWorkForm workToEdit={retrievedWork} />
       </HydrationBoundary>
-    </>
+    </div>
   )
 }
 export default EditWork;
