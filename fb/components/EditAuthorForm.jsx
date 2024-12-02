@@ -56,7 +56,7 @@ const EditAuthorForm = ({ author }) => {
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       <p className="capitalize m-4 font-bold text-blue text-lg">edit your attributes</p>
-      <div className="w-80 md:w-96 flex flex-col gap-4">
+      <div className="w-full sm:w-3/4 flex flex-col items-center">
         <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize border border-blue/50" placeholder="Name (min: 1, max: 40)" name="authorName" value={authorData.authorName} required />
         <textarea onChange={handleInputChange} type="textarea" className="textarea input border border-blue/50 join-item w-full rounded-lg capitalize" placeholder="Tell Us About Yourself (min: 25, max: 250)" name="aboutMe" value={authorData.aboutMe} required />
         <input onChange={handleInputChange} type="text" className="input border border-blue/50 join-item w-full rounded-lg capitalize" placeholder="Influenced By (min: 1, max: 40)" name="authorInfluence" value={authorData.authorInfluence} required />
