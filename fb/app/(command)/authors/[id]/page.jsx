@@ -17,20 +17,20 @@ const AuthorPage = async ({ params }) => {
   const authorParamId = params.id;
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <p className="text-lg font-bold text-blue">{author.authorName}</p>
+      <p className="text-lg font-bold">{author.authorName}</p>
       <div className="mt-6 mb-6">
-        <Link href={`/authors/edit/${author._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
-          Edit Author
+        <Link href={`/authors/edit/${author._id}`} className="btn btn-xs border-x-base-100 rounded-lg" >
+          Edit Profile
         </Link>
         <AuthorDelete authorId={authorParamId} />
       </div>
       <HydrationBoundary state={dehydrate(queryClient)} >
         <WorkForm workAuthor={retrievedAuthor} />
       </HydrationBoundary>
-      <p className="mt-4 font-bold text-blue text-lg">{firstName}'s Works</p>
+      {/* <p className="mt-4 font-bold text-blue text-lg">{firstName}'s Works</p>
       <div className="w-80 md:w-96 border border-neutral-50 rounded-lg shadow-lg">
         <AuthorWorksList authorId={authorParamId} authorName={author.authorName} />
-      </div>
+      </div> */}
     </div>
   )
 }
