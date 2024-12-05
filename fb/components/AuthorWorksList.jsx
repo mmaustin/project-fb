@@ -15,8 +15,8 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
   const displayWorks = allRouteWorks.map(work => {
     let workID = work._id.toString();
     let workAuthorId = work.createdBy.toString();
-    return <div key={work._id} className="grid grid-rows-1 gap-4 md:grid-rows-2 lg:grid-rows-3">
-      <div className="card bg-base-100 w-96 shadow-xl">
+    return <div key={work._id} className=" w-full">
+      <div className="card bg-neutral-400 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{work.title}</h2>
           <p>{work.synopsis}</p>
@@ -60,7 +60,7 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
 
   return (
     <>
-      <div className="">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start w-full">
         {displayWorks}
       </div>
     </>
