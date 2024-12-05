@@ -2,8 +2,7 @@ import { auth } from "@clerk/nextjs";
 
 
 const AuthorsWorksPage = () => {
-  const { userId } = auth();
-  console.log(userId);
+  // const { userId } = auth();
 
 
   return (
