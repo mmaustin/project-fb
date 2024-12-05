@@ -19,7 +19,7 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
       <div className="card bg-neutral-400 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{work.title}</h2>
-          <p>{work.synopsis}</p>
+          <p>{work.writingStage}</p>
           <div className="card-actions justify-center">
             <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs rounded-lg" >
               Work Page
@@ -32,38 +32,12 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
         </div>
       </div>
     </div>
-    // return <div key={work._id} className="carousel-item w-full mx-8  flex flex-col justify-center items-start rounded-lg shadow-lg">
-    //   <h4 className="text-lg font-bold capitalize ml-2">
-    //     {work.title}
-    //   </h4>
-    //   <h4 className="text-lg font-bold capitalize ml-2">
-    //     {work.genre}
-    //   </h4>
-    //   <h4 className=" text-lg font-bold capitalize text-info ml-2">
-    //     {work.synopsis}
-    //   </h4>
-    //   <h4 className="text-lg font-bold capitalize ml-2">
-    //     {work.writingStage}
-    //   </h4>
-    //   <div className="mb-2 ml-2">
-    //     <Link href={`/works/${work._id}`} className="btn btn-accent btn-xs rounded-lg" >
-    //       Work Page
-    //     </Link>
-    //     <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
-    //       Edit Work
-    //     </Link>
-    //     <WorkDelete workId={workID} />
-    //   </div>
-    //   {/* } */}
-    // </div>
-  })
+  });
 
   return (
-    <>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start w-full">
-        {displayWorks}
-      </div>
-    </>
-  )
-}
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start w-full">
+      {displayWorks}
+    </div>
+  );
+};
 export default AuthorWorksList;
