@@ -35,7 +35,7 @@ const SingleWorkPage = async ({ params }) => {
   // </div>
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 items-start w-full">
+    <div className="grid gap-4 md:grid-cols-2 justify-center w-full">
       {/* <div className="w-full flex flex-col justify-center items-center"> */}
       <div key={work._id} className="card w-80 shadow-xl">
         <div className="m-4">{work.synopsis}</div>
@@ -51,26 +51,8 @@ const SingleWorkPage = async ({ params }) => {
             </Link>
           </div>
         </div>
-        {/* <h4 className="text-lg capitalize font-bold text-blue">
-          {work.title}
-        </h4>
-        <h4 className="text-lg capitalize font-bold">
-          {work.authorName}
-        </h4>
-        <h4 className="text-lg font-bold capitalize">
-          {work.genre}
-        </h4>
-        <h4 className="text-md capitalize font-bold text-blue">
-          {work.synopsis}
-        </h4>
-        <h4 className="text-lg font-bold">
-          {work.writingStage}
-        </h4>
-        <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs join-item rounded-lg" >
-          Edit Work
-        </Link> */}
       </div>
-      <div className="w-80 mx-8 md:w-96 flex flex-col justify-center items-start px-6 py-4 mb-4 rounded-lg shadow-lg" >
+      <div className="w-80 flex justify-center rounded-lg shadow-xl" >
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
