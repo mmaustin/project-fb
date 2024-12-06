@@ -35,12 +35,13 @@ const SingleWorkPage = async ({ params }) => {
   // </div>
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 items-start w-full border border-red">
+    <div className="grid gap-4 md:grid-cols-2 items-start w-full">
       {/* <div className="w-full flex flex-col justify-center items-center"> */}
-      <div key={work._id} className="card bg-base-400 w-full shadow-xl border border-green">
-        <div className="">{work.synopsis}</div>
+      <div key={work._id} className="card w-80 shadow-xl">
+        <div className="m-4">{work.synopsis}</div>
+        <div className="border border-neutral-200"></div>
         <div className="card-body">
-          <h2 className="card-title">
+          <h2 className="card-title capitalize">
             {work.title}
           </h2>
           <p>{work.writingStage}</p>

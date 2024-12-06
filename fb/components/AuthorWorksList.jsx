@@ -16,7 +16,7 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
     let workID = work._id.toString();
     let workAuthorId = work.createdBy.toString();
     return <div key={work._id} className=" w-full">
-      <div className="card bg-neutral-400 shadow-xl">
+      <div className="card shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{work.title}</h2>
           <p>{work.writingStage}</p>
