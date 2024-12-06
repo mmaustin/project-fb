@@ -19,10 +19,10 @@ const NoteList = async ({ workId, workTitle }) => {
       <h4 className="text-md capitalize ml-2">
         {note.category}
       </h4>
-      <h4 className="ml-2 text-info text-md capitalize">
+      <h4 className="ml-2 font-semibold text-md capitalize">
         {note.content}
       </h4>
-      <div className="mb-2 ml-2">
+      <div className="flex justify-center w-full">
         <NoteDelete noteId={noteID} workID={workId} />
       </div>
     </div>
