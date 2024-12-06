@@ -20,7 +20,8 @@ const SingleWorkPage = async ({ params }) => {
   const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString(), workId: work._id.toString() };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="grid gap-4 md:grid-cols-2 items-start w-full">
+      {/* <div className="w-full flex flex-col justify-center items-center"> */}
       <div key={work._id} className="w-80 md:w-96 mx-8 flex flex-col justify-center items-start px-6 py-4 mb-4 rounded-lg shadow-lg">
         <h4 className="text-lg capitalize font-bold text-blue">
           {work.title}
@@ -46,16 +47,16 @@ const SingleWorkPage = async ({ params }) => {
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
       </div>
-      <p className="capitalize my-4 font-bold text-blue">{work.title} Notes' Hub</p>
-      <div className="w-80 md:w-full flex flex-col md:flex-row justify-around items-center">
-        <div className="" >
-          <NoteList workId={params.id} workTitle={work.title} />
-        </div>
-        <div className="">
-          <WorkNotesChart notesToChart={noteContents} />
-        </div>
+      {/* <p className="capitalize my-4 font-bold text-blue">{work.title} Notes' Hub</p> */}
+      {/* <div className="w-80 md:w-full flex flex-col md:flex-row justify-around items-center"> */}
+      <div className="" >
+        <NoteList workId={params.id} workTitle={work.title} />
       </div>
+      <div className="">
+        <WorkNotesChart notesToChart={noteContents} />
+      </div>
+      {/* </div> */}
     </div>
-  )
-}
+  );
+};
 export default SingleWorkPage;
