@@ -10,7 +10,7 @@ const WorkDelete = ({ workId }) => {
   }
 
   return (
-    <button onClick={deleteHandler} className="btn btn-info btn-xs rounded-lg" type="button">Delete</button>
+    <button onClick={deleteHandler} className="btn btn-xs border-2 border-error rounded-lg tooltip tooltip-top tooltip-error" data-tip="You will delete this work." type="button">Delete</button>
   )
 }
 export default WorkDelete;
