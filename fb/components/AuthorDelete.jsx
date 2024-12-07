@@ -9,7 +9,7 @@ const AuthorDelete = ({ authorId }) => {
   }
 
   return (
-    <button onClick={deleteHandler} className=" btn btn-xs rounded-lg tooltip tooltip-top tooltip-error" data-tip="You Sure? You Will Lose Your Author Object, All Works, & all Notes." type="button">Delete Profile</button>
+    <button onClick={deleteHandler} className="ml-1 btn btn-xs border-2 border-error rounded-lg tooltip tooltip-top tooltip-error" data-tip="This button deletes your profile, all works, and all notes." type="button">Delete Profile</button>
   )
 };
 export default AuthorDelete;

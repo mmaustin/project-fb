@@ -19,7 +19,7 @@ const AuthorPage = async ({ params }) => {
     <div className="w-full flex flex-col justify-center items-center">
       <p className="text-lg font-bold">{author.authorName}</p>
       <div className="mt-6 mb-6">
-        <Link href={`/authors/edit/${author._id}`} className="btn btn-xs border-x-base-100 rounded-lg" >
+        <Link href={`/authors/edit/${author._id}`} className="btn btn-xs rounded-lg" >
           Edit Profile
         </Link>
         <AuthorDelete authorId={authorParamId} />
