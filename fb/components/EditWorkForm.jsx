@@ -53,7 +53,7 @@ const EditWorkForm = ({ workToEdit }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
-      <p className="capitalize m-4 font-bold text-lg">edit <span className="text-blue">{editWorkData.workTitle}</span></p>
+      <p className="capitalize m-4 font-light text-lg">edit <span className="font-serif italic">{editWorkData.workTitle}</span></p>
       <div className="w-full sm:w-3/4 flex flex-col items-center border-2 border-base-300 bg-base-300 rounded-lg">
         <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Title (min: 1, max: 40)" name="workTitle" value={editWorkData.workTitle} required />
         <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Genre (min: 1, max: 40)" name="workGenre" value={editWorkData.workGenre} required />
@@ -61,9 +61,9 @@ const EditWorkForm = ({ workToEdit }) => {
         <select onChange={handleInputChange} className="select join-item w-full rounded-lg mb-1" name="workWritingStage" value={editWorkData.workWritingStage} >
           {writingStateOptions}
         </select>
-        <div className="">
-          <button className="w-1/3 btn btn-accent btn-xs join-item mr-2 rounded-lg" type="submit">Apply Edits</button>
-          <Link href={`/works/${workId}`} className="w-1/3 btn btn-accent btn-xs rounded-lg">Work Page</Link>
+        <div className="flex justify-center items-center w-full">
+          <button className=" btn btn-xs join-item mr-2 border-2 border-success rounded-lg" type="submit">Apply Edits</button>
+          <Link href={`/works/${workId}`} className="btn btn-xs rounded-lg">Work Page</Link>
         </div>
       </div>
     </form>
