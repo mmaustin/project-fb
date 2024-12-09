@@ -55,17 +55,17 @@ const EditAuthorForm = ({ author }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
-      <p className="capitalize m-4 font-bold text-lg">edit profile</p>
-      <div className="w-full sm:w-3/4 flex flex-col items-center">
-        <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize input-bordered mb-1" placeholder="Name (min: 1, max: 40)" name="authorName" value={authorData.authorName} required />
-        <textarea onChange={handleInputChange} type="textarea" className="textarea input input-bordered mb-1 join-item w-full rounded-lg capitalize" placeholder="Tell Us About Yourself (min: 25, max: 250)" name="aboutMe" value={authorData.aboutMe} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered mb-1 join-item w-full rounded-lg capitalize" placeholder="Influenced By (min: 1, max: 40)" name="authorInfluence" value={authorData.authorInfluence} required />
-        <input onChange={handleInputChange} type="text" className="input input-bordered mb-1 join-item w-full rounded-lg capitalize" placeholder="A Favorite Work (min: 1, max: 40)" name="workInfluence" value={authorData.workInfluence} required />
-        <select onChange={handleInputChange} className="input input-bordered mb-1 join-item w-full rounded-lg" name="publicProfile" value={authorData.publicProfile} >
+      <p className="capitalize m-4 font-serif text-lg">edit profile</p>
+      <div className="w-full sm:w-3/4 flex flex-col items-center border-4 border-base-300 bg-base-300 rounded-lg">
+        <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Name (min: 1, max: 40)" name="authorName" value={authorData.authorName} required />
+        <textarea onChange={handleInputChange} type="textarea" className="textarea input mb-1 join-item w-full rounded-lg capitalize" placeholder="Tell Us About Yourself (min: 25, max: 250)" name="aboutMe" value={authorData.aboutMe} required />
+        <input onChange={handleInputChange} type="text" className="input mb-1 join-item w-full rounded-lg capitalize" placeholder="Influenced By (min: 1, max: 40)" name="authorInfluence" value={authorData.authorInfluence} required />
+        <input onChange={handleInputChange} type="text" className="input mb-1 join-item w-full rounded-lg capitalize" placeholder="A Favorite Work (min: 1, max: 40)" name="workInfluence" value={authorData.workInfluence} required />
+        <select onChange={handleInputChange} className="input mb-1 join-item w-full rounded-lg" name="publicProfile" value={authorData.publicProfile} >
           {profileOptions}
         </select>
         <div className="flex justify-center">
-          <button className="btn btn-accent btn-xs join-item rounded-lg mr-2" type="submit">Edit</button>
+          <button className="w-auto btn btn-xs border-2 border-success join-item rounded-lg mb-1" type="submit">Edit Profile</button>
           {/* <Link href={`/authors/${aId}`} className="w-1/3 btn btn-accent btn-xs rounded-lg">Author Hub</Link> */}
         </div>
       </div>
