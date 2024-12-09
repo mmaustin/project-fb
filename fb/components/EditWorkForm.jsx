@@ -53,7 +53,7 @@ const EditWorkForm = ({ workToEdit }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
-      <p className="capitalize m-4 font-light text-lg">edit <span className="font-serif italic">{editWorkData.workTitle}</span></p>
+      <p className="capitalize m-4 font-serif text-lg">edit <span className="font-serif italic underline">{editWorkData.workTitle}</span></p>
       <div className="w-full sm:w-3/4 flex flex-col items-center border-2 border-base-300 bg-base-300 rounded-lg">
         <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Title (min: 1, max: 40)" name="workTitle" value={editWorkData.workTitle} required />
         <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Genre (min: 1, max: 40)" name="workGenre" value={editWorkData.workGenre} required />

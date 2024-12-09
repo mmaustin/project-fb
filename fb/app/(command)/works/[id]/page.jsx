@@ -19,24 +19,8 @@ const SingleWorkPage = async ({ params }) => {
 
   const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString(), workId: work._id.toString() };
 
-  // <div className="card bg-base-100 w-96 shadow-xl">
-  //   <figure>
-  //     <img
-  //       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-  //       alt="Shoes" />
-  //   </figure>
-  //   <div className="card-body">
-  //     <h2 className="card-title">Shoes!</h2>
-  //     <p>If a dog chews shoes whose shoes does he choose?</p>
-  //     <div className="card-actions justify-end">
-  //       <button className="btn btn-primary">Buy Now</button>
-  //     </div>
-  //   </div>
-  // </div>
-
   return (
     <div className="grid gap-4 md:grid-cols-2 justify-center w-full">
-      {/* <div className="w-full flex flex-col justify-center items-center"> */}
       <div key={work._id} className="card w-80 shadow-xl">
         <div className="m-4">{work.synopsis}</div>
         <div className="border border-neutral-200"></div>
@@ -52,7 +36,7 @@ const SingleWorkPage = async ({ params }) => {
           </div>
         </div>
       </div>
-      <div className="w-80 flex justify-center rounded-lg shadow-xl" >
+      <div className="w-80 flex justify-center shadow-xl" >
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>

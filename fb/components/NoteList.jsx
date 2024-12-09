@@ -33,4 +33,4 @@ const NoteList = async ({ workId, workTitle }) => {
     </div>
   )
 }
-export default NoteList
+export default NoteList;
