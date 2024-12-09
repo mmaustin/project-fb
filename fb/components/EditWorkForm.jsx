@@ -54,11 +54,11 @@ const EditWorkForm = ({ workToEdit }) => {
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       <p className="capitalize m-4 font-bold text-lg">edit <span className="text-blue">{editWorkData.workTitle}</span></p>
-      <div className="w-full sm:w-3/4 flex flex-col items-center">
-        <input onChange={handleInputChange} type="text" className="input border border-blue/50 join-item w-full rounded-lg capitalize" placeholder="Title (min: 1, max: 40)" name="workTitle" value={editWorkData.workTitle} required />
-        <input onChange={handleInputChange} type="text" className="input border border-blue/50 join-item w-full rounded-lg capitalize" placeholder="Genre (min: 1, max: 40)" name="workGenre" value={editWorkData.workGenre} required />
-        <textarea onChange={handleInputChange} type="textarea" className="textarea input border border-blue/50 join-item w-full rounded-lg" placeholder="Synopsis (min: 25, max: 250)" name="workSynopsis" value={editWorkData.workSynopsis} required />
-        <select onChange={handleInputChange} className="input border border-blue/50 join-item w-full rounded-lg" name="workWritingStage" value={editWorkData.workWritingStage} >
+      <div className="w-full sm:w-3/4 flex flex-col items-center border-2 border-base-300 bg-base-300 rounded-lg">
+        <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Title (min: 1, max: 40)" name="workTitle" value={editWorkData.workTitle} required />
+        <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Genre (min: 1, max: 40)" name="workGenre" value={editWorkData.workGenre} required />
+        <textarea onChange={handleInputChange} type="textarea" className="textarea input join-item w-full rounded-lg capitalize mb-1" placeholder="Synopsis (min: 25, max: 250)" name="workSynopsis" value={editWorkData.workSynopsis} required />
+        <select onChange={handleInputChange} className="select join-item w-full rounded-lg mb-1" name="workWritingStage" value={editWorkData.workWritingStage} >
           {writingStateOptions}
         </select>
         <div className="">
