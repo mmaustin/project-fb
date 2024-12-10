@@ -252,3 +252,14 @@ export const authorDelete = async (authorId) => {
     redirect('/authors');
   };
 };
+
+export const getChartStats = async () => {
+
+  try {
+    await connectToDB();
+
+  } catch (error) {
+
+  }
+
+};
