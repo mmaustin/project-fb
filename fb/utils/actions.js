@@ -7,6 +7,7 @@ import Work from "@/models/Work";
 import Note from "@/models/Note";
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import dayjs from "dayjs";
 
 export const getAuthors = async () => {
   try {
@@ -280,6 +281,5 @@ export const getChartStats = async () => {
 
   } catch (error) {
     redirect('/authors');
-  }
-
+  };
 };
