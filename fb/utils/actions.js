@@ -255,11 +255,31 @@ export const authorDelete = async (authorId) => {
 
 export const getChartStats = async () => {
 
+  const sixMonthsAgo = dayjs().subtract(6, 'month').toDate();
+
   try {
     await connectToDB();
 
-  } catch (error) {
+    const notes = await Note.find({ createdAt: { $gte: sixMonthsAgo }, clerkId: "user_2b5KptmJEkxjrHgT5TUUfmsG4y6" }).sort({ createdAt: 'desc' });
 
+    const monthlyNotes = notes.reduce((acc, job) => {
+      const date = dayjs(job.createdAt).format('MMM YY');
+
+      const existingEntry = acc.find((entry) => entry.date === date);
+
+      if (existingEntry) {
+        existingEntry.count += 1;
+      } else {
+        acc.push({ date, count: 1 });
+      }
+
+      return acc;
+    }, []);
+
+    return monthlyNotes
+
+  } catch (error) {
+    redirect('/authors');
   }
 
 };
