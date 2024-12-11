@@ -254,14 +254,14 @@ export const authorDelete = async (authorId) => {
   };
 };
 
-export const getChartStats = async () => {
+export const getChartStats = async (userId) => {
 
   const sixMonthsAgo = dayjs().subtract(6, 'month').toDate();
 
   try {
     await connectToDB();
 
-    const notes = await Note.find({ createdAt: { $gte: sixMonthsAgo }, clerkId: "user_2b5KptmJEkxjrHgT5TUUfmsG4y6" }).sort({ createdAt: 'desc' });
+    const notes = await Note.find({ createdAt: { $gte: sixMonthsAgo }, clerkId: userId }).sort({ createdAt: 'desc' });
 
     const monthlyNotes = notes.reduce((acc, job) => {
       const date = dayjs(job.createdAt).format('MMM YY');
