@@ -3,7 +3,8 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, } from 'recharts';
 
 
-function BarChart() {
+function BarChartContainer({ notesObj }) {
+
 
   if (!notesObj || notesObj.length < 1) return null;
 
@@ -24,4 +25,4 @@ function BarChart() {
     </section>
   )
 }
-export default BarChart
+export default BarChartContainer
