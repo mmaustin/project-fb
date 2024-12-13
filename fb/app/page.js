@@ -8,11 +8,11 @@ const HomePage = () => {
 
   return (
     <div className="mx-5 flex flex-col justify-center items-center">
-      <div className="my-10 w-full flex justify-center items-center">
+      {/* <div className="my-10 w-full flex justify-center items-center">
         <div className="w-full flex justify-between items-center">
           <ThemeToggle />
         </div>
-      </div>
+      </div> */}
       <div className="mt-32 flex justify-center items-center">
         <div className="max-w-3xl flex flex-col justify-center items-center">
           <h1 className="text-3xl md:text-5xl font-bold uppercase border-t-2 border-dotted text-center">
