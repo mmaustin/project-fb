@@ -28,7 +28,7 @@ const NoteList = async ({ workId, workTitle }) => {
     </div>
   })
   return (
-    <div className="w-80  md:h-80 carousel rounded-box mt-4 mb-4 shadow-2xl">
+    <div className="w-80  md:h-80 carousel rounded-box mt-4 mb-4 shadow-2xl border-t-2 border-t-base-300">
       {displayNotes}
     </div>
   )

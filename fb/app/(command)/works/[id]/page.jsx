@@ -1,6 +1,7 @@
 import NoteForm from "@/components/NoteForm";
 import NoteList from "@/components/NoteList";
 import WorkNotesChart from "@/components/visualization/WorkNotesChart";
+import WorkDelete from "@/components/WorkDelete";
 import { getSingleWork, getWorkNotes } from "@/utils/actions";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import Link from "next/link";
@@ -9,6 +10,7 @@ const SingleWorkPage = async ({ params }) => {
   const queryClient = new QueryClient();
 
   const work = await getSingleWork(params.id);
+  const workID = work._id.toString();
 
   const workNotes = await getWorkNotes(params.id);
 
@@ -20,8 +22,18 @@ const SingleWorkPage = async ({ params }) => {
   const noteWorkProperties = { authUser: work.authUser, authorName: work.authorName, authorId: work.createdBy.toString(), workId: work._id.toString() };
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 justify-center w-full">
-      <div key={work._id} className="card w-80 shadow-xl">
+    <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-full flex flex-col justify-center items-center my-6">
+        <p className="capitalize italic text-sm sm:text-lg font-serif mb-4">{work.synopsis}</p>
+        <h2 className="text-lg sm:text-xl font-bold capitalize underline mb-4">{work.title}</h2>
+        <div className="flex flex-row justify-center items-center">
+          <Link href={`/works/edit/${work._id}`} className="btn btn-xs border-x-base-100 rounded-lg" >
+            Edit Work
+          </Link>
+          <WorkDelete workId={workID} />
+        </div>
+      </div>
+      {/* <div key={work._id} className="card w-80 shadow-xl border-t-2 border-t-base-300">
         <div className="m-4">{work.synopsis}</div>
         <div className="border border-neutral-200"></div>
         <div className="card-body">
@@ -36,20 +48,17 @@ const SingleWorkPage = async ({ params }) => {
           </div>
         </div>
       </div>
-      <div className="w-80 flex justify-center shadow-xl" >
+      <div className="w-80 flex justify-center shadow-xl border-t-2 border-t-base-300" >
         <HydrationBoundary state={dehydrate(queryClient)}>
           <NoteForm workProperties={noteWorkProperties} />
         </HydrationBoundary>
       </div>
-      {/* <p className="capitalize my-4 font-bold text-blue">{work.title} Notes' Hub</p> */}
-      {/* <div className="w-80 md:w-full flex flex-col md:flex-row justify-around items-center"> */}
       <div className="" >
         <NoteList workId={params.id} workTitle={work.title} />
       </div>
       <div className="">
         <WorkNotesChart notesToChart={noteContents} />
-      </div>
-      {/* </div> */}
+      </div> */}
     </div>
   );
 };
