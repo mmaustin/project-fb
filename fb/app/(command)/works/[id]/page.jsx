@@ -25,12 +25,17 @@ const SingleWorkPage = async ({ params }) => {
     <div className="w-full flex flex-col justify-center items-center">
       <div className="w-full flex flex-col justify-center items-center my-6">
         <p className="capitalize italic text-sm sm:text-lg font-serif mb-4">{work.synopsis}</p>
-        <h2 className="text-lg sm:text-xl font-bold capitalize underline mb-4">{work.title}</h2>
+        <h2 className="text-lg sm:text-xl font-serif capitalize mb-4">{work.title}</h2>
         <div className="flex flex-row justify-center items-center">
           <Link href={`/works/edit/${work._id}`} className="btn btn-xs border-x-base-100 rounded-lg" >
             Edit Work
           </Link>
           <WorkDelete workId={workID} />
+        </div>
+        <div className="mt-8 mb-4 w-full">
+          <HydrationBoundary state={dehydrate(queryClient)}>
+            <NoteForm workProperties={noteWorkProperties} />
+          </HydrationBoundary>
         </div>
       </div>
       {/* <div key={work._id} className="card w-80 shadow-xl border-t-2 border-t-base-300">
