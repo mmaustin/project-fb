@@ -14,7 +14,6 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
 
   const displayWorks = allRouteWorks.map(work => {
     let workID = work._id.toString();
-    let workAuthorId = work.createdBy.toString();
     return <div key={work._id} className="border-2 border-base-300 w-full rounded-lg">
       <div className="card shadow-xl">
         <div className="card-body">

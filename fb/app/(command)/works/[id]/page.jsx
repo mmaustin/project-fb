@@ -37,6 +37,9 @@ const SingleWorkPage = async ({ params }) => {
             <NoteForm workProperties={noteWorkProperties} />
           </HydrationBoundary>
         </div>
+        <div className="mt-8 mb-4">
+          <NoteList workId={params.id} workTitle={work.title} />
+        </div>
       </div>
       {/* <div key={work._id} className="card w-80 shadow-xl border-t-2 border-t-base-300">
         <div className="m-4">{work.synopsis}</div>

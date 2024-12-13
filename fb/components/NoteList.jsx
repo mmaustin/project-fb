@@ -7,13 +7,22 @@ const NoteList = async ({ workId, workTitle }) => {
 
   if (workNotes.length === 0) {
     return (
-      <h2 className="mt-8 font-bold text-lg capitalize"><span className="text-blue">{workTitle}</span> has no notes.</h2>
+      <h2 className="mt-8 font-serif text-lg capitalize"><span className="italic">{workTitle}</span> has no notes.</h2>
     )
   };
   const displayNotes = workNotes.map(note => {
     let noteID = note._id.toString();
-    return <div key={note._id} className="carousel-item w-full mx-8 flex flex-col justify-center items-start rounded-lg shadow-lg mt-2">
-      <h4 className="text-md uppercase ml-2 font-bold">
+    return <div key={note._id} className="border-2 border-base-300 w-full h-[180px] rounded-lg">
+      <div className=" shadow-xl h-full">
+        <div className="">
+          <h2 className="font-bold text-sm font-serif">{note.category}</h2>
+          <p className="font-serif text-base">{note.content}</p>
+          <div className=" justify-center">
+            <NoteDelete noteId={noteID} workID={workId} />
+          </div>
+        </div>
+      </div>
+      {/* <h4 className="text-md uppercase ml-2 font-bold">
         created: {new Date(note.createdAt).toDateString()}
       </h4>
       <h4 className="text-md capitalize ml-2">
@@ -24,11 +33,11 @@ const NoteList = async ({ workId, workTitle }) => {
       </h4>
       <div className="flex justify-center w-full">
         <NoteDelete noteId={noteID} workID={workId} />
-      </div>
+      </div> */}
     </div>
   })
   return (
-    <div className="w-80  md:h-80 carousel rounded-box mt-4 mb-4 shadow-2xl border-t-2 border-t-base-300">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 items-start w-full">
       {displayNotes}
     </div>
   )
