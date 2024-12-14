@@ -10,7 +10,7 @@ const NoteDelete = ({ noteId, workID }) => {
   }
 
   return (
-    <button onClick={deleteHandler} className="btn btn-accent btn-xs mb-2 md:mb-0 rounded-lg" type="button">Delete Note</button>
+    <button onClick={deleteHandler} className="btn btn-xs border-2 border-error rounded-lg tooltip tooltip-top tooltip-error" data-tip="You will delete this note." type="button">Delete Note</button>
   )
 }
 export default NoteDelete;
