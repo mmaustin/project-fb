@@ -15,9 +15,6 @@ const AuthorStats = async () => {
     <div className="w-full">
       <BarChartContainer notesObj={notesObj} />
     </div>
-    // <div className="flex flex-wrap justify-center items-center w-96 h-auto shadow-2xl">
-    //   <AuthorChart authorId={userId} />
-    // </div>
-  )
-}
+  );
+};
 export default AuthorStats;

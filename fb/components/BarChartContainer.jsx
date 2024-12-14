@@ -10,8 +10,8 @@ function BarChartContainer({ notesObj }) {
 
   return (
     <section className='mt-16'>
-      <h1 className='text-4xl font-semibold text-center'>
-        Monthly Notes
+      <h1 className='text-2xl font-serif text-center'>
+        Monthly Notes <span className='font-semibold text-sm'>(last six months)</span>
       </h1>
       <ResponsiveContainer width='100%' height={300}>
         <BarChart data={notesObj} margin={{ top: 50 }}>
