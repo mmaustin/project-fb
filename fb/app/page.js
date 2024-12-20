@@ -1,6 +1,7 @@
+import ImageContainer from "@/components/ImageContainer";
 import ThemeToggle from "@/components/ThemeToggle";
 import Link from "next/link";
-import { IoInformationCircle } from "react-icons/io5"
+import { IoInformationCircle } from "react-icons/io5";
 
 
 const HomePage = () => {
@@ -27,6 +28,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <ImageContainer />
     </div>
   )
 }
