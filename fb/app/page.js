@@ -6,15 +6,15 @@ import { IoInformationCircle } from "react-icons/io5";
 
 const HomePage = () => {
 
-
+  //mx-5 w-full flex flex-col justify-center items-center
   return (
-    <div className="mx-5 flex flex-col justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center">
       {/* <div className="my-10 w-full flex justify-center items-center">
         <div className="w-full flex justify-between items-center">
           <ThemeToggle />
         </div>
       </div> */}
-      <div className="mt-32 flex justify-center items-center">
+      <div className="mt-32 mx-5 flex flex-col justify-center items-center">
         <div className="max-w-3xl flex flex-col justify-center items-center">
           <div className="text-3xl md:text-5xl font-semibold uppercase text-center">
             Novel Ideas
@@ -26,9 +26,11 @@ const HomePage = () => {
               <IoInformationCircle className="m-0" />
             </div>
           </div>
+          <div className="">
+            <ImageContainer />
+          </div>
         </div>
       </div>
-      <ImageContainer />
     </div>
   )
 }

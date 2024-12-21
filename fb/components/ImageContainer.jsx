@@ -11,7 +11,7 @@ import categoryNotes from "@/public/category-notes.png"
 const ImageContainer = () => {
 
   return (
-    <div className="my-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 w-3/4">
+    <div className="my-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 w-full">
       <Image
         className="h-[200px] w-[300px] object-contain border border-base-300/50 hover:border-neutral-800 rounded-lg"
         src={profileForm}
