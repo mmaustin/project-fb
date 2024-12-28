@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import appImg from "@/public/appImg.png"
-import profileForm from "@/public/profile-form.png"
+import profileForm from "@/public/new-profile-form.png"
 import workForm from "@/public/work-form.png"
 import noteForm from "@/public/note-form.png"
 import monthlyNotes from "@/public/monthly-notes.png"
