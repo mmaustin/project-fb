@@ -5,6 +5,7 @@ import workForm from "@/public/work-form.png"
 import noteForm from "@/public/note-form.png"
 import monthlyNotes from "@/public/monthly-notes.png"
 import categoryNotes from "@/public/category-notes.png"
+import themeControl from "@/public/new-theme-control.png"
 
 
 
@@ -48,6 +49,14 @@ const ImageContainer = () => {
         className="h-[200px] w-[300px] object-contain border border-base-300/50 hover:border-neutral-800 rounded-lg"
         src={categoryNotes}
         alt="graph showing notes by category"
+        priority
+        height={265}
+        width={198}
+      />
+      <Image
+        className="h-[200px] w-[300px] object-contain border border-base-300/50 hover:border-neutral-800 rounded-lg"
+        src={themeControl}
+        alt="preview of control panel"
         priority
         height={265}
         width={198}
