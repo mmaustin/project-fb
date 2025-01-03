@@ -1,5 +1,6 @@
+'use client'
 import Sidebar from "@/components/Sidebar";
-import { FaBarsStaggered } from 'react-icons/fa6'
+import { FaBarsStaggered } from 'react-icons/fa6';
 
 const layout = ({ children }) => {
   return (
