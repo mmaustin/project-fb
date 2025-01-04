@@ -21,7 +21,7 @@ const HomePage = () => {
               <IoInformationCircle className="m-0" />
             </div> */}
           </div>
-          <div className="">
+          <div className="mt-7">
             <ImageContainer />
           </div>
         </div>
