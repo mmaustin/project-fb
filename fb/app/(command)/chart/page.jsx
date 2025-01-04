@@ -6,7 +6,7 @@ const AuthorNotesChart = () => {
   const { userId } = auth();
 
   return (
-    <div className="flex flex-wrap justify-center items-center w-96 h-auto shadow-2xl">
+    <div className="flex flex-wrap justify-center items-center w-[216px] sm:w-96 h-auto shadow-2xl">
       <AuthorChart authorId={userId} />
     </div>
   );

@@ -47,7 +47,7 @@ const AuthorNotesDisplay = ({ notesToChart }) => {
   };
 
   return (
-    <div className="">
+    <div className="w-52 sm:w-80">
       <Doughnut className='mb-4 pb-2 bg-gray-light' data={noteData} />
     </div>
   )
