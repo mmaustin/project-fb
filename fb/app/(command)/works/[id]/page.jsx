@@ -40,7 +40,7 @@ const SingleWorkPage = async ({ params }) => {
         <div className="mt-8 mb-4">
           <NoteList workId={params.id} workTitle={work.title} />
         </div>
-        <div className="mt-6 text-xs text-error capitalize sm:hidden"><span className="text-error sm:hidden mr-2">*</span>this button deletes all associated profiles, works, and notes.</div>
+        <div className="mt-6 text-xs text-error capitalize sm:hidden"><span className="text-error sm:hidden mr-2">*</span>do you really want to delete this!?</div>
       </div>
     </div>
   );
