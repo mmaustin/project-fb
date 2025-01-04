@@ -9,7 +9,7 @@ const HomePage = () => {
   //mx-5 w-full flex flex-col justify-center items-center
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <div className="mt-32 mx-5 flex flex-col justify-center items-center">
+      <div className="mt-16 mx-5 flex flex-col justify-center items-center">
         <div className="max-w-3xl flex flex-col justify-center items-center">
           <div className="text-3xl md:text-5xl font-semibold uppercase text-center">
             Novel Ideas
