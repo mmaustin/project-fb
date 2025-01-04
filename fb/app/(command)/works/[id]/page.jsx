@@ -40,33 +40,8 @@ const SingleWorkPage = async ({ params }) => {
         <div className="mt-8 mb-4">
           <NoteList workId={params.id} workTitle={work.title} />
         </div>
+        <div className="mt-6 text-xs text-error capitalize sm:hidden"><span className="text-error sm:hidden mr-2">*</span>this button deletes all associated profiles, works, and notes.</div>
       </div>
-      {/* <div key={work._id} className="card w-80 shadow-xl border-t-2 border-t-base-300">
-        <div className="m-4">{work.synopsis}</div>
-        <div className="border border-neutral-200"></div>
-        <div className="card-body">
-          <h2 className="card-title capitalize">
-            {work.title}
-          </h2>
-          <p>{work.writingStage}</p>
-          <div className="card-actions justify-center">
-            <Link href={`/works/edit/${work._id}`} className="btn btn-accent btn-xs border-x-base-100 rounded-lg" >
-              Edit Work
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="w-80 flex justify-center shadow-xl border-t-2 border-t-base-300" >
-        <HydrationBoundary state={dehydrate(queryClient)}>
-          <NoteForm workProperties={noteWorkProperties} />
-        </HydrationBoundary>
-      </div>
-      <div className="" >
-        <NoteList workId={params.id} workTitle={work.title} />
-      </div>
-      <div className="">
-        <WorkNotesChart notesToChart={noteContents} />
-      </div> */}
     </div>
   );
 };
