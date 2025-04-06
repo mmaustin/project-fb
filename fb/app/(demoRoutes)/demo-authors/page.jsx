@@ -2,7 +2,7 @@
 
 
 
-const DemoPage = async () => {
+const DemoAuthor = async () => {
 
   // const author = await getSingleDemoAuthor();
 
@@ -13,4 +13,4 @@ const DemoPage = async () => {
     </div>
   )
 }
-export default DemoPage;
+export default DemoAuthor;
