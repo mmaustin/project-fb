@@ -51,7 +51,7 @@ export const createDemoWork = async ({ title, genre, synopsis, authorName, writi
       title, genre, synopsis, authorName, writingStage, createdBy
     });
 
-    revalidatePath(`authors`);
+    revalidatePath(`demo-authors`);
     return { newWorkTitle: work.title };
   } catch (error) {
     return null;

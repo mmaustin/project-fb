@@ -1,15 +1,19 @@
+import DemoWorkForm from "@/components/demoComponents/DemoWorkForm";
 import { getSingleDemoAuthor } from "@/utils/demoActions";
-
-
+//import Link from "next/link";
+import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
 const DemoAuthor = async () => {
-
+  const queryClient = new QueryClient();
   const author = await getSingleDemoAuthor();
 
+  const stringifiedAuthor = JSON.stringify(author);
 
   return (
-    <div>
-      <p>Demo Page</p>
+    <div className="w-full flex flex-col justify-center items-center">
+      <HydrationBoundary state={dehydrate(queryClient)} >
+        <DemoWorkForm workAuthor={stringifiedAuthor} />
+      </HydrationBoundary>
     </div>
   )
 }
