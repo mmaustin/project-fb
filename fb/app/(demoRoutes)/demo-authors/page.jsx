@@ -1,10 +1,10 @@
-// import { getSingleDemoAuthor } from "@/utils/demoActions";
+import { getSingleDemoAuthor } from "@/utils/demoActions";
 
 
 
 const DemoAuthor = async () => {
 
-  // const author = await getSingleDemoAuthor();
+  const author = await getSingleDemoAuthor();
 
 
   return (

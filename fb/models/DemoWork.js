@@ -14,7 +14,6 @@ const DemoWorkSchema = mongoose.Schema(
     },
     synopsis: {
       type: String,
-      minLength: 5,
       maxLength: 250,
       default: 'Still Conceptualizing, Patience!',
       trim: true,
