@@ -59,3 +59,12 @@ export const createDemoWork = async ({ title, genre, synopsis, authorName, writi
     return null;
   }
 };
+
+export const getDemoWorks = async () => {
+  try {
+    await connectToDB();
+    return await DemoWork.find();
+  } catch (error) {
+    console.log(error);
+  }
+};
