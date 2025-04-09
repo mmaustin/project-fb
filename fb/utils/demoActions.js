@@ -51,7 +51,6 @@ export const createDemoWork = async ({ title, genre, synopsis, authorName, writi
     const work = await DemoWork.create({
       title, genre, synopsis, authorName, writingStage, createdBy
     });
-    console.log(work);
 
     revalidatePath(`/demo-authors`);
     return { newWorkTitle: work.title };
