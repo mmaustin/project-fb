@@ -6,15 +6,17 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
 
-const DemoWorkForm = ({ workAuthor }) => {
+const DemoWorkForm = ({ demoAuthor }) => {
+  const workAuthor = JSON.parse(demoAuthor);
+
 
   const [workData, setWorkData] = useState({
     title: "",
     genre: "",
     synopsis: "",
-    authorName: workAuthor.aAuthorName,
+    authorName: workAuthor.authorName,
     writingStage: "Brainstorming",
-    createdBy: workAuthor.aId
+    createdBy: workAuthor._id
   });
 
 
@@ -34,9 +36,10 @@ const DemoWorkForm = ({ workAuthor }) => {
 
   const { mutate, isPending, data } = useMutation({
     mutationFn: async (work) => {
-      const newWork = await createWork(work);
+      const newWork = await createDemoWork(work);
       if (newWork) {
         toast.success('New Work Created!');
+
         return newWork;
       }
       toast.error('Something went wrong. Try again.');
@@ -55,6 +58,8 @@ const DemoWorkForm = ({ workAuthor }) => {
       writingStage: "Brainstorming"
     }));
   };
+
+
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">

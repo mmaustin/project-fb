@@ -12,7 +12,7 @@ const DemoAuthor = async () => {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <HydrationBoundary state={dehydrate(queryClient)} >
-        <DemoWorkForm workAuthor={stringifiedAuthor} />
+        <DemoWorkForm demoAuthor={stringifiedAuthor} />
       </HydrationBoundary>
     </div>
   )

@@ -106,6 +106,7 @@ export const createWork = async ({ title, genre, synopsis, authUser, authorName,
     genre: z.string().min(1).max(30),
     synopsis: z.string().min(25).max(250),
   });
+  console.log(title, genre, synopsis, authorName, writingStage, createdBy);
 
   try {
     await connectToDB();
