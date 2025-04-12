@@ -76,4 +76,15 @@ export const getDemoWork = async (workId) => {
     console.log(error);
 
   }
+};
+
+export const demoWorkDelete = async (workId) => {
+  try {
+    await connectToDB();
+    await DemoWork.findByIdAndDelete(workId);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    redirect('/demo-authors');
+  }
 }
