@@ -67,3 +67,13 @@ export const getDemoWorks = async () => {
     console.log(error);
   }
 };
+
+export const getDemoWork = async (workId) => {
+  try {
+    await connectToDB();
+    return await DemoWork.findOne({ _id: workId })
+  } catch (error) {
+    console.log(error);
+
+  }
+}

@@ -1,9 +1,11 @@
+import { getDemoWork } from "@/utils/demoActions";
 
 
+const DemoWorkPage = async ({ params }) => {
 
-const DemoWorkPage = ({ params }) => {
+  const work = await getDemoWork(params.id);
+  console.log(work);
 
-  console.log(params.id);
 
   return (
     <div>Demo Work Page for: {`${params.id}`}</div>
