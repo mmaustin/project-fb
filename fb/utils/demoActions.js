@@ -5,6 +5,7 @@ import { connectToDB } from "./database";
 import DemoWork from "@/models/DemoWork";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 // export const createDemoAuthor = async () => {
 
@@ -51,11 +52,10 @@ export const createDemoWork = async ({ title, genre, synopsis, authorName, writi
     const work = await DemoWork.create({
       title, genre, synopsis, authorName, writingStage, createdBy
     });
-
     revalidatePath(`/demo-authors`);
     return { newWorkTitle: work.title };
   } catch (error) {
-    return null;
+    console.log(error);
   }
 };
 

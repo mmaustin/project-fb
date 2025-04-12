@@ -14,7 +14,7 @@ const DemoWorksList = async ({ authorName }) => {
     )
   };
 
-  const displayWorks = allWorks.map((work, i) => {
+  const displayWorks = allWorks.reverse().map((work, i) => {
     let workID = work._id.toString();
 
     return <div key={work._id} className="border-2 border-base-300 w-full rounded-lg">

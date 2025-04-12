@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
-
 const DemoWorkForm = ({ demoAuthor }) => {
   const workAuthor = JSON.parse(demoAuthor);
 
@@ -38,8 +37,8 @@ const DemoWorkForm = ({ demoAuthor }) => {
     mutationFn: async (work) => {
       const newWork = await createDemoWork(work);
       if (newWork) {
-        toast.success('New Work Created!');
 
+        toast.success('New Work Created!');
         return newWork;
       }
       toast.error('Something went wrong. Try again.');
