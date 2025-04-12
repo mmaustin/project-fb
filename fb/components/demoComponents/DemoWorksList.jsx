@@ -1,7 +1,7 @@
 
 import { getDemoWorks } from "@/utils/demoActions";
 import Link from "next/link";
-// import WorkDelete from "./WorkDelete";
+import DemoWorkDelete from "./DemoWorkDelete";
 
 const DemoWorksList = async ({ authorName }) => {
   let allWorks;
@@ -28,11 +28,10 @@ const DemoWorksList = async ({ authorName }) => {
               Work Page
             </Link>
             <button type="" className="btn btn-xs rounded-lg ">Edit Page</button>
-            <button type="" className="btn btn-xs rounded-lg ">Delete Work</button>
             {/* <Link href={`/works/edit/${work._id}`} className="btn btn-xs  rounded-lg" >
               Edit Work
-            </Link>
-            <WorkDelete workId={workID} /> */}
+            </Link> */}
+            <DemoWorkDelete workId={workID} />
           </div>
         </div>
       </div>
