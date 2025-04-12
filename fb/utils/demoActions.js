@@ -6,6 +6,8 @@ import DemoWork from "@/models/DemoWork";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import dayjs from "dayjs";
+import Note from "@/models/Note";
 
 // export const createDemoAuthor = async () => {
 
@@ -87,4 +89,34 @@ export const demoWorkDelete = async (workId) => {
   } finally {
     redirect('/demo-authors');
   }
-}
+};
+
+export const getDemoChartStats = async () => {
+
+  const twoMonthsAgo = dayjs().subtract(2, 'month').toDate();
+
+  try {
+    await connectToDB();
+
+    const notes = await Note.find({ createdAt: { $gte: twoMonthsAgo } }).sort({ createdAt: 'desc' });
+
+    const monthlyNotes = notes.reduce((acc, note) => {
+      const date = dayjs(note.createdAt).format('MMM YY');
+
+      const existingEntry = acc.find((entry) => entry.date === date);
+
+      if (existingEntry) {
+        existingEntry.count += 1;
+      } else {
+        acc.push({ date, count: 1 });
+      }
+
+      return acc;
+    }, []);
+
+    return monthlyNotes;
+
+  } catch (error) {
+    redirect('/authors');
+  };
+};

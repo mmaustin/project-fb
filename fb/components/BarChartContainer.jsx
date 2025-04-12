@@ -25,4 +25,4 @@ function BarChartContainer({ notesObj }) {
     </section>
   )
 }
-export default BarChartContainer
+export default BarChartContainer;
