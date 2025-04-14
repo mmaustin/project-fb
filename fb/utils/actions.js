@@ -198,7 +198,7 @@ export const createNote = async ({ content, category, createdBy, authUser, autho
   } catch (error) {
     return null;
   }
-}
+};
 
 export const getWorkNotes = async (workId) => {
   try {

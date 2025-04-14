@@ -8,6 +8,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import dayjs from "dayjs";
 import Note from "@/models/Note";
+import DemoNote from "@/models/DemoNote";
 
 // export const createDemoAuthor = async () => {
 
@@ -119,4 +120,26 @@ export const getDemoChartStats = async () => {
   } catch (error) {
     redirect('/authors');
   };
+};
+
+
+export const createDemoNote = async ({ content, category, createdBy, authorName, authorId }) => {
+  const ZodNote = z.object({
+    content: z.string().min(1).max(100)
+  });
+
+  try {
+    await connectToDB();
+
+    ZodNote.parse({ content });
+
+    const note = await DemoNote.create({
+      content, category, createdBy, authorName, authorId
+    });
+
+    revalidatePath(`demo-works/${createdBy}`);
+    return { newNoteCategory: note.category };
+  } catch (error) {
+    return null;
+  }
 };
