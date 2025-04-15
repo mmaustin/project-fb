@@ -9,13 +9,15 @@ import toast from "react-hot-toast";
 const DemoNoteForm = ({ workStringified }) => {
 
   const work = JSON.parse(workStringified);
+  console.log(work);
+
 
   const [noteData, setNoteData] = useState({
     content: "",
     category: "Musings",
     createdBy: work._id,
     authorName: work.authorName,
-    authorId: work.createdBy.toString(),
+    authorId: work.createdBy,
   });
 
   const categoryOptions = ['Musings', 'Character', 'Plot', 'Setting'].map((opt, i) => {
@@ -57,7 +59,7 @@ const DemoNoteForm = ({ workStringified }) => {
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
       <div className="w-full sm:w-3/4 flex flex-col items-center border-2 border-base-300 bg-base-300 rounded-lg">
-        <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Note (min: 20, max: 100)" name="content" value={noteData.content} required />
+        <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Note (max: 100)" name="content" value={noteData.content} required />
         <input hidden readOnly type="text" className="input join-item w-full" name="createdBy" value={noteData.createdBy} required />
         <select onChange={handleInputChange} className="select join-item w-full rounded-lg" name="category" value={noteData.category} >
           {categoryOptions}

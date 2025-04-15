@@ -143,3 +143,12 @@ export const createDemoNote = async ({ content, category, createdBy, authorName,
     return null;
   }
 };
+
+export const getDemoWorkNotes = async (workId) => {
+  try {
+    await connectToDB();
+    return await DemoNote.find({ createdBy: workId });
+  } catch (error) {
+    console.log(error);
+  }
+};
