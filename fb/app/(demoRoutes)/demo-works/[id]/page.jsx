@@ -1,4 +1,5 @@
 import DemoNoteForm from "@/components/demoComponents/DemoNoteForm";
+import DemoNoteList from "@/components/demoComponents/DemoNoteList";
 import { getDemoWork } from "@/utils/demoActions";
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
@@ -23,10 +24,10 @@ const DemoWorkPage = async ({ params }) => {
             <DemoNoteForm workStringified={workToNoteForm} />
           </HydrationBoundary>
         </div>
-        {/* <div className="mt-8 mb-4">
-          <NoteList workId={params.id} workTitle={work.title} />
+        <div className="mt-8 mb-4">
+          <DemoNoteList workId={params.id} workTitle={work.title} />
         </div>
-        <div className="mt-6 text-xs text-error capitalize sm:hidden"><span className="text-error sm:hidden mr-2">*</span>do you really want to delete this!?</div> */}
+        {/* <div className="mt-6 text-xs text-error capitalize sm:hidden"><span className="text-error sm:hidden mr-2">*</span>do you really want to delete this!?</div> */}
       </div>
     </div>
   )

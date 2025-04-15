@@ -9,7 +9,6 @@ import toast from "react-hot-toast";
 const DemoNoteForm = ({ workStringified }) => {
 
   const work = JSON.parse(workStringified);
-  console.log(work);
 
 
   const [noteData, setNoteData] = useState({
