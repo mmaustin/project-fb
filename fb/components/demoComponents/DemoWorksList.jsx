@@ -17,20 +17,15 @@ const DemoWorksList = async ({ authorName }) => {
   const displayWorks = allWorks.reverse().map((work, i) => {
     let workID = work._id.toString();
 
-    return <div key={work._id} className="border-2 border-base-300 w-full rounded-lg">
-      <div className="card shadow-xl">
+    return <div key={work._id} className=" w-full h-[220px] rounded-lg">
+      <div className="card shadow-xl h-[220px] border-2 border-base-300">
         <div className="card-body">
-          <h2 className="card-title">{work.title}</h2>
+          <p className="card-title text-base">{work.title}</p>
           <p>{work.writingStage}</p>
           <div className="card-actions justify-center">
-            {/* <button type="" className="btn btn-xs rounded-lg ">Work Page</button> */}
             <Link href={`/demo-works/${work._id}`} className="btn btn-xs  rounded-lg" >
               Work Page
             </Link>
-            <button type="" className="btn btn-xs rounded-lg ">Edit Page</button>
-            {/* <Link href={`/works/edit/${work._id}`} className="btn btn-xs  rounded-lg" >
-              Edit Work
-            </Link> */}
             <DemoWorkDelete workId={workID} />
           </div>
         </div>

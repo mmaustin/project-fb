@@ -6,7 +6,7 @@ import { demoNoteDelete } from "@/utils/demoActions";
 const DemoNoteDelete = ({ noteId, workID }) => {
 
   const deleteHandler = async () => {
-    await noteDelete(noteId, workID);
+    await demoNoteDelete(noteId, workID);
   };
 
   return (
