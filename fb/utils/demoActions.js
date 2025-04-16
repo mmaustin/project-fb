@@ -84,6 +84,7 @@ export const getDemoWork = async (workId) => {
 export const demoWorkDelete = async (workId) => {
   try {
     await connectToDB();
+    await DemoNote.deleteMany({ createdBy: workId });
     await DemoWork.findByIdAndDelete(workId);
   } catch (error) {
     console.log(error);
@@ -91,6 +92,18 @@ export const demoWorkDelete = async (workId) => {
     redirect('/demo-authors');
   }
 };
+
+export const demoNoteDelete = async (noteId, workId) => {
+
+  try {
+    await connectToDB();
+    await DemoNote.findByIdAndDelete(noteId);
+    revalidatePath(`demo-works/${workId}`)
+  } catch (error) {
+
+  }
+
+}
 
 export const getDemoChartStats = async () => {
 
