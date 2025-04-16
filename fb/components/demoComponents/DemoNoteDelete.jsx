@@ -3,10 +3,10 @@
 import { demoNoteDelete } from "@/utils/demoActions";
 
 
-const DemoNoteDelete = ({ noteId, workId }) => {
+const DemoNoteDelete = ({ noteId, workID }) => {
 
   const deleteHandler = async () => {
-    await noteDelete(noteId, workId);
+    await noteDelete(noteId, workID);
   };
 
   return (

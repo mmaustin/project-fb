@@ -93,12 +93,12 @@ export const demoWorkDelete = async (workId) => {
   }
 };
 
-export const demoNoteDelete = async (noteId, workId) => {
+export const demoNoteDelete = async (noteId, workID) => {
 
   try {
     await connectToDB();
     await DemoNote.findByIdAndDelete(noteId);
-    revalidatePath(`demo-works/${workId}`)
+    revalidatePath(`demo-works/${workID}`)
   } catch (error) {
 
   }
