@@ -7,12 +7,12 @@ const links = [
   { href: '/authors', label: 'author hub' },
   { href: '/stats', label: 'monthly stats' },
   { href: '/chart', label: 'category stats' },
-  // { href: '/', label: 'home' }
+  { href: '/', label: 'home' }
 ];
 
 const removeLinks = [
   { href: '/authors', label: 'create author' },
-  // { href: '/', label: 'home' }
+  { href: '/', label: 'home' }
 ];
 
 const NavLinks = async () => {

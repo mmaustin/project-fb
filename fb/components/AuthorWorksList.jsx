@@ -8,7 +8,7 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
 
   if (allRouteWorks.length === 0) {
     return (
-      <h2 className="mt-8 font-bold capitalize text-center">You have yet to create a work.</h2>
+      <h2 className="mt-8 font-bold capitalize text-center">create some works, writer!</h2>
     )
   };
 
@@ -17,7 +17,7 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
     return <div key={work._id} className="border-2 border-base-300 w-full rounded-lg">
       <div className="card shadow-xl">
         <div className="card-body">
-          <h2 className="card-title">{work.title}</h2>
+          <h2 className="card-title capitalize">{work.title}</h2>
           <p>{work.writingStage}</p>
           <div className="card-actions justify-center">
             <Link href={`/works/${work._id}`} className="btn btn-xs  rounded-lg" >
