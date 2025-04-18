@@ -4,8 +4,6 @@ const NoteSchema = mongoose.Schema(
   {
     content: {
       type: String,
-      minLength: 20,
-      maxLength: 100,
       trim: true,
       required: true
     },

@@ -20,7 +20,7 @@ const DemoWorksList = async ({ authorName }) => {
     return <div key={work._id} className=" w-full h-[220px] rounded-lg">
       <div className="card shadow-xl h-[220px] border-2 border-base-300">
         <div className="card-body">
-          <p className="card-title text-base">{work.title}</p>
+          <p className="card-title text-base capitalize">{work.title}</p>
           <p>{work.writingStage}</p>
           <div className="card-actions justify-center">
             <Link href={`/demo-works/${work._id}`} className="btn btn-xs  rounded-lg" >

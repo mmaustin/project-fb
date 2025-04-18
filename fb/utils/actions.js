@@ -49,7 +49,7 @@ export const createAuthor = async ({ authorName, aboutMe, authorInfluence, workI
 
   const ZodAuthor = z.object({
     authorName: z.string().min(1).max(40),
-    aboutMe: z.string().min(25).max(250),
+    aboutMe: z.string().min(1).max(250),
     authorInfluence: z.string().min(1).max(40),
     workInfluence: z.string().min(1).max(40),
   });
@@ -74,7 +74,7 @@ export const editAuthor = async ({ authorId, authorName, aboutMe, authorInfluenc
 
   const ZodAuthor = z.object({
     authorName: z.string().min(1).max(40),
-    aboutMe: z.string().min(25).max(250),
+    aboutMe: z.string().min(1).max(250),
     authorInfluence: z.string().min(1).max(40),
     workInfluence: z.string().min(1).max(40),
   });
@@ -104,7 +104,7 @@ export const createWork = async ({ title, genre, synopsis, authUser, authorName,
   const ZodWork = z.object({
     title: z.string().min(1).max(40),
     genre: z.string().min(1).max(30),
-    synopsis: z.string().min(25).max(250),
+    synopsis: z.string().min(10).max(250),
   });
   console.log(title, genre, synopsis, authorName, writingStage, createdBy);
 
@@ -128,7 +128,7 @@ export const editWork = async ({ workId, workTitle, workGenre, workSynopsis, wor
   const ZodWork = z.object({
     workTitle: z.string().min(1).max(40),
     workGenre: z.string().min(1).max(30),
-    workSynopsis: z.string().min(25).max(250),
+    workSynopsis: z.string().min(10).max(250),
   });
 
   try {
@@ -181,7 +181,7 @@ export const getAuthorsWorks = async (authorId) => {
 
 export const createNote = async ({ content, category, createdBy, authUser, authorName, authorId }) => {
   const ZodNote = z.object({
-    content: z.string().min(20).max(100)
+    content: z.string().min(1).max(100)
   });
 
   try {

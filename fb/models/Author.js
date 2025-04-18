@@ -10,8 +10,6 @@ const AuthorSchema = mongoose.Schema(
     aboutMe: {
       type: String,
       required: true,
-      minLength: 5,
-      maxLength: 500,
       trim: true,
     },
     authorInfluence: {
