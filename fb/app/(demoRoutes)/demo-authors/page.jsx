@@ -17,7 +17,7 @@ const DemoAuthor = async () => {
         <DemoWorkForm demoAuthor={stringifiedAuthor} />
       </HydrationBoundary>
       <p className="mt-4 font-serif capitalize text-lg">your works</p>
-      <div className="mt-4">
+      <div className="mt-4 w-full">
         <DemoWorksList />
       </div>
     </div>
