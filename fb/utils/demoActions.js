@@ -7,7 +7,6 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import dayjs from "dayjs";
-import Note from "@/models/Note";
 import DemoNote from "@/models/DemoNote";
 
 // export const createDemoAuthor = async () => {
@@ -44,7 +43,7 @@ export const createDemoWork = async ({ title, genre, synopsis, authorName, writi
   const ZodWork = z.object({
     title: z.string().min(1).max(40),
     genre: z.string().min(1).max(30),
-    synopsis: z.string().min(1).max(250),
+    synopsis: z.string().min(10).max(250),
   });
 
   try {
