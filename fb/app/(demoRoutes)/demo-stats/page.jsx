@@ -1,14 +1,14 @@
-import { getDemoChartStats } from "@/utils/demoActions"
-
+import DemoBarChartContainer from "@/components/demoComponents/DemoBarChartContainer";
+import { getDemoChartStats } from "@/utils/demoActions";
 
 const DemoStats = async () => {
 
-  const stats = await getDemoChartStats();
-  console.log(stats);
-
+  const notes = await getDemoChartStats();
 
   return (
-    <div>Demo Stats</div>
+    <div className="w-full">
+      <DemoBarChartContainer allNotes={notes} />
+    </div>
   )
 }
-export default DemoStats
+export default DemoStats;

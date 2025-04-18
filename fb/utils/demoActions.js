@@ -112,7 +112,7 @@ export const getDemoChartStats = async () => {
   try {
     await connectToDB();
 
-    const notes = await Note.find({ createdAt: { $gte: twoMonthsAgo } }).sort({ createdAt: 'desc' });
+    const notes = await DemoNote.find({ createdAt: { $gte: twoMonthsAgo } }).sort({ createdAt: 'desc' });
 
     const monthlyNotes = notes.reduce((acc, note) => {
       const date = dayjs(note.createdAt).format('MMM YY');

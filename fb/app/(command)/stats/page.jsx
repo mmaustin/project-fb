@@ -9,7 +9,6 @@ const AuthorStats = async () => {
   const { userId } = auth();
 
   const notesObj = await getChartStats(userId);
-  //console.log(notesObj);
 
   return (
     <div className="w-full">
