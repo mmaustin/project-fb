@@ -14,10 +14,10 @@ const AuthorWorksList = async ({ authorId, authorName }) => {
 
   const displayWorks = allRouteWorks.map(work => {
     let workID = work._id.toString();
-    return <div key={work._id} className="border-2 border-base-300 w-full rounded-lg">
-      <div className="card shadow-xl">
+    return <div key={work._id} className="w-full h-[220px] rounded-lg">
+      <div className="card shadow-xl h-[220px] border-2 border-base-300">
         <div className="card-body">
-          <h2 className="card-title capitalize">{work.title}</h2>
+          <h2 className="card-title text-base capitalize">{work.title}</h2>
           <p>{work.writingStage}</p>
           <div className="card-actions justify-center">
             <Link href={`/works/${work._id}`} className="btn btn-xs  rounded-lg" >

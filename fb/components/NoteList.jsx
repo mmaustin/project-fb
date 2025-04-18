@@ -13,14 +13,14 @@ const NoteList = async ({ workId, workTitle }) => {
 
   const displayNotes = workNotes.map(note => {
     let noteID = note._id.toString();
-    return <div key={note._id} className="border-2 border-base-300 w-full h-[180px] rounded-lg">
-      <div className="relative shadow-xl h-full">
-        {/* <div className=""> */}
-        <h2 className="pt-2 pl-2 pb-2 font-bold text-sm font-serif">{note.category}</h2>
-        <p className="pl-2 font-serif text-base">{note.content}</p>
-        <div className="absolute bottom-2 left-2">
-          <NoteDelete noteId={noteID} workID={workId} />
-          {/* </div> */}
+    return <div key={note._id} className=" w-full h-[225px] rounded-lg">
+      <div className="card h-[225px] shadow-xl border-2 border-base-300">
+        <div className="card-body">
+          <h2 className="card-title">{note.category}</h2>
+          <p className="pl-2 font-serif text-sm">{note.content}</p>
+          <div className="card-actions justify-center">
+            <NoteDelete noteId={noteID} workID={workId} />
+          </div>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 function BarChartContainer({ notesObj }) {
 
 
-  if (!notesObj || notesObj.length < 1) return null;
+  if (!notesObj || notesObj.length < 1) return <p className='capitalize font-serif text-xl font-bold text-center'>create some notes, writer!</p>;
 
   return (
     <section className='mt-16'>

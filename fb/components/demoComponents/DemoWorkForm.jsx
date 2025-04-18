@@ -27,7 +27,6 @@ const DemoWorkForm = ({ demoAuthor }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log(value.length);
 
     setWorkData((prevWorkData) => ({
       ...prevWorkData,
