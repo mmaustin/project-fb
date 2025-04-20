@@ -24,8 +24,8 @@ const SingleWorkPage = async ({ params }) => {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div className="w-full flex flex-col justify-center items-center my-6">
-        <p className="capitalize italic text-sm sm:text-lg font-serif mb-4">{work.synopsis}</p>
         <h2 className="text-lg sm:text-xl font-serif capitalize mb-4">{work.title}</h2>
+        <p className="capitalize italic text-sm sm:text-lg font-serif mb-4">{work.synopsis}</p>
         <div className="flex flex-row justify-center items-center">
           <Link href={`/works/edit/${work._id}`} className="btn btn-xs border-x-base-100 rounded-lg" >
             Edit Work
