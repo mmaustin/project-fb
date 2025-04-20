@@ -6,7 +6,6 @@ import { IoInformationCircle } from "react-icons/io5";
 
 const HomePage = () => {
 
-  //mx-5 w-full flex flex-col justify-center items-center
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div className="mt-16 mx-5 flex flex-col justify-center items-center">
@@ -16,10 +15,12 @@ const HomePage = () => {
             <p className="m-6 text-sm md:text-xl font-serif leading-loose normal-case">Stop relying on sticky notes, napkins, and your "perfect" memory. Store all of your notes here.  Your book will thank you.</p>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <Link href="/authors" className="btn btn-secondary flex w-24 items-center rounded-lg ">Get Started</Link>
-            {/* <div className="tooltip tooltip-bottom mt-1 border" data-tip="Outlook Is Not Recommended. May Experience Redirect Issues On Login.">
-              <IoInformationCircle className="m-0" />
-            </div> */}
+            <Link href="/authors" className="btn btn-secondary btn-circle btn-sm flex w-24 items-center text-neutral-50 hover:text-success hover:bg-neutral-950 mb-4">
+              Log In
+            </Link>
+            <Link href="/demo-authors" className="btn btn-secondary btn-circle btn-sm flex w-24 items-center text-neutral-50 hover:text-success hover:bg-neutral-950">
+              Demo
+            </Link>
           </div>
           <div className="mt-7">
             <ImageContainer />

@@ -9,7 +9,7 @@ const layout = ({ children }) => {
         <label htmlFor="my-drawer-2" className="drawer-button md:hidden fixed top-6 right-6">
           <FaBarsStaggered className="w-6 h-6 text-primary" />
         </label>
-        <div className="bg-base-100 flex flex-col justify-center items-center px-8 py-12 min-h-screen border">
+        <div className="bg-base-100 flex flex-col justify-center items-center px-8 py-12 min-h-screen">
           <p className='m-0 capitalize text-[11px] mb-6 text-center font-serif italic'>auth, personalized profiles, full cRUD capabilities, and more upon sign in. delete and create here with abandon!</p>
           {children}
         </div>
