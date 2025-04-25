@@ -55,16 +55,18 @@ const NoteForm = ({ workProperties }) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-center">
-      <div className="w-full sm:w-3/4 flex flex-col items-center border-2 border-base-300 bg-base-300 rounded-lg">
-        <input onChange={handleInputChange} type="text" className="input join-item w-full rounded-lg capitalize mb-1" placeholder="Note (min: 1, max: 100)" name="content" value={noteData.content} required />
+
+      <div className="w-full sm:w-3/4 flex flex-col items-center border-2 border-base-300 bg-base-300 gap-1 rounded-lg">
+
+        <div className="flex flex-row w-full"><input onChange={handleInputChange} type="text" className="input join-item w-[90%] sm:w-[94%] rounded-tl-lg capitalize focus:outline-none" placeholder="Note (min: 1, max: 100)" name="content" value={noteData.content} required /><span className={`text-xs w-[10%] sm:w-[6%] flex justify-center items-center rounded-tr-lg font-bold ${noteData.content.length >= 101 ? 'bg-error' : 'bg-success/50'}`}>{noteData.content.length}</span></div>
+
         <input hidden readOnly type="text" className="input join-item w-full" name="createdBy" value={noteData.createdBy} required />
-        <select onChange={handleInputChange} className="select join-item w-full rounded-lg" name="category" value={noteData.category} >
+        <select onChange={handleInputChange} className="select join-item w-full focus:outline-none" name="category" value={noteData.category} >
           {categoryOptions}
         </select>
+
         <button className="w-auto btn btn-xs border-2 border-success join-item rounded-lg my-2" type="submit">New Note</button>
-        {/* <div className="flex justify-center">
-          <button className="w-1/3 btn btn-accent btn-xs join-item rounded-lg my-2" type="submit">New Note</button>
-        </div> */}
+
       </div>
     </form>
   )

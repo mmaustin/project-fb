@@ -17,7 +17,7 @@ const NoteList = async ({ workId, workTitle }) => {
       <div className="card h-[225px] shadow-xl border-2 border-base-300">
         <div className="card-body">
           <h2 className="card-title">{note.category}</h2>
-          <p className="pl-2 font-serif text-sm">{note.content}</p>
+          <p className="pl-2 font-serif text-sm capitalize">{note.content}</p>
           <div className="card-actions justify-center">
             <NoteDelete noteId={noteID} workID={workId} />
           </div>
