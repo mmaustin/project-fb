@@ -66,16 +66,16 @@ const DemoWorkForm = ({ demoAuthor }) => {
 
       <div className="w-full sm:w-3/4 flex flex-col items-center border-2 border-base-300 bg-base-300 gap-1 rounded-lg">
 
-        <div className="flex flex-row w-full"><input onChange={handleInputChange} type="text" className="input join-item w-[90%] sm:w-[94%] rounded-tl-lg capitalize focus:outline-none" placeholder="Title (min: 1, max: 40)" name="title" value={workData.title} required /><span className={`text-xs w-[10%] sm:w-[6%] flex justify-center items-center rounded-tr-lg ${workData.title.length >= 41 ? 'bg-error' : 'bg-success/50'}`}>{workData.title.length}</span></div>
+        <div className="flex flex-row w-full"><input onChange={handleInputChange} type="text" className="input join-item w-[90%] sm:w-[94%] rounded-tl-lg capitalize focus:outline-none " placeholder="Title (min: 1, max: 40)" name="title" value={workData.title} required /><span className={`text-xs w-[10%] sm:w-[6%] flex justify-center items-center rounded-tr-lg font-bold ${workData.title.length >= 41 ? 'bg-error' : 'bg-success/50'}`}>{workData.title.length}</span></div>
 
-        <input onChange={handleInputChange} type="text" className="input join-item w-full capitalize mb-1" placeholder="Genre (min: 1, max: 30)" name="genre" value={workData.genre} required /><span>{workData.genre.length}</span>
+        <div className="flex flex-row w-full"><input onChange={handleInputChange} type="text" className="input join-item w-[90%] sm:w-[94%] capitalize focus:outline-none" placeholder="Genre (min: 1, max: 30)" name="genre" value={workData.genre} required /><span className={`text-xs w-[10%] sm:w-[6%] flex justify-center items-center font-bold ${workData.genre.length >= 31 ? 'bg-error' : 'bg-success/50'}`}>{workData.genre.length}</span></div>
 
-        <textarea onChange={handleInputChange} type="textarea" className="textarea input join-item w-full rounded-lg capitalize mb-1" placeholder="Synopsis (min: 10, max: 250)" name="synopsis" value={workData.synopsis} required /><span>{workData.synopsis.length}</span>
+        <div className="flex flex-row w-full"><textarea onChange={handleInputChange} type="textarea" className="textarea input join-item w-[90%] sm:w-[94%] capitalize focus:outline-none" placeholder="Synopsis (min: 10, max: 250)" name="synopsis" value={workData.synopsis} required /><span className={`text-xs w-[10%] sm:w-[6%] flex justify-center items-center font-bold ${workData.synopsis.length >= 251 ? 'bg-error' : 'bg-success/50'}`}>{workData.synopsis.length}</span></div>
 
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authName" value={workData.authorName} required />
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="createdBy" value={workData.createdBy} required />
 
-        <select onChange={handleInputChange} className="select join-item w-full rounded-lg mb-1" name="writingStage" value={workData.writingStage} >
+        <select onChange={handleInputChange} className="select join-item w-full mb-1" name="writingStage" value={workData.writingStage} >
           {writingStateOptions}
         </select>
         <button className="w-auto btn btn-xs border-2 border-success join-item rounded-lg mb-1" type="submit">Create Work</button>
