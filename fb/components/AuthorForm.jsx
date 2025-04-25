@@ -68,7 +68,7 @@ const AuthorForm = ({ authUser }) => {
 
         <div className="flex flex-row w-full"><input onChange={handleInputChange} type="text" className="input join-item w-[90%] sm:w-[94%] capitalize focus:outline-none" placeholder="A Favorite Work (min: 1, max: 40)" name="workInfluence" value={authorData.workInfluence} required /><span className={`text-xs w-[10%] sm:w-[6%] flex justify-center items-center font-bold ${authorData.workInfluence.length >= 41 ? 'bg-error' : 'bg-success/50'}`}>{authorData.workInfluence.length}</span></div>
 
-        <div className="flex flex-row w-full"><textarea onChange={handleInputChange} type="text" className="input join-item w-[89%] sm:w-[94%] capitalize focus:outline-none" placeholder="Tell Us About Yourself (min: 1, max: 250)" name="aboutMe" value={authorData.aboutMe} required /><span className={`text-xs w-[11%] sm:w-[6%] flex justify-center items-center font-bold ${authorData.aboutMe.length >= 251 ? 'bg-error' : 'bg-success/50'}`}>{authorData.aboutMe.length}</span></div>
+        <div className="flex flex-row w-full"><textarea onChange={handleInputChange} type="text" className="input join-item w-[90%] sm:w-[94%] capitalize focus:outline-none" placeholder="Tell Us About Yourself (min: 1, max: 250)" name="aboutMe" value={authorData.aboutMe} required /><span className={`text-xs w-[10%] sm:w-[6%] flex justify-center items-center font-bold ${authorData.aboutMe.length >= 251 ? 'bg-error' : 'bg-success/50'}`}>{authorData.aboutMe.length}</span></div>
 
         <input hidden readOnly type="text" className="input input-bordered join-item w-full" name="authUser" value={authorData.authUser} required />
 
